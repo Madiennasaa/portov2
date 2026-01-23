@@ -2,8 +2,6 @@
 
 Portfolio website pribadi yang modern dan responsif, dibangun dengan Vue.js 3 dan Tailwind CSS. Menampilkan projects, skills, certificates, dan informasi kontak dengan desain yang elegan dan interaktif.
 
-![Portfolio Preview](./src/assets/hero.png)
-
 ## ✨ Features
 
 - 🎨 **Modern Design** - UI/UX yang clean dengan gradient emerald & blue theme
