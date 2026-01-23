@@ -23,22 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Assets - Personal Files
-src/assets/hero.png
-src/assets/project1.png
-src/assets/project2.png
-src/assets/project3.png
-src/assets/About.png
-src/assets/About2.png
-src/assets/About3.png
-src/assets/About4.png
-src/assets/Cer1.png
-src/assets/Cer2.png
-src/assets/Cer3.png
-src/assets/Cer4.png
-src/assets/*.pdf
-src/assets/CV_*.pdf
-
 # Optional: Ignore all images in assets except placeholders
 # src/assets/*.png
 # src/assets/*.jpg
