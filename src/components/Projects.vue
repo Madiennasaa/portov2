@@ -13,47 +13,48 @@
                         Projects
                     </span>
                 </h2>
-                <p class="text-slate-400 text-lg max-w-2xl mx-auto" 
-                data-aos="fade-up"
-                data-aos-delay="100">
-                    Beberapa karya terbaik yang menunjukkan keahlian saya dalam pengembangan full-stack dan desain UI/UX.
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Kumpulan proyek yang saya kerjakan selama belajar — dari web statis hingga aplikasi full-stack.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div v-for="(project, index) in projects"
                 :key="project.id"
                 :data-aos="'zoom-in'"
                 :data-aos-delay="(index * 150) + 100"
-                class="group relative rounded-2xl bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 shadow-xl overflow-hidden transition-all duration-500 hover:border-emerald-400/50 hover:shadow-emerald-500/20 flex flex-col">
-                    
-                    <div class="h-56 overflow-hidden flex-shrink-0">
-                        <img :src="project.src" 
-                        :alt="project.title" 
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
+                class="group relative rounded-2xl overflow-hidden border border-slate-700/50 aspect-video">
 
-                    <div class="p-6 relative z-10 flex flex-col flex-grow">
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            <span v-for="tag in project.tags"
-                            :key="tag"
-                            class="text-xs px-3 py-1 rounded-full font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-400/30">
+                    <!-- Gambar -->
+                    <img :src="project.src"
+                    :alt="project.title"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-6">
+
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-2 mb-3 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[50ms]">
+                            <span v-for="tag in project.tags" :key="tag"
+                            class="text-[10px] px-2 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-400/30 font-medium">
                                 {{ tag }}
                             </span>
                         </div>
 
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">
+                        <!-- Title -->
+                        <h3 class="text-white font-bold text-lg mb-2 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[100ms]">
                             {{ project.title }}
                         </h3>
-                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+
+                        <!-- Description -->
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[150ms]">
                             {{ project.description }}
                         </p>
 
-                        <a :href="project.link" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="mt-auto inline-flex items-center text-emerald-400 font-semibold group-hover:text-blue-400 transition-colors duration-300">
-                            View Project
+                        <!-- Link -->
+                        <a :href="project.link" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center text-emerald-400 font-semibold text-sm translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[200ms]">
+                            View on GitHub
                             <ArrowRightIcon class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300"/>
                         </a>
                     </div>
@@ -67,7 +68,7 @@
                     rel="noopener noreferrer"
                     class="inline-flex px-8 py-4 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-white font-semibold transition-all duration-300 items-center mx-auto group shadow-lg shadow-emerald-500/20"
                 >
-                    See All Works
+                    View More on GitHub
                     <ChevronDoubleRightIcon class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"/>
                 </a>
             </div>
@@ -89,7 +90,7 @@ const projects = ref([
         id: 1,
         src: project1,
         title: 'E-Commerce Platform Toko Hijau',
-        description: 'Sebuah platform marketplace lengkap yang memungkinkan pengguna melakukan transaksi jual beli secara online. Dilengkapi dengan manajemen keranjang, integrasi database produk, dan sistem checkout yang dinamis.',
+        description: 'Platform marketplace jual beli online dengan fitur keranjang, manajemen produk, dan sistem checkout dinamis.',
         tags: ['PHP Native', 'MySQL', 'Javascript', 'CSS'],
         link: 'https://github.com/Madiennasaa/tokohijau'
     },
@@ -97,7 +98,7 @@ const projects = ref([
         id: 2,
         src: project2, 
         title: 'Sistem Pembayaran SPP TK DHARMA',
-        description: 'Aplikasi manajemen keuangan sekolah untuk mencatat transaksi SPP siswa secara digital. Fitur utama mencakup rekapitulasi pembayaran, manajemen data siswa, dan pembuatan laporan keuangan yang akurat.',
+        description: 'Aplikasi manajemen keuangan sekolah untuk mencatat transaksi SPP siswa, rekap pembayaran, dan laporan keuangan.',
         tags: ['Laravel', 'Javascript', 'MySQL', 'Tailwind'],
         link: 'https://github.com/Madiennasaa/pembayaran-spp'
     },
@@ -105,8 +106,8 @@ const projects = ref([
         id: 3,
         src: project3, 
         title: 'Sistem Perpustakaan Online',
-        description: 'Solusi digital untuk pengelolaan peminjaman dan pengembalian buku. Memudahkan pustakawan dalam mendata koleksi buku serta memberikan akses pencarian katalog yang cepat bagi pengguna.',
-        tags: ['MySQL', 'OOP', 'Python', 'PyQt5'],
+        description: 'Aplikasi pengelolaan peminjaman dan pengembalian buku dengan pencarian katalog dan manajemen koleksi.',
+        tags: ['MySQL', 'Python', 'PyQt5'],
         link: 'https://github.com/Madiennasaa/perpustakaan'
     },
 ]);
