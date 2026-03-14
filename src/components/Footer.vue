@@ -13,7 +13,7 @@
                         My <span class="font-black">Portofolio</span>
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6 text-center md:text-left">
-                        Membangun solusi digital yang menggabungkan estetika desain dan performa kode yang optimal. Mari berkolaborasi untuk proyek Anda selanjutnya.
+                        Selalu tertarik dengan proyek baru dan peluang belajar. Jangan ragu untuk menghubungi.
                     </p>
                 </div>
 
