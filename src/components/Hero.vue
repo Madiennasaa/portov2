@@ -52,17 +52,22 @@
 
                 <!-- Image -->
                 <div class="lg:h-full flex justify-center lg:justify-end">
-                    <div class="relative w-full max-w-md">
-                        <div class="relative z-10 rounded-2xl overflow-hidden border border-slate-700/50 bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm p-8">
-                            <img 
-                                src="../assets/hero.png" 
-                                alt="Ubai - Full-Stack Developer" 
-                                loading="lazy" 
-                                class="w-full h-auto object-contain"
-                            />
+                    <div class="relative flex items-center justify-center">
+                        <!-- Glow background -->
+                        <div class="absolute w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl"></div>
+                        <div class="absolute w-80 h-80 bg-blue-500/10 rounded-full blur-2xl"></div>
+
+                        <!-- Circle foto -->
+                        <div class="relative z-10 floating">
+                            <div class="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-emerald-400/40 shadow-[0_0_40px_rgba(52,211,153,0.3)]">
+                                <img 
+                                    src="../assets/hero.png" 
+                                    alt="Ubai - Full-Stack Developer" 
+                                    loading="lazy" 
+                                    class="w-full h-full object-cover object-top"
+                                />
+                            </div>
                         </div>
-                        <!-- Subtle Accent -->
-                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-gradient-to-br from-emerald-500/10 to-blue-500/10 rounded-full blur-2xl -z-10"></div>
                     </div>
                 </div>
             </div>
