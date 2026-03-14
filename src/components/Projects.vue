@@ -14,7 +14,7 @@
                     </span>
                 </h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-                    Kumpulan proyek yang saya kerjakan selama belajar — dari web statis hingga aplikasi full-stack.
+                    Kumpulan proyek yang saya kerjakan selama belajar, mulai dari web statis hingga aplikasi full-stack.
                 </p>
             </div>
 
