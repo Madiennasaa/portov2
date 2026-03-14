@@ -4,29 +4,28 @@
             <div class="grid lg:grid-cols-2 gap-10 xl:gap-14 items-center">
                 
                 <!-- Certificates Grid -->
-                <div class="lg:h-full flex justify-center lg:justify-start order-2 lg:order-1">
-                    <div class="relative w-full max-w-md">
-                        <div class="relative bg-gradient-to-br from-slate-800/60 to-slate-900/40 rounded-3xl p-6 backdrop-blur-sm border border-slate-700/50 shadow-2xl">
-                            <div class="grid grid-cols-2 gap-4">
-                                <div v-for="cert in certificates" :key="cert.id" class="relative group">
-                                    <div class="rounded-2xl p-3 border shadow-lg bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border-emerald-500/30 aspect-[4/3] flex items-center justify-center hover:border-emerald-400/50 transition-all duration-300">
-                                        <img :src="cert.src" 
-                                        :alt="cert.title" 
-                                        class="w-full h-full object-contain rounded-xl group-hover:scale-105 transition-transform duration-300">
-                                    </div>
-                                    <div class="absolute -top-2 -right-2 text-white text-[10px] px-2 py-1 rounded-full font-semibold bg-emerald-500 shadow-lg">
-                                        Verified
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 z-20 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-2xl px-6 py-3 border border-emerald-400/40 shadow-xl">
-                                <div class="text-center text-white text-xl font-bold">
-                                    4+ Certifications
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="grid grid-cols-2 gap-4">
+    <div v-for="cert in certificates" :key="cert.id" class="relative" style="perspective: 1000px;">
+        <!-- Badge -->
+        <div class="absolute -top-2 -right-2 text-white text-[10px] px-2 py-1 rounded-full font-semibold bg-emerald-500 shadow-lg z-10">
+            Verified
+        </div>
+        <!-- Flip Card -->
+        <div class="flip-card aspect-[4/3]">
+            <div class="flip-inner">
+                <!-- Depan: gambar -->
+                <div class="flip-front rounded-2xl p-3 border bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border-emerald-500/30 flex items-center justify-center">
+                    <img :src="cert.src" :alt="cert.title" class="w-full h-full object-contain rounded-xl">
+                </div>
+                <!-- Belakang: detail -->
+                <div class="flip-back rounded-2xl flex flex-col items-center justify-center p-4 text-center gap-2">
+                    <p class="text-white text-xs font-semibold leading-snug">{{ cert.title }}</p>
+                    <p class="text-emerald-400 text-[11px]">{{ cert.issuer }}</p>
+                    <p class="text-slate-400 text-[10px]">{{ cert.year }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
                 </div>
 
                 <!-- Content -->
@@ -129,28 +128,18 @@ import cert1 from '../assets/Cer1.png'
 import cert2 from '../assets/Cer2.png'
 import cert3 from '../assets/Cer3.png'
 import cert4 from '../assets/Cer4.png'
-import cvFile from '../assets/CV_Ahmad_Ubaidillah_Tsani.pdf'
 
 const certificates = [
-    {
-        id: 1,
-        src: cert1,
-        title: 'Back-End Pemula dengan Javascript',
-    },
-    {
-        id: 2,
-        src: cert2,
-        title: 'Belajar Dasar Cloud dan Gen AI di AWS',
-    },
-    {
-        id: 3,
-        src: cert3,
-        title: 'Belajar Dasar Pemrograman Javascript',
-    },
-    {
-        id: 4,
-        src: cert4,
-        title: 'Belajar Penerapan Data Science dengan Microsoft Fabric',
-    },
+    { id: 1, src: cert1, title: 'Back-End Pemula dengan Javascript', issuer: 'Dicoding Indonesia', year: '2025' },
+    { id: 2, src: cert2, title: 'Belajar Dasar Cloud dan Gen AI di AWS', issuer: 'Dicoding Indonesia', year: '2025' },
+    { id: 3, src: cert3, title: 'Belajar Dasar Pemrograman Javascript', issuer: 'Dicoding Indonesia', year: '2023' },
+    { id: 4, src: cert4, title: 'Belajar Penerapan Data Science dengan Microsoft Fabric', issuer: 'Dicoding Indonesia', year: '2024' },
 ]
 </script>
+<style scoped>
+.flip-card { width: 100%; height: 100%; }
+.flip-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s ease; transform-style: preserve-3d; }
+.flip-card:hover .flip-inner { transform: rotateY(180deg); }
+.flip-front, .flip-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.flip-back { background: linear-gradient(135deg, #0f4c35, #0c2a4a); border: 1px solid rgba(52,211,153,0.4); transform: rotateY(180deg); }
+</style>
