@@ -78,7 +78,7 @@ const services = ref([
         id: 3,
         icon: ComputerDesktopIcon,
         name: 'Website Landing Page Cepat',
-        desc: 'Membuat landing page atau website statis yang ringan dan cepat — cocok untuk profil, portofolio, atau kampanye sederhana.'
+        desc: 'Membuat landing page atau website statis yang ringan dan cepat, cocok untuk profil, portofolio, atau kampanye sederhana.'
     },
 ])
 </script>
