@@ -52,9 +52,15 @@
 
                 <!-- Image -->
                 <div class="lg:h-full flex justify-center lg:justify-end items-center pr-8 lg:pr-12">
-                    <div class="relative floating">
+                    <div class="relative w-52 h-72 md:w-64 md:h-80 flex items-center justify-center">
+
+                        <!-- Dot pattern background -->
+                        <div class="absolute -top-4 -right-4 w-44 h-56 rounded-xl z-0"
+                            style="background-image: radial-gradient(circle, rgba(52,211,153,0.35) 1px, transparent 1px); background-size: 14px 14px; mask-image: radial-gradient(ellipse at top right, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse at top right, black 30%, transparent 80%);">
+                        </div>
+
                         <!-- Card foto -->
-                        <div class="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden border border-emerald-400/30 shadow-[0_0_30px_rgba(52,211,153,0.15),0_0_60px_rgba(52,211,153,0.07)] bg-slate-800/50">
+                        <div class="relative z-10 w-full h-full rounded-2xl overflow-hidden border border-emerald-400/30 shadow-[0_0_30px_rgba(52,211,153,0.15)] bg-slate-800/50 floating">
                             <img 
                                 src="../assets/hero.png" 
                                 alt="Ubai - Full-Stack Developer" 
@@ -62,8 +68,9 @@
                                 class="w-full h-full object-cover object-center"
                             />
                         </div>
-                        <!-- Glow bawah card -->
-                        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-48 h-8 bg-emerald-500/15 rounded-full blur-xl"></div>
+
+                        <!-- Glow bawah -->
+                        <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-40 h-6 bg-emerald-500/20 rounded-full blur-xl z-0"></div>
                     </div>
                 </div>
             </div>
