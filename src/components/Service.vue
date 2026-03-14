@@ -66,19 +66,19 @@ const services = ref([
         id: 1,
         icon: CodeBracketIcon,
         name: 'Pengembangan Web Full-Stack',
-        desc: 'Saya membangun aplikasi web lengkap, dari perencanaan database (arsitektur dasar) dan logika bisnis (backend), hingga coding tampilan depan (frontend) yang responsif. Produk aman, terukur, dan siap diluncurkan.',
+        desc: 'Membangun aplikasi web dari database hingga tampilan frontend menggunakan Laravel dan Vue. Fokus pada kode yang bersih, terstruktur, dan mudah dikembangkan.',
     },
     {
         id: 2,
         icon: DevicePhoneMobileIcon,
         name: 'Responsiveness & Optimasi Mobile',
-        desc: 'Memastikan website atau aplikasi web Anda tampil sempurna dan bekerja dengan cepat di semua ukuran layar, terutama perangkat mobile, memberikan pengalaman pengguna yang mulus.',
+        desc: 'Memastikan tampilan website responsif dan nyaman digunakan di semua ukuran layar, dari desktop hingga mobile.',
     },
     {
         id: 3,
         icon: ComputerDesktopIcon,
         name: 'Website Landing Page Cepat',
-        desc: 'Membuat landing page atau website statis dengan fokus pada kecepatan dan konversi tinggi. Ideal untuk kampanye marketing, profil perusahaan, atau produk baru yang butuh diluncurkan cepat.',
+        desc: 'Membuat landing page atau website statis yang ringan dan cepat — cocok untuk profil, portofolio, atau kampanye sederhana.'
     },
 ])
 </script>
