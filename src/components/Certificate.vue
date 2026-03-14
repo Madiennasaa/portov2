@@ -22,7 +22,7 @@
                             
                             <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 z-20 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-2xl px-6 py-3 border border-emerald-400/40 shadow-xl">
                                 <div class="text-center text-white text-xl font-bold">
-                                    10+ Certifications
+                                    4+ Certifications
                                 </div>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                     </div>
                     
                     <p class="text-slate-300 pt-6 text-center lg:text-left text-base md:text-lg leading-relaxed font-light">
-                        Saya terus berkomitmen untuk meningkatkan keahlian saya melalui pelatihan dan sertifikasi industri yang diakui secara global. Berikut adalah beberapa bukti kompetensi yang telah saya raih dalam pengembangan perangkat lunak dan desain.
+                        Beberapa sertifikasi yang sudah saya selesaikan sebagai bagian dari proses belajar mandiri di luar perkuliahan.
                     </p>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8">
@@ -61,20 +61,19 @@
                     </div>
 
                     <div class="flex gap-4 pt-8 flex-col sm:flex-row">
-                        <a 
-                        :href="cvFile" 
-                        download="CV_Ahmad_Ubaidillah_Tsani.pdf"
-                        class="px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center bg-emerald-500 text-white hover:bg-emerald-400 hover:shadow-lg hover:shadow-emerald-500/25 group cursor-pointer">
-                            <DocumentCheckIcon class="w-5 h-5 mr-2" />
-                            Unduh CV & Sertifikat
-                        </a>
-                        <a 
-                        href="https://www.linkedin.com/in/ahmadubai02" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        class="px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center border border-slate-600 hover:border-emerald-400 text-slate-300 hover:text-emerald-400">
-                            Lihat di LinkedIn
-                        </a>
+    <a 
+    href="#certificates"
+    class="px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center bg-emerald-500 text-white hover:bg-emerald-400 hover:shadow-lg hover:shadow-emerald-500/25 group cursor-pointer">
+        <DocumentCheckIcon class="w-5 h-5 mr-2" />
+        Lihat Sertifikat
+    </a>
+    <a 
+    href="https://www.linkedin.com/in/ahmadubai02" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center border border-slate-600 hover:border-emerald-400 text-slate-300 hover:text-emerald-400">
+        Lihat di LinkedIn
+    </a>
                     </div>
                 </div>
             </div>
@@ -86,10 +85,44 @@
 import { 
     AcademicCapIcon,
     DocumentCheckIcon,
-    StarIcon,
-    TrophyIcon,
+    CodeBracketIcon,
     ShieldCheckIcon
 } from '@heroicons/vue/24/solid'
+
+const certHighlights = [
+    {
+        id: 1,
+        icon: CodeBracketIcon,
+        iconColor: 'text-emerald-400',
+        title: 'Backend Basic',
+        issuer: 'Dicoding Indonesia',
+        year: '2025'
+    },
+    {
+        id: 2,
+        icon: ShieldCheckIcon,
+        iconColor: 'text-blue-400',
+        title: 'Cyber Security Basic',
+        issuer: 'Cisco Networking Academy',
+        year: '2024'
+    },
+    {
+        id: 3,
+        icon: CodeBracketIcon,
+        iconColor: 'text-emerald-400',
+        title: 'Javascript Basic',
+        issuer: 'Dicoding Indonesia',
+        year: '2023'
+    },
+    {
+        id: 4,
+        icon: AcademicCapIcon,
+        iconColor: 'text-blue-400',
+        title: 'Python Basic',
+        issuer: 'Cisco Networking Academy',
+        year: '2025'
+    },
+]
 
 // Ganti path ini dengan gambar sertifikat Anda
 import cert1 from '../assets/Cer1.png'
@@ -118,41 +151,6 @@ const certificates = [
         id: 4,
         src: cert4,
         title: 'Belajar Penerapan Data Science dengan Microsoft Fabric',
-    },
-]
-
-const certHighlights = [
-    {
-        id: 1,
-        icon: AcademicCapIcon,
-        iconColor: 'text-emerald-400',
-        title: 'Backend Basic',
-        issuer: 'Dicoding Indonesia',
-        year: '2025'
-    },
-    {
-        id: 2,
-        icon: ShieldCheckIcon,
-        iconColor: 'text-blue-400',
-        title: 'Cyber Security Basic',
-        issuer: 'Cisco Networking Academy',
-        year: '2024'
-    },
-    {
-        id: 3,
-        icon: TrophyIcon,
-        iconColor: 'text-emerald-400',
-        title: 'Javascript Basic',
-        issuer: 'Dicoding Indonesia',
-        year: '2023'
-    },
-    {
-        id: 4,
-        icon: StarIcon,
-        iconColor: 'text-blue-400',
-        title: 'Python Basic',
-        issuer: 'Cisco Networking Academy',
-        year: '2025'
     },
 ]
 </script>
