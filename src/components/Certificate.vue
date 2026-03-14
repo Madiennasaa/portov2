@@ -96,7 +96,7 @@ import cert1 from '../assets/Cer1.png'
 import cert2 from '../assets/Cer2.png'
 import cert3 from '../assets/Cer3.png'
 import cert4 from '../assets/Cer4.png'
-import cvFile from '../assets/CV_Ahmad Ubaidillah Tsani.pdf'
+import cvFile from '../assets/CV_Ahmad_Ubaidillah_Tsani.pdf'
 
 const certificates = [
     {
