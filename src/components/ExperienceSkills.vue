@@ -66,8 +66,7 @@
 
                         <div class="space-y-12">
                             <div v-for="exp in experience" :key="exp.id" class="relative pl-10 group">
-                                <span class="absolute flex items-center justify-center w-6 h-6 rounded-full -start-3 ring-8 ring-slate-950 group-hover:ring-emerald-500/20 bg-emerald-500/20 border border-emerald-500/50 transition-all duration-300 z-10">
-                                    <BriefcaseIcon class="w-3 h-3 text-emerald-400"/>
+                                <span class="absolute w-3 h-3 rounded-full -start-1.5 top-7 ring-4 ring-slate-950 bg-emerald-400 group-hover:bg-emerald-300 transition-all duration-300 z-10">
                                 </span>
                                 
                                 <div class="p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/30 backdrop-blur-md rounded-2xl border border-slate-700/50 group-hover:border-emerald-500/50 transition-all duration-500 shadow-xl group-hover:-translate-y-1">
@@ -101,11 +100,11 @@
 
 <script setup>
 import { 
-    CloudIcon, 
     CodeBracketIcon, 
     DevicePhoneMobileIcon, 
     PaintBrushIcon, 
     ServerIcon, 
+    CircleStackIcon,
     Squares2X2Icon, 
     BriefcaseIcon,
     AcademicCapIcon
@@ -117,7 +116,7 @@ const skills = [
         title: 'Front-End Developer',
         icon: CodeBracketIcon,
         iconColor: 'text-emerald-400',
-        percentage: 60,
+        percentage: 65,
         percentageColor: 'text-emerald-400 text-sm font-medium',
         gradient: 'bg-gradient-to-r from-emerald-500 to-blue-500'
     },
@@ -126,7 +125,7 @@ const skills = [
         title: 'Back-End Developer',
         icon: ServerIcon,
         iconColor: 'text-blue-400',
-        percentage: 45,
+        percentage: 50,
         percentageColor: 'text-blue-400 text-sm font-medium',
         gradient: 'bg-gradient-to-r from-blue-500 to-emerald-500'
     },
@@ -135,7 +134,7 @@ const skills = [
         title: 'UI/UX Design',
         icon: PaintBrushIcon,
         iconColor: 'text-emerald-400',
-        percentage: 65,
+        percentage: 50,
         percentageColor: 'text-emerald-400 text-sm font-medium',
         gradient: 'bg-gradient-to-r from-emerald-500 to-blue-500'
     },
@@ -144,23 +143,23 @@ const skills = [
         title: 'Mobile Developer',
         icon: DevicePhoneMobileIcon,
         iconColor: 'text-blue-400',
-        percentage: 10,
+        percentage: 20,
         percentageColor: 'text-blue-400 text-sm font-medium',
         gradient: 'bg-gradient-to-r from-blue-500 to-emerald-500'
     },
     {
         id: 5,
-        title: 'DevOps & Cloud',
-        icon: CloudIcon,
+        title: 'Database & SQL',
+        icon: CircleStackIcon,
         iconColor: 'text-emerald-400',
-        percentage: 30,
+        percentage: 60,
         percentageColor: 'text-emerald-400 text-sm font-medium',
         gradient: 'bg-gradient-to-r from-emerald-500 to-blue-500'
     },
 ]
 
 const techStack = [
-    'Vue.js', 'Node.js', 'Javascript', 'MySQL', 'Figma', 'Docker', 'Git', 'REST APIs', 'PHP', 'Laravel',
+    'Vue.js', 'Node.js', 'Javascript', 'MySQL', 'Figma', 'Git', 'REST APIs', 'PHP', 'Laravel', 'HTML', 'CSS', 'Tailwind CSS',
 ]
 
 const experience = [
