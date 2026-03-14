@@ -67,11 +67,21 @@
                             <textarea id="message" v-model="form.message" rows="4" required
                             class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300"></textarea>
                         </div>
-                        <button type="submit"
-                        class="w-full px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center bg-emerald-500 text-white hover:bg-emerald-400 shadow-lg shadow-emerald-500/20">
-                            Send Message
-                            <PaperAirplaneIcon class="w-4 h-4 ml-2"/>
+                        <button type="submit" :disabled="isLoading"
+                            class="w-full px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center bg-emerald-500 text-white hover:bg-emerald-400 shadow-lg shadow-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed">
+                            <span v-if="isLoading">Mengirim...</span>
+                            <span v-else class="flex items-center">
+                                Send Message
+                                <PaperAirplaneIcon class="w-4 h-4 ml-2"/>
+                            </span>
                         </button>
+
+                        <!-- Status message -->
+                        <p v-if="statusMsg" 
+                            :class="isSuccess ? 'text-emerald-400' : 'text-red-400'"
+                            class="text-sm text-center mt-2">
+                            {{ statusMsg }}
+                        </p>
                     </form>
                 </div>
             </div>
@@ -81,64 +91,57 @@
 
 <script setup>
 import { ref } from 'vue';
+import emailjs from '@emailjs/browser';
 import { 
     EnvelopeIcon, 
     PhoneIcon, 
     MapPinIcon, 
     PaperAirplaneIcon,
-    UserIcon,        // Digunakan untuk LinkedIn (Profil)
-    CodeBracketIcon, // Digunakan untuk GitHub (Kode)
-    CameraIcon       // Digunakan untuk Instagram (Foto)
+    UserIcon,
+    CodeBracketIcon,
+    CameraIcon
 } from '@heroicons/vue/16/solid';
 
-const form = ref({
-    name: '',
-    email: '',
-    message: ''
-});
+const form = ref({ name: '', email: '', message: '' });
+const isLoading = ref(false);
+const statusMsg = ref('');
+const isSuccess = ref(false);
+
+const submitForm = async () => {
+    isLoading.value = true;
+    statusMsg.value = '';
+
+    try {
+        await emailjs.send(
+            'service_3qriz9d',
+            'template_bfgzpql',
+            {
+                from_name: form.value.name,
+                from_email: form.value.email,
+                message: form.value.message,
+            },
+            '2uSqy7hts8dDzgvYp'
+        );
+        isSuccess.value = true;
+        statusMsg.value = 'Pesan berhasil terkirim!';
+        form.value = { name: '', email: '', message: '' };
+    } catch (error) {
+        isSuccess.value = false;
+        statusMsg.value = 'Gagal mengirim pesan. Coba lagi.';
+    } finally {
+        isLoading.value = false;
+    }
+};
 
 const contactInfo = [
-    {
-        id: 1,
-        icon: EnvelopeIcon,
-        title: 'Email Address',
-        detail: 'ahmadubai02@gmail.com'
-    },
-    {
-        id: 2,
-        icon: PhoneIcon,
-        title: 'Phone Number',
-        detail: '+62 857-5637-3129'
-    },
-    {
-        id: 3,
-        icon: MapPinIcon,
-        title: 'Location',
-        detail: 'Kediri, Jawa Timur, Indonesia'
-    },
-]
+    { id: 1, icon: EnvelopeIcon, title: 'Email Address', detail: 'ahmadubai02@gmail.com' },
+    { id: 2, icon: PhoneIcon, title: 'Phone Number', detail: '+62 857-5637-3129' },
+    { id: 3, icon: MapPinIcon, title: 'Location', detail: 'Kediri, Jawa Timur, Indonesia' },
+];
 
 const socialLinks = [
-    {
-        name: 'LinkedIn',
-        icon: UserIcon, 
-        link: 'https://www.linkedin.com/in/ahmadubai02'
-    },
-    {
-        name: 'GitHub',
-        icon: CodeBracketIcon,
-        link: 'https://github.com/Madiennasaa'
-    },
-    {
-        name: 'Instagram',
-        icon: CameraIcon,
-        link: 'https://www.instagram.com/madnst_/'
-    },
-]
-
-const submitForm = () => {
-    console.log('Form Submitted:', form.value);
-    alert('Thank you for your message! (Form submission logic needs backend)');
-    form.value = { name: '', email: '', message: '' };
-};
+    { name: 'LinkedIn', icon: UserIcon, link: 'https://www.linkedin.com/in/ahmadubai02' },
+    { name: 'GitHub', icon: CodeBracketIcon, link: 'https://github.com/Madiennasaa' },
+    { name: 'Instagram', icon: CameraIcon, link: 'https://www.instagram.com/madnst_/' },
+];
 </script>
