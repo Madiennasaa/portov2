@@ -64,7 +64,7 @@
                                     src="../assets/hero.png" 
                                     alt="Ubai - Full-Stack Developer" 
                                     loading="lazy" 
-                                    class="w-full h-full object-cover object-top"
+                                    class="w-full h-full object-cover object-[center_20%]"
                                 />
                             </div>
                         </div>
