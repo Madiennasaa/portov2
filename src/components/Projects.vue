@@ -34,12 +34,10 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-6">
 
                         <!-- Tags -->
-                        <div class="flex flex-wrap gap-2 mb-3 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[50ms]">
-                            <span v-for="tag in project.tags" :key="tag"
-                            class="text-[10px] px-2 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-400/30 font-medium">
-                                {{ tag }}
-                            </span>
-                        </div>
+                        <span v-for="tag in project.tags" :key="tag"
+                        class="text-[10px] px-2 py-1 rounded-full bg-slate-700/80 text-slate-200 border border-slate-500/50 font-medium">
+                            {{ tag }}
+                        </span>
 
                         <!-- Title -->
                         <h3 class="text-white font-bold text-lg mb-2 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[100ms]">
