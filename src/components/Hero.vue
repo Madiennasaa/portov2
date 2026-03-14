@@ -18,13 +18,12 @@
                             Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Ubai</span>
                         </h1>
                         <p class="text-slate-400 text-xl md:text-2xl font-light">
-                            Full-Stack Developer & UI/UX Enthusiast
+                            Full-Stack Developer
                         </p>
                     </div>
 
                     <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-xl font-light">
-                        Mahasiswa D3 Manajemen Informatika di Politeknik Negeri Malang dengan passion dalam web development. 
-                        Berfokus pada pengembangan solusi digital yang inovatif dan user-friendly.
+                        Mahasiswa D3 Manajemen Informatika Polinema yang fokus di web development berbasis Laravel dan Vue. Senang membangun aplikasi yang fungsional, rapi, dan mudah digunakan.
                     </p>
 
                     <div class="flex items-center gap-4 pt-4">
