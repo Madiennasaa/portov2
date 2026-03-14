@@ -51,19 +51,19 @@
                 </div>
 
                 <!-- Image -->
-                <div class="lg:h-full flex justify-center lg:justify-end items-center">
+                <div class="lg:h-full flex justify-center lg:justify-end items-center pr-8 lg:pr-12">
                     <div class="relative floating">
                         <!-- Card foto -->
-                        <div class="w-48 h-64 md:w-52 md:h-72 rounded-2xl overflow-hidden border border-emerald-400/30 shadow-[0_0_30px_rgba(52,211,153,0.15),0_0_60px_rgba(52,211,153,0.07)] bg-slate-800/50">
+                        <div class="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden border border-emerald-400/30 shadow-[0_0_30px_rgba(52,211,153,0.15),0_0_60px_rgba(52,211,153,0.07)] bg-slate-800/50">
                             <img 
                                 src="../assets/hero.png" 
                                 alt="Ubai - Full-Stack Developer" 
                                 loading="lazy" 
-                                class="w-full h-full object-cover object-top"
+                                class="w-full h-full object-cover object-center"
                             />
                         </div>
                         <!-- Glow bawah card -->
-                        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-36 h-8 bg-emerald-500/15 rounded-full blur-xl"></div>
+                        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-48 h-8 bg-emerald-500/15 rounded-full blur-xl"></div>
                     </div>
                 </div>
             </div>
