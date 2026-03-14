@@ -54,9 +54,9 @@
                 <div class="lg:h-full flex justify-center lg:justify-end items-center pr-8 lg:pr-12">
                     <div class="relative w-52 h-72 md:w-64 md:h-80 flex items-center justify-center">
 
-                        <!-- Dot pattern background -->
+                        <!-- Grid pattern background -->
                         <div class="absolute -top-4 -right-2 w-40 h-52 rounded-xl z-0"
-                            style="background-image: radial-gradient(circle, rgba(52,211,153,0.3) 1px, transparent 1px); background-size: 14px 14px; mask-image: radial-gradient(ellipse at top right, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at top right, black 20%, transparent 70%);">
+                            style="background-image: linear-gradient(rgba(52,211,153,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(52,211,153,0.15) 1px, transparent 1px); background-size: 20px 20px; mask-image: radial-gradient(ellipse at top right, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at top right, black 20%, transparent 70%);">
                         </div>
 
                         <!-- Card foto -->
