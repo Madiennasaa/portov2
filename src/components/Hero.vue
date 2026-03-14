@@ -51,23 +51,19 @@
                 </div>
 
                 <!-- Image -->
-                <div class="lg:h-full flex justify-center lg:justify-end">
-                    <div class="relative flex items-center justify-center">
-                        <!-- Glow background -->
-                        <div class="absolute w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl"></div>
-                        <div class="absolute w-80 h-80 bg-blue-500/10 rounded-full blur-2xl"></div>
-
-                        <!-- Circle foto -->
-                        <div class="relative z-10 floating">
-                            <div class="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-emerald-400/40 shadow-[0_0_40px_rgba(52,211,153,0.3)]">
-                                <img 
-                                    src="../assets/hero.png" 
-                                    alt="Ubai - Full-Stack Developer" 
-                                    loading="lazy" 
-                                    class="w-full h-full object-cover object-[center_20%]"
-                                />
-                            </div>
+                <div class="lg:h-full flex justify-center lg:justify-end items-center">
+                    <div class="relative floating">
+                        <!-- Card foto -->
+                        <div class="w-48 h-64 md:w-52 md:h-72 rounded-2xl overflow-hidden border border-emerald-400/30 shadow-[0_0_30px_rgba(52,211,153,0.15),0_0_60px_rgba(52,211,153,0.07)] bg-slate-800/50">
+                            <img 
+                                src="../assets/hero.png" 
+                                alt="Ubai - Full-Stack Developer" 
+                                loading="lazy" 
+                                class="w-full h-full object-cover object-top"
+                            />
                         </div>
+                        <!-- Glow bawah card -->
+                        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-36 h-8 bg-emerald-500/15 rounded-full blur-xl"></div>
                     </div>
                 </div>
             </div>
@@ -82,9 +78,8 @@ import cvUrl from '../assets/CV_Ahmad_Ubaidillah_Tsani.pdf';
 .floating {
     animation: floating 4s ease-in-out infinite;
 }
-
 @keyframes floating {
     0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(-14px); }
+    50%       { transform: translateY(-12px); }
 }
 </style>
