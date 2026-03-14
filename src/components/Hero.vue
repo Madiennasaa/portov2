@@ -72,5 +72,5 @@
 </template>
 
 <script setup>
-import cvUrl from '../assets/CV_Ahmad Ubaidillah Tsani.pdf';
+import cvUrl from '../assets/CV_Ahmad_Ubaidillah_Tsani.pdf';
 </script>
