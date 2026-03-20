@@ -167,14 +167,6 @@ const projects = ref([
         tags: ['Laravel', 'PHP', 'MySQL', 'Tailwind'],
         link: 'https://github.com/Madiennasaa/wpi'
     },
-    {
-        id: 5,
-        src: project5,
-        title: 'SKMUI — Platform Les Online',
-        description: 'Kontribusi UI dan pengembangan beberapa halaman pada platform les online berbasis web.',
-        tags: ['Laravel', 'Tailwind CSS'],
-        link: 'https://github.com/Madiennasaa/skmui'
-    },
 ]);
 </script>
 
