@@ -130,6 +130,7 @@ import project1 from '../assets/project1.png';
 import project2 from '../assets/project2.png';
 import project3 from '../assets/project3.png';
 import project4 from '../assets/project4.png';
+import project5 from '../assets/project5.png';
 
 const modules = [Autoplay, Pagination, Navigation];
 
@@ -165,6 +166,14 @@ const projects = ref([
         description: 'Website profil organisasi yang menampilkan informasi, kegiatan, dan struktur kepengurusan secara dinamis.',
         tags: ['Laravel', 'PHP', 'MySQL', 'Tailwind'],
         link: 'https://github.com/Madiennasaa/wpi'
+    },
+    {
+        id: 5,
+        src: project5,
+        title: 'SKMUI — Platform Les Online',
+        description: 'Kontribusi UI dan pengembangan beberapa halaman pada platform les online berbasis web.',
+        tags: ['Laravel', 'Tailwind CSS'],
+        link: 'https://github.com/Madiennasaa/skmui'
     },
 ]);
 </script>
