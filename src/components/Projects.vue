@@ -43,12 +43,11 @@
                 >
                     <SwiperSlide v-for="project in projects" :key="project.id">
                         <!-- Card -->
-                        <div class="group relative rounded-2xl overflow-hidden border border-slate-700/50 aspect-video cursor-pointer">
-                            <!-- Gambar -->
+                        <div class="group relative rounded-2xl overflow-hidden border border-slate-700/50 aspect-video cursor-pointer bg-slate-900">
                             <img
                                 :src="project.src"
                                 :alt="project.title"
-                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                             />
 
                             <!-- Overlay -->
