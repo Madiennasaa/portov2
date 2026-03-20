@@ -75,7 +75,7 @@
                                 </p>
 
                                 <!-- Link -->
-                                
+                                <a
                                     :href="project.link"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -101,7 +101,7 @@
 
             <!-- CTA -->
             <div class="text-center mt-10" data-aos="fade-up" data-aos-delay="400">
-                
+                <a
                     href="https://github.com/Madiennasaa"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -129,6 +129,8 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/outline';
 import project1 from '../assets/project1.png';
 import project2 from '../assets/project2.png';
 import project3 from '../assets/project3.png';
+import project4 from '../assets/project4.png';
+import project5 from '../assets/project5.png';
 
 const modules = [Autoplay, Pagination, Navigation];
 
@@ -157,11 +159,26 @@ const projects = ref([
         tags: ['MySQL', 'Python', 'PyQt5'],
         link: 'https://github.com/Madiennasaa/perpustakaan'
     },
+    {
+        id: 4,
+        src: project4,
+        title: 'Website Organisasi WPI',
+        description: 'Website profil organisasi yang menampilkan informasi, kegiatan, dan struktur kepengurusan secara dinamis.',
+        tags: ['Laravel', 'PHP', 'MySQL', 'Tailwind'],
+        link: 'https://github.com/Madiennasaa/wpi'
+    },
+    {
+        id: 5,
+        src: project5,
+        title: 'SKMUI — Platform Les Online',
+        description: 'Kontribusi UI dan pengembangan beberapa halaman pada platform les online berbasis web.',
+        tags: ['Laravel', 'Tailwind CSS'],
+        link: 'https://github.com/Madiennasaa/skmui'
+    },
 ]);
 </script>
 
 <style scoped>
-/* Override warna pagination dot */
 .projects-swiper :deep(.swiper-pagination-bullet) {
     background: #475569;
     opacity: 1;
