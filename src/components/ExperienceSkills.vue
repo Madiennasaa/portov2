@@ -45,15 +45,16 @@
                             <Squares2X2Icon class="w-6 h-6 text-blue-400" />
                             Tech Stack
                         </h4>
-                        <div class="flex flex-wrap gap-3">
-                            <span
+                        <div class="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
+                            <div
                                 v-for="tech in techStack"
                                 :key="tech.name"
-                                class="inline-flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 px-4 py-2 text-sm font-medium text-slate-300 transition-all duration-300 hover:scale-105 hover:border-emerald-400/50"
+                                class="flex flex-1 min-w-[56px] basis-[calc(25%-0.75rem)] items-center justify-center rounded-xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 to-blue-500/10 p-3 shadow-sm transition-all duration-300 hover:scale-105 hover:border-emerald-400/50 sm:min-w-[64px] sm:basis-[calc(16.66%-0.75rem)]"
+                                :title="tech.name"
                             >
-                                <span class="flex h-4 w-4 shrink-0 items-center justify-center text-emerald-400" v-html="tech.icon"></span>
-                                <span>{{ tech.name }}</span>
-                            </span>
+                                <span class="flex h-8 w-8 items-center justify-center text-emerald-300 sm:h-10 sm:w-10" v-html="tech.icon"></span>
+                                <span class="sr-only">{{ tech.name }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>

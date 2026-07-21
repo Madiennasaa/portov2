@@ -52,9 +52,9 @@
                             />
 
                             <!-- Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 from-50% via-slate-950/80 to-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-4 sm:p-6 overflow-hidden">
+                            <div class="absolute inset-0 flex flex-col bg-gradient-to-t from-slate-950 from-50% via-slate-950/80 to-slate-950/40 p-4 opacity-0 transition-opacity duration-400 group-hover:opacity-100 sm:p-6 overflow-hidden">
                                 <!-- Tags -->
-                                <div class="flex flex-wrap gap-2 mb-3 w-full max-w-full translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[50ms]">
+                                <div class="flex flex-wrap gap-2 w-full max-w-full translate-y-3 opacity-0 transition-all duration-300 delay-[50ms] group-hover:translate-y-0 group-hover:opacity-100">
                                     <span
                                         v-for="tag in project.tags"
                                         :key="tag"
@@ -64,27 +64,29 @@
                                     </span>
                                 </div>
 
-                                <!-- Title -->
-                                <h3 class="text-white font-bold text-lg mb-2 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[100ms] break-words">
-                                    {{ project.title }}
-                                </h3>
+                                <div class="mt-4 flex flex-1 flex-col justify-end">
+                                    <!-- Title -->
+                                    <h3 class="text-lg font-bold text-white break-words translate-y-3 opacity-0 transition-all duration-300 delay-[100ms] group-hover:translate-y-0 group-hover:opacity-100">
+                                        {{ project.title }}
+                                    </h3>
 
-                                <!-- Description -->
-                                <p class="text-slate-300 text-sm leading-relaxed mb-4 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[150ms] break-words">
-                                    {{ project.description }}
-                                </p>
+                                    <!-- Description -->
+                                    <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-300 break-words translate-y-3 opacity-0 transition-all duration-300 delay-[150ms] group-hover:translate-y-0 group-hover:opacity-100">
+                                        {{ project.description }}
+                                    </p>
 
-                                <!-- Link -->
-                                <a
-                                    :href="project.link"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="inline-flex items-center self-start text-emerald-400 font-semibold text-sm translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[200ms] mt-auto"
-                                    @click.stop
-                                >
-                                    View on GitHub
-                                    <ArrowRightIcon class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                                </a>
+                                    <!-- Link -->
+                                    <a
+                                        :href="project.link"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="mt-4 inline-flex items-center self-start text-sm font-semibold text-emerald-400 translate-y-3 opacity-0 transition-all duration-300 delay-[200ms] group-hover:translate-y-0 group-hover:opacity-100"
+                                        @click.stop
+                                    >
+                                        View on GitHub
+                                        <ArrowRightIcon class="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </SwiperSlide>
