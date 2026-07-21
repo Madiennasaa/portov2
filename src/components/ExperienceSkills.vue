@@ -45,11 +45,11 @@
                             <Squares2X2Icon class="w-6 h-6 text-blue-400" />
                             Tech Stack
                         </h4>
-                        <div class="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
+                        <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 lg:gap-4">
                             <div
                                 v-for="tech in techStack"
                                 :key="tech.name"
-                                class="flex flex-1 min-w-[56px] basis-[calc(25%-0.75rem)] items-center justify-center rounded-xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 to-blue-500/10 p-3 shadow-sm transition-all duration-300 hover:scale-105 hover:border-emerald-400/50 sm:min-w-[64px] sm:basis-[calc(16.66%-0.75rem)]"
+                                class="flex min-h-[56px] min-w-[56px] flex-1 items-center justify-center rounded-xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 to-blue-500/10 p-3 shadow-sm transition-all duration-300 hover:scale-105 hover:border-emerald-400/50 sm:min-h-[64px] sm:min-w-[64px] sm:flex-[0_0_calc(16.66%-0.75rem)]"
                                 :title="tech.name"
                             >
                                 <span class="flex h-8 w-8 items-center justify-center text-emerald-300 sm:h-10 sm:w-10" v-html="tech.icon"></span>

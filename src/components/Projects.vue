@@ -43,35 +43,35 @@
                 >
                     <SwiperSlide v-for="project in projects" :key="project.id">
                         <!-- Card -->
-                        <div class="group relative rounded-2xl overflow-hidden border border-slate-700/50 aspect-video cursor-pointer">
+                        <div class="group relative cursor-pointer overflow-hidden rounded-2xl border border-slate-700/50 bg-slate-900/80">
                             <!-- Gambar -->
                             <img
                                 :src="project.src"
                                 :alt="project.title"
-                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
 
                             <!-- Overlay -->
-                            <div class="absolute inset-0 flex flex-col bg-gradient-to-t from-slate-950 from-50% via-slate-950/80 to-slate-950/40 p-4 opacity-0 transition-opacity duration-400 group-hover:opacity-100 sm:p-6 overflow-hidden">
+                            <div class="absolute inset-0 flex flex-col justify-between overflow-hidden bg-gradient-to-t from-slate-950 from-50% via-slate-950/80 to-slate-950/40 p-4 opacity-0 transition-opacity duration-400 group-hover:opacity-100 sm:p-6">
                                 <!-- Tags -->
-                                <div class="flex flex-wrap gap-2 w-full max-w-full translate-y-3 opacity-0 transition-all duration-300 delay-[50ms] group-hover:translate-y-0 group-hover:opacity-100">
+                                <div class="flex flex-wrap gap-2 translate-y-3 opacity-0 transition-all duration-300 delay-[50ms] group-hover:translate-y-0 group-hover:opacity-100">
                                     <span
                                         v-for="tag in project.tags"
                                         :key="tag"
-                                        class="inline-flex items-center rounded-full border border-slate-500/50 bg-slate-700/80 px-2.5 py-1 text-[10px] font-medium text-slate-200 whitespace-nowrap"
+                                        class="inline-flex items-center whitespace-nowrap rounded-full border border-slate-500/50 bg-slate-700/80 px-2.5 py-1 text-[10px] font-medium text-slate-200"
                                     >
                                         {{ tag }}
                                     </span>
                                 </div>
 
-                                <div class="mt-4 flex flex-1 flex-col justify-end">
+                                <div class="mt-4 flex flex-1 flex-col">
                                     <!-- Title -->
                                     <h3 class="text-lg font-bold text-white break-words translate-y-3 opacity-0 transition-all duration-300 delay-[100ms] group-hover:translate-y-0 group-hover:opacity-100">
                                         {{ project.title }}
                                     </h3>
 
                                     <!-- Description -->
-                                    <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-300 break-words translate-y-3 opacity-0 transition-all duration-300 delay-[150ms] group-hover:translate-y-0 group-hover:opacity-100">
+                                    <p class="mt-2 flex-1 overflow-y-auto pr-1 text-sm leading-relaxed text-slate-300 break-words translate-y-3 opacity-0 transition-all duration-300 delay-[150ms] group-hover:translate-y-0 group-hover:opacity-100">
                                         {{ project.description }}
                                     </p>
 
