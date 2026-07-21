@@ -46,9 +46,13 @@
                             Tech Stack
                         </h4>
                         <div class="flex flex-wrap gap-3">
-                            <span v-for="tech in techStack" :key="tech"
-                            class="px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 border border-emerald-500/30 rounded-lg text-slate-300 text-sm font-medium hover:scale-105 hover:border-emerald-400/50 transition-all duration-300">
-                                {{ tech }}
+                            <span
+                                v-for="tech in techStack"
+                                :key="tech.name"
+                                class="inline-flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 px-4 py-2 text-sm font-medium text-slate-300 transition-all duration-300 hover:scale-105 hover:border-emerald-400/50"
+                            >
+                                <span class="flex h-4 w-4 shrink-0 items-center justify-center text-emerald-400" v-html="tech.icon"></span>
+                                <span>{{ tech.name }}</span>
                             </span>
                         </div>
                     </div>
@@ -168,7 +172,22 @@ const skills = [
 ]
 
 const techStack = [
-    'Vue.js', 'Node.js', 'Javascript', 'MySQL', 'Figma', 'Git', 'REST APIs', 'PHP', 'Laravel', 'HTML', 'CSS', 'Tailwind CSS',
+    { name: 'Vue.js', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><path d="M3 7l9 12 9-12" /><path d="M7 7l5 7 5-7" /></svg>' },
+    { name: 'Node.js', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><rect x="4" y="4" width="16" height="16" rx="3" /><path d="M8 8h8" /><path d="M8 12h5" /><path d="M8 16h3" /></svg>' },
+    { name: 'JavaScript', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><path d="M9 9h3v8a1 1 0 0 1-1 1H9" /><path d="M15 9h3" /><path d="M15 13h2" /></svg>' },
+    { name: 'MySQL', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><ellipse cx="12" cy="6" rx="7" ry="3" /><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6" /><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" /></svg>' },
+    { name: 'Figma', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><path d="M12 5a3 3 0 0 1 0 6 3 3 0 0 1 0-6z" /><path d="M7 14a3 3 0 0 1 0-6h5v6H7z" /><path d="M12 14h5a3 3 0 1 1-3 3v-3z" /></svg>' },
+    { name: 'Git', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><circle cx="7" cy="6" r="2.5" /><circle cx="17" cy="12" r="2.5" /><circle cx="7" cy="18" r="2.5" /><path d="M9.5 7.5 14.5 10.5" /><path d="M9.5 16.5 14.5 13.5" /></svg>' },
+    { name: 'REST APIs', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><path d="M5 7h14" /><path d="M5 17h14" /><path d="M8 7v10" /><path d="M16 7v10" /></svg>' },
+    { name: 'PHP', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><path d="M7 8h4a3 3 0 0 1 0 6H7z" /><path d="M13 8h4a3 3 0 0 1 0 6h-4" /></svg>' },
+    { name: 'Laravel', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><path d="M5 8l7-4 7 4" /><path d="M5 16l7 4 7-4" /><path d="M5 8v8" /><path d="M19 8v8" /><path d="M12 4v16" /></svg>' },
+    { name: 'HTML5', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><path d="M4 3h16l-1.4 16-6.6 2-6.6-2L4 3z" /><path d="M8 7h8" /><path d="M8 11h8" /><path d="M8 15h5" /></svg>' },
+    { name: 'CSS3', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><path d="M4 3h16l-1.4 16-6.6 2-6.6-2L4 3z" /><path d="M8 7h8" /><path d="M8 11h8" /><path d="M8 15h4" /></svg>' },
+    { name: 'Tailwind CSS', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><path d="M4 7c2-2 4.5-3 7-3 2.8 0 4.8 1 5.8 2.8C18 8.7 16.6 10 14 10H8c-1.2 0-2.5 1-2.5 2.5S6.8 15 8 15h6" /><path d="M10 19c-2 0-3.5-1-4.5-3" /></svg>' },
+    { name: 'React JS', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><circle cx="12" cy="12" r="4" /><path d="M4.5 9.5c2.8-2.8 6.8-4.4 10.5-4.4" /><path d="M4.5 14.5c2.8 2.8 6.8 4.4 10.5 4.4" /><path d="M19.5 9.5c-2.8-2.8-6.8-4.4-10.5-4.4" /><path d="M19.5 14.5c-2.8 2.8-6.8 4.4-10.5 4.4" /></svg>' },
+    { name: 'Firebase', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><path d="M6 16.5 12 4l3 5-3 7-6-6z" /><path d="M12 4l6 12.5-3 3L9 13" /></svg>' },
+    { name: 'Kotlin', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><path d="M4 20L20 4" /><path d="M4 4h8l8 8" /><path d="M4 20h8" /></svg>' },
+    { name: 'CodeIgniter', icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-full w-full"><rect x="4" y="4" width="16" height="16" rx="3" /><path d="M8 8h8" /><path d="M8 12h5" /><path d="M8 16h3" /></svg>' },
 ]
 
 const experience = [

@@ -52,25 +52,25 @@
                             />
 
                             <!-- Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 from-50% via-slate-950/80 to-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-6">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 from-50% via-slate-950/80 to-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-4 sm:p-6 overflow-hidden">
                                 <!-- Tags -->
-                                <div class="flex flex-wrap gap-2 mb-3 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[50ms]">
+                                <div class="flex flex-wrap gap-2 mb-3 w-full max-w-full translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[50ms]">
                                     <span
                                         v-for="tag in project.tags"
                                         :key="tag"
-                                        class="inline-block text-[10px] px-2 py-1 rounded-full bg-slate-700/80 text-slate-200 border border-slate-500/50 font-medium whitespace-nowrap"
+                                        class="inline-flex items-center rounded-full border border-slate-500/50 bg-slate-700/80 px-2.5 py-1 text-[10px] font-medium text-slate-200 whitespace-nowrap"
                                     >
                                         {{ tag }}
                                     </span>
                                 </div>
 
                                 <!-- Title -->
-                                <h3 class="text-white font-bold text-lg mb-2 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[100ms]">
+                                <h3 class="text-white font-bold text-lg mb-2 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[100ms] break-words">
                                     {{ project.title }}
                                 </h3>
 
                                 <!-- Description -->
-                                <p class="text-slate-300 text-sm leading-relaxed mb-4 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[150ms]">
+                                <p class="text-slate-300 text-sm leading-relaxed mb-4 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[150ms] break-words">
                                     {{ project.description }}
                                 </p>
 
@@ -79,7 +79,7 @@
                                     :href="project.link"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center text-emerald-400 font-semibold text-sm translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[200ms]"
+                                    class="inline-flex items-center self-start text-emerald-400 font-semibold text-sm translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-[200ms] mt-auto"
                                     @click.stop
                                 >
                                     View on GitHub
