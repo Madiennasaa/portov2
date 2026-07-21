@@ -9,7 +9,7 @@
                     & Education
                 </h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light">
-                    Eksplorasi keahlian teknis dan perjalanan akademik saya dalam membangun solusi digital yang inovatif dan efisien.
+                    Eksplorasi keahlian teknis, perjalanan akademik, dan pengalaman profesional saya dalam membangun solusi digital yang inovatif dan efisien.
                 </p>
             </div>
 
@@ -58,7 +58,7 @@
                 <div>
                     <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
                         <AcademicCapIcon class="w-6 h-6 text-blue-400" />
-                        Education
+                        Education & Experience
                     </h3>
                     
                     <div class="relative ml-4">
@@ -106,8 +106,8 @@ import {
     ServerIcon, 
     CircleStackIcon,
     Squares2X2Icon, 
-    BriefcaseIcon,
-    AcademicCapIcon
+    AcademicCapIcon,
+    GlobeAltIcon
 } from '@heroicons/vue/16/solid';
 
 const skills = [
@@ -156,6 +156,15 @@ const skills = [
         percentageColor: 'text-emerald-400 text-sm font-medium',
         gradient: 'bg-gradient-to-r from-emerald-500 to-blue-500'
     },
+    {
+        id: 6,
+        title: 'Networking',
+        icon: GlobeAltIcon,
+        iconColor: 'text-blue-400',
+        percentage: 45,
+        percentageColor: 'text-blue-400 text-sm font-medium',
+        gradient: 'bg-gradient-to-r from-blue-500 to-emerald-500'
+    },
 ]
 
 const techStack = [
@@ -165,6 +174,14 @@ const techStack = [
 const experience = [
     {
         id: 1,
+        date: '2024 - Present',
+        title: 'Web Tester (QA) & UI/UX Designer',
+        company: 'CV Visual Code Indonesia (Viscode)',
+        description: 'Melakukan pengujian fungsionalitas aplikasi web, menyusun test case dan scenario pengujian, serta memastikan kualitas produk sebelum dirilis. Terlibat dalam merancang antarmuka pengguna yang intuitif, responsif, dan sesuai kebutuhan pengguna.',
+        type: 'Work Experience'
+    },
+    {
+        id: 2,
         date: '2024 - 2027',
         title: 'D3 Manajemen Informatika',
         company: 'Politeknik Negeri Malang',
@@ -172,7 +189,7 @@ const experience = [
         type: 'Education'
     },
     {
-        id: 2,
+        id: 3,
         date: '2021 - 2024',
         title: 'MIPA (Matematika & IPA)',
         company: 'MAN 3 Tangerang',

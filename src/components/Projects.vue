@@ -131,6 +131,8 @@ import project2 from '../assets/project2.png';
 import project3 from '../assets/project3.png';
 import project4 from '../assets/project4.png';
 import project5 from '../assets/project5.png';
+import project6 from '../assets/project6.png';
+import project7 from '../assets/project7.png';
 
 const modules = [Autoplay, Pagination, Navigation];
 
@@ -174,6 +176,22 @@ const projects = ref([
         description: 'Kontribusi UI dan pengembangan beberapa halaman pada platform les online berbasis web.',
         tags: ['Laravel', 'Tailwind CSS'],
         link: 'https://github.com/Madiennasaa/skmui'
+    },
+    {
+        id: 6,
+        src: project6,
+        title: 'Web Sistem Manajemen SDN Sukorame 1',
+        description: 'Web sistem manajemen sekolah terintegrasi yang dilengkapi dengan halaman profil sekolah, manajemen jadwal, materi pembelajaran, serta pengelolaan data guru dan siswa.',
+        tags: ['Laravel', 'MySQL', 'Vite', 'JavaScript', 'Tailwind CSS'],
+        link: 'https://github.com/Madiennasaa'
+    },
+    {
+        id: 7,
+        src: project7,
+        title: 'Mobile Sistem Manajemen SDN Sukorame 1',
+        description: 'Aplikasi mobile sistem manajemen sekolah SDN Sukorame 1 untuk mempermudah akses informasi, jadwal, dan aktivitas sekolah secara mobile.',
+        tags: ['Kotlin', 'Firebase'],
+        link: 'https://github.com/Madiennasaa'
     },
 ]);
 </script>
