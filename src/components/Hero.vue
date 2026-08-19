@@ -38,7 +38,7 @@
                         </a>
                         <a 
                             :href="cvUrl" 
-                            download="CV_Ahmad_Ubaidillah_Tsani_2026.pdf"
+                            download="CV_Ubai.pdf"
                             target="_blank"
                             class="group px-8 py-4 border border-slate-600 hover:border-emerald-400 text-slate-300 hover:text-emerald-400 rounded-lg transition-all duration-300 flex items-center gap-2 font-medium"
                         >
@@ -79,7 +79,7 @@
 </template>
 
 <script setup>
-import cvUrl from '../assets/CV_Ahmad_Ubaidillah_Tsani_2026.pdf';
+import cvUrl from '../assets/CV_Ubai.pdf';
 </script>
 <style scoped>
 .floating {
