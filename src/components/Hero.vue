@@ -37,7 +37,7 @@
                             </svg>
                         </a>
                         <a 
-                            href="/CV_Ubai.pdf" 
+                            href="/CV_Ubai.pdf?v=2" 
                             download="CV_Ubai.pdf"
                             target="_blank"
                             class="group px-8 py-4 border border-slate-600..."
