@@ -32,3 +32,4 @@ dist-ssr
 
 # Optional: Ignore entire assets folder
 # src/assets/
+.env
