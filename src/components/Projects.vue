@@ -1,20 +1,12 @@
 <template>
-    <section class="relative py-20 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" id="projects">
-        <!-- Background Elements -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-1/3 left-1/3 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-1/3 right-1/3 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-        </div>
-
+    <section class="relative py-20 overflow-hidden bg-slate-950" id="projects">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Header -->
-            <div class="text-center mb-16" data-aos="fade-up">
+            <!-- Header - konsisten dengan Skills & Services -->
+            <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                    My <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">
-                        Projects
-                    </span>
+                    My <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Projects</span>
                 </h2>
-                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light">
                     Kumpulan proyek yang saya kerjakan selama belajar, mulai dari web statis hingga aplikasi full-stack.
                 </p>
             </div>
@@ -41,52 +33,26 @@
                     }"
                     class="projects-swiper !pb-14"
                 >
-                    <SwiperSlide v-for="project in projects" :key="project.id">
-                        <!-- Card -->
-                        <div class="group relative cursor-pointer overflow-hidden rounded-2xl border border-slate-700/50 bg-slate-900/80">
-                            <!-- Gambar -->
-                            <img
-                                :src="project.src"
-                                :alt="project.title"
-                                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-
-                            <!-- Overlay -->
-                            <div class="absolute inset-0 flex flex-col justify-between overflow-hidden bg-gradient-to-t from-slate-950 from-50% via-slate-950/80 to-slate-950/40 p-4 opacity-0 transition-opacity duration-400 group-hover:opacity-100 sm:p-6">
-                                <!-- Tags -->
-                                <div class="flex flex-wrap gap-2 translate-y-3 opacity-0 transition-all duration-300 delay-[50ms] group-hover:translate-y-0 group-hover:opacity-100">
-                                    <span
-                                        v-for="tag in project.tags"
-                                        :key="tag"
-                                        class="inline-flex items-center whitespace-nowrap rounded-full border border-slate-500/50 bg-slate-700/80 px-2.5 py-1 text-[10px] font-medium text-slate-200"
-                                    >
+                    <SwiperSlide v-for="project in projects" :key="project.id" class="h-auto">
+                        <!-- Card - konsisten dengan Services & Education -->
+                        <div class="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-800/50 to-slate-900/30 backdrop-blur-md shadow-xl transition-all duration-500 hover:border-emerald-500/50 hover:-translate-y-1">
+                            <div class="overflow-hidden">
+                                <img :src="project.src" :alt="project.title" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            </div>
+                            <div class="flex flex-1 flex-col p-5">
+                                <div class="flex flex-wrap gap-1.5 mb-3">
+                                    <span v-for="tag in project.tags" :key="tag"
+                                        class="px-2.5 py-1 text-[10px] font-semibold rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 uppercase tracking-wider">
                                         {{ tag }}
                                     </span>
                                 </div>
-
-                                <div class="mt-4 flex flex-1 flex-col">
-                                    <!-- Title -->
-                                    <h3 class="text-lg font-bold text-white break-words translate-y-3 opacity-0 transition-all duration-300 delay-[100ms] group-hover:translate-y-0 group-hover:opacity-100">
-                                        {{ project.title }}
-                                    </h3>
-
-                                    <!-- Description -->
-                                    <p class="mt-2 flex-1 overflow-y-auto pr-1 text-sm leading-relaxed text-slate-300 break-words translate-y-3 opacity-0 transition-all duration-300 delay-[150ms] group-hover:translate-y-0 group-hover:opacity-100">
-                                        {{ project.description }}
-                                    </p>
-
-                                    <!-- Link -->
-                                    <a
-                                        :href="project.link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="mt-4 inline-flex items-center self-start text-sm font-semibold text-emerald-400 translate-y-3 opacity-0 transition-all duration-300 delay-[200ms] group-hover:translate-y-0 group-hover:opacity-100"
-                                        @click.stop
-                                    >
-                                        View on GitHub
-                                        <ArrowRightIcon class="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                                    </a>
-                                </div>
+                                <h3 class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors line-clamp-2">{{ project.title }}</h3>
+                                <p class="mt-2 text-sm leading-relaxed text-slate-300/70 font-light line-clamp-3 flex-1">{{ project.description }}</p>
+                                <a :href="project.link" target="_blank" rel="noopener noreferrer"
+                                    class="mt-4 inline-flex items-center self-start text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors" @click.stop>
+                                    View on GitHub
+                                    <ArrowRightIcon class="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                                </a>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -101,14 +67,10 @@
                 </button>
             </div>
 
-            <!-- CTA -->
-            <div class="text-center mt-10" data-aos="fade-up" data-aos-delay="400">
-                <a
-                    href="https://github.com/Madiennasaa"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex px-8 py-4 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-white font-semibold transition-all duration-300 items-center mx-auto group shadow-lg shadow-emerald-500/20"
-                >
+            <!-- CTA - konsisten dengan Services -->
+            <div class="text-center mt-12">
+                <a href="https://github.com/Madiennasaa" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center px-8 py-4 rounded-lg border border-emerald-500 text-emerald-400 font-medium hover:bg-emerald-500/10 transition-all duration-300 group">
                     View More on GitHub
                     <ChevronDoubleRightIcon class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
