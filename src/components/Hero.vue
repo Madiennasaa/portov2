@@ -25,7 +25,7 @@ import cvFile from '../assets/CV_Ubai.pdf'
           </div>
 
           <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-xl font-light">
-            Mahasiswa D3 Manajemen Informatika Polinema yang fokus di web development berbasis Laravel dan Vue. Senang membangun aplikasi yang fungsional, rapi, dan mudah digunakan.
+            Mahasiswa D3 Manajemen Informatika Polinema yang antusias di ekosistem Linux, networking, dan pengembangan full-stack (Laravel & Vue). Senang membangun aplikasi yang fungsional, mengeksplorasi infrastruktur open-source, dan merancang sistem yang rapi serta mudah digunakan.
           </p>
 
           <div class="flex items-center gap-4 pt-4">

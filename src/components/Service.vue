@@ -7,12 +7,12 @@
                     My <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Services</span>
                 </h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light">
-                    Saya menawarkan solusi pengembangan digital end-to-end, memastikan ide Anda berubah menjadi produk web yang fungsional, cepat, dan siap untuk pertumbuhan bisnis di masa depan.
+                    Dari aplikasi full-stack hingga setup server Linux dan optimasi jaringan saya bantu wujudkan ide Anda menjadi produk digital yang fungsional, aman, dan siap untuk pertumbuhan jangka panjang.
                 </p>
             </div>
 
             <!-- Card Grid - style konsisten dengan Education & Tech Stack -->
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div v-for="service in services" :key="service.id"
                     class="group p-6 bg-gradient-to-br from-slate-800/50 to-slate-900/30 backdrop-blur-md rounded-2xl border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-500 shadow-xl hover:-translate-y-1 flex flex-col">
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500/20 to-blue-500/20 border border-emerald-500/20 flex items-center justify-center mb-4 group-hover:border-emerald-400/40 transition-colors">
@@ -43,29 +43,36 @@
 
 <script setup>
 import { ref } from 'vue';
-import { ChatBubbleLeftRightIcon, CodeBracketIcon, DevicePhoneMobileIcon, RocketLaunchIcon } from '@heroicons/vue/16/solid';
+import { ChatBubbleLeftRightIcon, CodeBracketIcon, DevicePhoneMobileIcon, RocketLaunchIcon, CommandLineIcon, GlobeAltIcon, PaintBrushIcon } from '@heroicons/vue/16/solid';
 
 const services = ref([
     {
         id: 1,
-        name: 'Pengembangan Web Full-Stack',
-        desc: 'Aplikasi web dari database hingga frontend, kode bersih & terstruktur.',
+        name: 'Full-Stack Web Development',
+        desc: 'Membangun aplikasi end-to-end dari REST API & database hingga UI yang interaktif. Fokus pada kode yang bersih, terstruktur, dan mudah dipelihara.',
         stack: ['Laravel', 'Vue', 'MySQL'],
         icon: CodeBracketIcon,
     },
     {
         id: 2,
-        name: 'Responsiveness & Optimasi Mobile',
-        desc: 'Tampilan responsif dan nyaman di semua ukuran layar.',
-        stack: ['Tailwind', 'Mobile-first'],
-        icon: DevicePhoneMobileIcon,
+        name: 'Linux Server & Deployment',
+        desc: 'Setup dan manajemen server berbasis Linux konfigurasi VPS, Nginx, Docker, hingga CI/CD untuk deployment yang stabil dan aman.',
+        stack: ['Linux', 'Docker', 'Nginx'],
+        icon: CommandLineIcon,
     },
     {
         id: 3,
-        name: 'Website Landing Page Cepat',
-        desc: 'Landing page ringan dan cepat untuk profil atau portofolio.',
-        stack: ['Static', 'Fast', 'Deploy-ready'],
-        icon: RocketLaunchIcon,
+        name: 'Networking & Infrastructure',
+        desc: 'Tertarik merancang dan mengoptimalkan infrastruktur jaringan: pemahaman TCP/IP, subnetting, firewall, dan troubleshooting untuk konektivitas yang andal.',
+        stack: ['TCP/IP', 'Mikrotik', 'Firewall'],
+        icon: GlobeAltIcon,
+    },
+    {
+        id: 4,
+        name: 'Responsive UI & Landing Page',
+        desc: 'Desain antarmuka yang responsif dan landing page ringan yang cepat, SEO-friendly, dan nyaman di semua ukuran layar.',
+        stack: ['Tailwind', 'Mobile-first', 'Vite'],
+        icon: PaintBrushIcon,
     },
 ]);
 </script>

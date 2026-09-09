@@ -9,7 +9,7 @@
                     & Education
                 </h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light">
-                    Eksplorasi keahlian teknis, perjalanan akademik, dan pengalaman profesional saya dalam membangun solusi digital yang inovatif dan efisien.
+                    Perpaduan kemampuan full-stack, eksplorasi ekosistem Linux, dan ketertarikan mendalam pada networking perjalanan saya membangun solusi digital yang efisien, aman, dan siap di-deploy di lingkungan open-source.
                 </p>
             </div>
 
