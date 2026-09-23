@@ -15,7 +15,7 @@ import { locale, t } from '../i18n/index.js'
         <div class="flex flex-col justify-center space-y-8">
           <div>
             <p class="text-emerald-400 font-medium text-sm tracking-widest uppercase mb-4">
-              Welcome
+              {{ t('hero.welcome') }}
             </p>
             <h1 class="text-white font-bold text-5xl md:text-6xl lg:text-7xl leading-tight mb-6">
               {{ t('hero.greeting') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Ubai</span>
@@ -34,7 +34,7 @@ import { locale, t } from '../i18n/index.js'
               href="#contact" 
               class="group px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-white rounded-lg transition-all duration-300 flex items-center gap-2 font-medium"
             >
-              {{ locale.value === 'id' ? 'Hubungi Saya' : 'Contact Me' }}
+              {{ t('hero.contactMe') }}
               <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
@@ -48,7 +48,7 @@ import { locale, t } from '../i18n/index.js'
               <svg class="w-5 h-5 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
               </svg>
-              Download CV
+              {{ t('hero.downloadCv') }}
             </a>
           </div>
         </div>

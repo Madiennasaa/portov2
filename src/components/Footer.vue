@@ -13,12 +13,12 @@
                         My <span class="font-black">Portofolio</span>
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6 text-center md:text-left">
-                        {{ locale.value==='id' ? 'Selalu tertarik dengan proyek baru dan peluang belajar. Jangan ragu untuk menghubungi.' : 'Always interested in new projects and learning opportunities. Feel free to reach out.' }}
+                        {{ tr('footer.desc') }}
                     </p>
                 </div>
 
                 <div class="flex flex-col items-center md:items-start" data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="text-white font-bold mb-6 text-lg">{{ locale.value==='id' ? 'Navigasi' : 'Navigation' }}</h4>
+                    <h4 class="text-white font-bold mb-6 text-lg">{{ tr('footer.navigation') }}</h4>
                     <ul class="space-y-4">
                         <li v-for="link in quickLinks" :key="link.name">
                             <a :href="link.href" 
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="flex flex-col items-center md:items-start" data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="text-white font-bold mb-6 text-lg">{{ locale.value==='id' ? 'Kontak' : 'Contact' }}</h4>
+                    <h4 class="text-white font-bold mb-6 text-lg">{{ tr('footer.contact') }}</h4>
                     <ul class="space-y-4">
                         <li class="flex items-center gap-3 text-slate-400 group">
                             <EnvelopeIcon class="w-5 h-5 text-emerald-400 group-hover:scale-110 transition-transform" />
@@ -46,8 +46,8 @@
                 </div>
 
                 <div class="flex flex-col items-center md:items-start" data-aos="fade-up" data-aos-delay="300">
-                    <h4 class="text-white font-bold mb-6 text-lg">{{ locale.value==='id' ? 'Ikuti Saya' : 'Follow Me' }}</h4>
-                    <p class="text-slate-400 text-sm mb-6 text-center md:text-left">{{ locale.value==='id' ? 'Dapatkan update terbaru melalui media sosial saya.' : 'Get the latest updates via my social media.' }}</p>
+                    <h4 class="text-white font-bold mb-6 text-lg">{{ tr('footer.followMe') }}</h4>
+                    <p class="text-slate-400 text-sm mb-6 text-center md:text-left">{{ tr('footer.followDesc') }}</p>
                     <div class="flex gap-4">
                         <a v-for="social in socialLinks" 
                            :key="social.name"
@@ -65,8 +65,8 @@
                     © {{ new Date().getFullYear() }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500 font-medium">Ahmad Ubaidillah Tsani</span>. All rights reserved.
                 </p>
                 <div class="flex gap-6 text-slate-500 text-sm">
-                    <a href="#" class="hover:text-emerald-400 transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-emerald-400 transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-emerald-400 transition-colors">{{ tr('footer.privacy') }}</a>
+                    <a href="#" class="hover:text-emerald-400 transition-colors">{{ tr('footer.terms') }}</a>
                 </div>
             </div>
         </div>
@@ -79,14 +79,15 @@ import {
     EnvelopeIcon, 
     MapPinIcon 
 } from '@heroicons/vue/24/outline';
-import { locale } from '../i18n/index.js';
+import { locale, t as tr } from '../i18n/index.js';
+import { computed } from 'vue';
 
-const quickLinks = [
-    { name: 'Services', href: '#services' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Certificates', href: '#certicates' },
-    { name: 'Projects', href: '#projects' },
-];
+const quickLinks = computed(() => [
+    { name: tr('nav.services'), href: '#services' },
+    { name: tr('nav.skills'), href: '#skills' },
+    { name: tr('nav.certificates'), href: '#certificates' },
+    { name: tr('nav.projects'), href: '#projects' },
+]);
 
 const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/Madiennasaa', icon: 'fab fa-github' },

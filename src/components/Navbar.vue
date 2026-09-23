@@ -56,7 +56,8 @@
 
             <!-- CTA + Hamburger -->
             <div class="flex items-center gap-3">
-                <button @click="toggleLocale" class="text-xs font-bold border border-white/20 text-white px-3 py-1.5 rounded-full hover:bg-white/10 transition-colors">
+                <button @click="toggleLocale" class="flex items-center gap-1.5 text-xs font-bold border border-white/20 text-white px-2.5 py-1.5 rounded-full hover:bg-white/10 transition-colors">
+                    <span class="text-base leading-none">{{ locale === 'id' ? '🇬🇧' : '🇮🇩' }}</span>
                     {{ locale === 'id' ? 'EN' : 'ID' }}
                 </button>
                 <a

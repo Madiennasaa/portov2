@@ -22,7 +22,7 @@
                         class="text-2xl font-bold text-white mb-8 flex items-center gap-3"
                     >
                         <CodeBracketIcon class="w-6 h-6 text-emerald-400" />
-                        Technical Skills
+                        {{ tr('skills.technicalSkills') }}
                     </h3>
 
                     <div class="space-y-6">
@@ -63,7 +63,7 @@
                             class="text-xl font-bold text-white mb-6 flex items-center gap-2"
                         >
                             <Squares2X2Icon class="w-6 h-6 text-blue-400" />
-                            Tech Stack
+                            {{ tr('skills.techStack') }}
                         </h4>
                         <div class="grid grid-cols-3 sm:grid-cols-4 gap-3">
                             <div
@@ -90,7 +90,7 @@
                         class="text-2xl font-bold text-white mb-8 flex items-center gap-3"
                     >
                         <AcademicCapIcon class="w-6 h-6 text-blue-400" />
-                        Education & Experience
+                        {{ tr('skills.eduExp') }}
                     </h3>
 
                     <div class="relative ml-4">

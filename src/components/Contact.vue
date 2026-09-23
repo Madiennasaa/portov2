@@ -10,14 +10,14 @@
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">
-                        {{ locale.value==='id' ? 'Hubungi' : 'Get In' }}
+                        {{ tr('contact.title').split(' ').slice(0,-1).join(' ') }}
                     </span>
-                    {{ locale.value==='id' ? 'Saya' : 'Touch' }}
+                    {{ tr('contact.title').split(' ').slice(-1)[0] }}
                 </h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto" 
                 data-aos="fade-up"
                 data-aos-delay="100">
-                    {{ locale.value==='id' ? 'Tertarik untuk berkolaborasi atau ingin bertanya lebih lanjut? Hubungi saya!' : 'Interested in collaborating or have questions? Get in touch!' }}
+                    {{ tr('contact.subtitle') }}
                 </p>
             </div>
 
@@ -36,7 +36,7 @@
                     </div>
                     
                     <div class="pt-4" data-aos="fade-right" data-aos-delay="300">
-                        <h4 class="text-xl font-bold text-white mb-4">{{ locale.value==='id' ? 'Ikuti Saya' : 'Follow Me' }}</h4>
+                        <h4 class="text-xl font-bold text-white mb-4">{{ tr('contact.followMe') }}</h4>
                         <div class="flex gap-4">
                             <a v-for="social in socialLinks" 
                             :key="social.name"
@@ -53,25 +53,25 @@
                 data-aos="fade-left">
                     <form @submit.prevent="submitForm" class="space-y-6">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Your Name</label>
+                            <label for="name" class="block text-sm font-medium text-slate-300 mb-2">{{ tr('contact.yourName') }}</label>
                             <input type="text" id="name" v-model="form.name" required
                             class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300">
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Your Email</label>
+                            <label for="email" class="block text-sm font-medium text-slate-300 mb-2">{{ tr('contact.yourEmail') }}</label>
                             <input type="email" id="email" v-model="form.email" required
                             class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300">
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                            <label for="message" class="block text-sm font-medium text-slate-300 mb-2">{{ tr('contact.message') }}</label>
                             <textarea id="message" v-model="form.message" rows="4" required
                             class="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-emerald-500 focus:border-emerald-500 transition-all duration-300"></textarea>
                         </div>
                         <button type="submit" :disabled="isLoading"
                             class="w-full px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center bg-emerald-500 text-white hover:bg-emerald-400 shadow-lg shadow-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed">
-                            <span v-if="isLoading">{{ locale.value==='id' ? 'Mengirim...' : 'Sending...' }}</span>
+                            <span v-if="isLoading">{{ tr('contact.sending') }}</span>
                             <span v-else class="flex items-center">
-                                Send Message
+                                {{ tr('contact.sendMessage') }}
                                 <PaperAirplaneIcon class="w-4 h-4 ml-2"/>
                             </span>
                         </button>
@@ -124,21 +124,21 @@ const submitForm = async () => {
             '2uSqy7hts8dDzgvYp'
         );
         isSuccess.value = true;
-        statusMsg.value = locale.value==='id' ? 'Pesan berhasil terkirim!' : 'Message sent successfully!';
+        statusMsg.value = tr('contact.success');
         form.value = { name: '', email: '', message: '' };
     } catch (error) {
         isSuccess.value = false;
-        statusMsg.value = locale.value==='id' ? 'Gagal mengirim pesan. Coba lagi.' : 'Failed to send message. Please try again.';
+        statusMsg.value = tr('contact.error');
     } finally {
         isLoading.value = false;
     }
 };
 
-const contactInfo = [
-    { id: 1, icon: EnvelopeIcon, title: 'Email Address', detail: 'ahmadubai02@gmail.com' },
-    { id: 2, icon: PhoneIcon, title: 'Phone Number', detail: '+62 857-5637-3129' },
-    { id: 3, icon: MapPinIcon, title: 'Location', detail: 'Kediri, Jawa Timur, Indonesia' },
-];
+const contactInfo = computed(() => [
+    { id: 1, icon: EnvelopeIcon, title: tr('contact.emailAddress'), detail: 'ahmadubai02@gmail.com' },
+    { id: 2, icon: PhoneIcon, title: tr('contact.phoneNumber'), detail: '+62 857-5637-3129' },
+    { id: 3, icon: MapPinIcon, title: tr('contact.location'), detail: tr('contact.locationDetail') },
+]);
 
 const socialLinks = [
     { name: 'LinkedIn', icon: UserIcon, link: 'https://www.linkedin.com/in/ahmadubai02' },
