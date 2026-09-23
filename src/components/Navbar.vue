@@ -56,12 +56,15 @@
 
             <!-- CTA + Hamburger -->
             <div class="flex items-center gap-3">
+                <button @click="toggleLocale" class="text-xs font-bold border border-white/20 text-white px-3 py-1.5 rounded-full hover:bg-white/10 transition-colors">
+                    {{ locale === 'id' ? 'EN' : 'ID' }}
+                </button>
                 <a
                     href="#contact"
                     @click.prevent="scrollToSection('#contact')"
                     class="hidden md:block text-xs font-semibold bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-2 rounded-full transition-all duration-300"
                 >
-                    Let's Talk
+                    {{ locale === 'id' ? 'Mari Bicara' : "Let's Talk" }}
                 </a>
 
                 <!-- Hamburger Mobile -->
@@ -128,15 +131,16 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted, computed } from "vue";
+import { locale, toggleLocale } from "../i18n/index.js";
 
-const Menu = [
-    { name: "Services", href: "#services" },
-    { name: "Skills", href: "#skills" },
-    { name: "Certificates", href: "#certificates" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-];
+const Menu = computed(() => [
+    { name: locale.value === 'id' ? 'Layanan' : 'Services', href: "#services" },
+    { name: locale.value === 'id' ? 'Keahlian' : 'Skills', href: "#skills" },
+    { name: locale.value === 'id' ? 'Sertifikat' : 'Certificates', href: "#certificates" },
+    { name: locale.value === 'id' ? 'Proyek' : 'Projects', href: "#projects" },
+    { name: locale.value === 'id' ? 'Kontak' : 'Contact', href: "#contact" },
+]);
 
 const tickerItems = [
     "Full-Stack Developer",
@@ -157,7 +161,7 @@ const scrollToSection = (href) => {
 
 const handleScroll = () => {
     scrolled.value = window.scrollY > 50;
-    const sections = Menu.map((item) => item.href.slice(1));
+    const sections = Menu.value.map((item) => item.href.slice(1));
     for (const id of [...sections].reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 120) {

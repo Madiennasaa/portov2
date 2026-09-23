@@ -4,10 +4,10 @@
             <!-- Header - konsisten dengan Skills & Projects -->
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                    My <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Services</span>
+                    {{ tr('services.title') }}
                 </h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light">
-                    Dari aplikasi full-stack hingga setup server Linux dan optimasi jaringan saya bantu wujudkan ide Anda menjadi produk digital yang fungsional, aman, dan siap untuk pertumbuhan jangka panjang.
+                    {{ tr('services.subtitle') }}
                 </p>
             </div>
 
@@ -33,7 +33,7 @@
             <div class="text-center mt-12">
                 <a href="#contact"
                     class="inline-flex items-center px-8 py-4 rounded-lg border border-emerald-500 text-emerald-400 font-medium hover:bg-emerald-500/10 transition-all duration-300">
-                    Get In Touch
+                    {{ locale.value==='id' ? 'Hubungi Saya' : 'Get In Touch' }}
                     <ChatBubbleLeftRightIcon class="w-5 h-5 ml-2" />
                 </a>
             </div>
@@ -42,10 +42,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { locale, t as tr } from '../i18n/index.js';
 import { ChatBubbleLeftRightIcon, CodeBracketIcon, DevicePhoneMobileIcon, RocketLaunchIcon, CommandLineIcon, GlobeAltIcon, PaintBrushIcon } from '@heroicons/vue/16/solid';
 
-const services = ref([
+const services = computed(() => locale.value === 'id' ? [
+
     {
         id: 1,
         name: 'Full-Stack Web Development',
@@ -71,6 +73,35 @@ const services = ref([
         id: 4,
         name: 'Responsive UI & Landing Page',
         desc: 'Desain antarmuka yang responsif dan landing page ringan yang cepat, SEO-friendly, dan nyaman di semua ukuran layar.',
+        stack: ['Tailwind', 'Mobile-first', 'Vite'],
+        icon: PaintBrushIcon,
+    },
+] : [
+    {
+        id: 1,
+        name: 'Full-Stack Web Development',
+        desc: 'Building end-to-end apps from REST APIs & databases to interactive UIs. Focus on clean, maintainable code.',
+        stack: ['Laravel', 'Vue', 'MySQL'],
+        icon: CodeBracketIcon,
+    },
+    {
+        id: 2,
+        name: 'Linux Server & Deployment',
+        desc: 'Setup and management of Linux-based servers — VPS config, Nginx, Docker, and CI/CD for stable, secure deployments.',
+        stack: ['Linux', 'Docker', 'Nginx'],
+        icon: CommandLineIcon,
+    },
+    {
+        id: 3,
+        name: 'Networking & Infrastructure',
+        desc: 'Designing and optimizing network infrastructure: TCP/IP, subnetting, firewalls, and troubleshooting for reliable connectivity.',
+        stack: ['TCP/IP', 'Mikrotik', 'Firewall'],
+        icon: GlobeAltIcon,
+    },
+    {
+        id: 4,
+        name: 'Responsive UI & Landing Page',
+        desc: 'Responsive interfaces and lightweight landing pages — fast, SEO-friendly, and comfortable on every screen size.',
         stack: ['Tailwind', 'Mobile-first', 'Vite'],
         icon: PaintBrushIcon,
     },

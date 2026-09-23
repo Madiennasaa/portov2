@@ -1,5 +1,6 @@
 <script setup>
 import cvFile from '../assets/CV_Ubai.pdf'
+import { locale, t } from '../i18n/index.js'
 </script>
 
 <template>
@@ -17,15 +18,15 @@ import cvFile from '../assets/CV_Ubai.pdf'
               Welcome
             </p>
             <h1 class="text-white font-bold text-5xl md:text-6xl lg:text-7xl leading-tight mb-6">
-              Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Ubai</span>
+              {{ t('hero.greeting') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Ubai</span>
             </h1>
             <p class="text-slate-400 text-xl md:text-2xl font-light">
-              Full-Stack Developer
+              {{ t('hero.role') }}
             </p>
           </div>
 
           <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-xl font-light">
-            Mahasiswa D3 Manajemen Informatika Polinema yang antusias di ekosistem Linux, networking, dan pengembangan full-stack (Laravel & Vue). Senang membangun aplikasi yang fungsional, mengeksplorasi infrastruktur open-source, dan merancang sistem yang rapi serta mudah digunakan.
+            {{ t('hero.desc') }}
           </p>
 
           <div class="flex items-center gap-4 pt-4">
@@ -33,7 +34,7 @@ import cvFile from '../assets/CV_Ubai.pdf'
               href="#contact" 
               class="group px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-white rounded-lg transition-all duration-300 flex items-center gap-2 font-medium"
             >
-              Contact Me
+              {{ locale.value === 'id' ? 'Hubungi Saya' : 'Contact Me' }}
               <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>

@@ -13,12 +13,12 @@
                         My <span class="font-black">Portofolio</span>
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6 text-center md:text-left">
-                        Selalu tertarik dengan proyek baru dan peluang belajar. Jangan ragu untuk menghubungi.
+                        {{ locale.value==='id' ? 'Selalu tertarik dengan proyek baru dan peluang belajar. Jangan ragu untuk menghubungi.' : 'Always interested in new projects and learning opportunities. Feel free to reach out.' }}
                     </p>
                 </div>
 
                 <div class="flex flex-col items-center md:items-start" data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="text-white font-bold mb-6 text-lg">Navigasi</h4>
+                    <h4 class="text-white font-bold mb-6 text-lg">{{ locale.value==='id' ? 'Navigasi' : 'Navigation' }}</h4>
                     <ul class="space-y-4">
                         <li v-for="link in quickLinks" :key="link.name">
                             <a :href="link.href" 
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="flex flex-col items-center md:items-start" data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="text-white font-bold mb-6 text-lg">Kontak</h4>
+                    <h4 class="text-white font-bold mb-6 text-lg">{{ locale.value==='id' ? 'Kontak' : 'Contact' }}</h4>
                     <ul class="space-y-4">
                         <li class="flex items-center gap-3 text-slate-400 group">
                             <EnvelopeIcon class="w-5 h-5 text-emerald-400 group-hover:scale-110 transition-transform" />
@@ -46,8 +46,8 @@
                 </div>
 
                 <div class="flex flex-col items-center md:items-start" data-aos="fade-up" data-aos-delay="300">
-                    <h4 class="text-white font-bold mb-6 text-lg">Ikuti Saya</h4>
-                    <p class="text-slate-400 text-sm mb-6 text-center md:text-left">Dapatkan update terbaru melalui media sosial saya.</p>
+                    <h4 class="text-white font-bold mb-6 text-lg">{{ locale.value==='id' ? 'Ikuti Saya' : 'Follow Me' }}</h4>
+                    <p class="text-slate-400 text-sm mb-6 text-center md:text-left">{{ locale.value==='id' ? 'Dapatkan update terbaru melalui media sosial saya.' : 'Get the latest updates via my social media.' }}</p>
                     <div class="flex gap-4">
                         <a v-for="social in socialLinks" 
                            :key="social.name"
@@ -79,6 +79,7 @@ import {
     EnvelopeIcon, 
     MapPinIcon 
 } from '@heroicons/vue/24/outline';
+import { locale } from '../i18n/index.js';
 
 const quickLinks = [
     { name: 'Services', href: '#services' },

@@ -4,10 +4,10 @@
             <!-- Header - konsisten dengan Skills & Services -->
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                    My <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Projects</span>
+{{ tr('projects.title') }}
                 </h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light">
-                    Kumpulan proyek yang saya kerjakan selama belajar, mulai dari web statis hingga aplikasi full-stack.
+                    {{ tr('projects.subtitle') }}
                 </p>
             </div>
 
@@ -47,14 +47,14 @@
                                     </span>
                                 </div>
                                 <h3 class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors line-clamp-2">{{ project.title }}</h3>
-                                <p class="mt-2 text-sm leading-relaxed text-slate-300/70 font-light line-clamp-3 flex-1">{{ project.description }}</p>
+                                <p class="mt-2 text-sm leading-relaxed text-slate-300/70 font-light line-clamp-3 flex-1">{{ locale.value==='id' ? project.description : (project.description_en || project.description) }}</p>
                                 <a v-if="project.link" :href="project.link" target="_blank" rel="noopener noreferrer"
                                     class="mt-4 inline-flex items-center self-start text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors" @click.stop>
-                                    View on GitHub
+                                    {{ tr('projects.viewGithub') }}
                                     <ArrowRightIcon class="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                                 </a>
                                 <span v-else class="mt-4 inline-flex items-center self-start text-sm font-semibold text-slate-500">
-                                    Private Project
+                                    {{ tr('projects.private') }}
                                 </span>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
             <div class="text-center mt-12">
                 <a href="https://github.com/Madiennasaa" target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center px-8 py-4 rounded-lg border border-emerald-500 text-emerald-400 font-medium hover:bg-emerald-500/10 transition-all duration-300 group">
-                    View More on GitHub
+                    {{ tr('projects.viewMore') }}
                     <ChevronDoubleRightIcon class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
             </div>
@@ -83,7 +83,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { locale, t as tr } from '../i18n/index.js';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -109,6 +110,7 @@ const projects = ref([
         src: project1,
         title: 'E-Commerce Platform Toko Hijau',
         description: 'Platform marketplace jual beli online dengan fitur keranjang, manajemen produk, dan sistem checkout dinamis.',
+        description_en: 'Online marketplace platform with cart, product management, and dynamic checkout.',
         tags: ['PHP Native', 'MySQL', 'Javascript', 'CSS'],
         link: 'https://github.com/Madiennasaa/tokohijau'
     },
@@ -117,6 +119,7 @@ const projects = ref([
         src: project2,
         title: 'Sistem Pembayaran SPP TK DHARMA',
         description: 'Aplikasi manajemen keuangan sekolah untuk mencatat transaksi SPP siswa, rekap pembayaran, dan laporan keuangan.',
+        description_en: 'School finance management app for recording student tuition transactions, payment recaps, and financial reports.',
         tags: ['Laravel', 'Javascript', 'MySQL', 'Tailwind'],
         link: 'https://github.com/Madiennasaa/pembayaran-spp'
     },
@@ -125,6 +128,7 @@ const projects = ref([
         src: project3,
         title: 'Sistem Perpustakaan Online',
         description: 'Aplikasi pengelolaan peminjaman dan pengembalian buku dengan pencarian katalog dan manajemen koleksi.',
+        description_en: 'Library management app for borrowing/returning books with catalog search and collection management.',
         tags: ['MySQL', 'Python', 'PyQt5'],
         link: 'https://github.com/Madiennasaa/perpustakaan'
     },
@@ -133,6 +137,7 @@ const projects = ref([
         src: project4,
         title: 'Website Organisasi WPI',
         description: 'Website profil organisasi yang menampilkan informasi, kegiatan, dan struktur kepengurusan secara dinamis.',
+        description_en: 'Organization profile website displaying information, activities, and management structure dynamically.',
         tags: ['Laravel', 'PHP', 'MySQL', 'Tailwind'],
         link: 'https://github.com/Madiennasaa/wpi'
     },
@@ -141,6 +146,7 @@ const projects = ref([
         src: project5,
         title: 'SKMUI Platform Les Online',
         description: 'Kontribusi UI dan pengembangan beberapa halaman pada platform les online berbasis web.',
+        description_en: 'UI contribution and development of several pages for a web-based online tutoring platform.',
         tags: ['Laravel', 'Tailwind CSS'],
         link: 'https://github.com/Madiennasaa/skmui'
     },
@@ -149,6 +155,7 @@ const projects = ref([
         src: project6,
         title: 'Web Sistem Manajemen SDN Sukorame 1',
         description: 'Web sistem manajemen sekolah terintegrasi yang dilengkapi dengan halaman profil sekolah, manajemen jadwal, materi pembelajaran, serta pengelolaan data guru dan siswa.',
+        description_en: 'Integrated school management web system with school profile, schedule, learning materials, and teacher/student data management.',
         tags: ['Laravel', 'MySQL', 'Vite', 'JavaScript', 'Tailwind CSS'],
         link: 'https://github.com/Madiennasaa'
     },
@@ -157,6 +164,7 @@ const projects = ref([
         src: project7,
         title: 'Mobile Sistem Manajemen SDN Sukorame 1',
         description: 'Aplikasi mobile sistem manajemen sekolah SDN Sukorame 1 untuk mempermudah akses informasi, jadwal, dan aktivitas sekolah secara mobile.',
+        description_en: 'Mobile school management app for SDN Sukorame 1 to simplify access to info, schedules, and school activities.',
         tags: ['Kotlin', 'Firebase'],
         link: 'https://github.com/Madiennasaa'
     },
@@ -165,6 +173,7 @@ const projects = ref([
         src: project7,
         title: 'Noora - Quran Web App',
         description: 'Platform Al-Quran digital dengan fitur baca, pencarian surah, audio murottal, dan bookmark. Dibangun modern dan responsif untuk kemudahan ibadah.',
+        description_en: 'Digital Quran platform with reading, surah search, murottal audio, and bookmarks. Modern and responsive.',
         tags: ['HTML', 'CSS', 'Tailwind CSS', 'JavaScript'],
         link: 'https://github.com/Madiennasaa/noora-quran'
     },
@@ -173,6 +182,7 @@ const projects = ref([
         src: project7,
         title: 'ALC Mazda - Stechoq Robotika Indonesia',
         description: 'Sistem internal ALC Mazda yang sedang dikembangkan di Stechoq Robotika Indonesia (Yogyakarta) untuk manajemen operasional dan alur kerja perusahaan.',
+        description_en: 'Internal ALC Mazda system being developed at Stechoq Robotika Indonesia (Yogyakarta) for operational and workflow management.',
         tags: ['Vue.js', 'Nuxt.js', 'Express', 'PostgreSQL'],
         link: ''
     },

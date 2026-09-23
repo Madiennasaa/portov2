@@ -10,14 +10,14 @@
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">
-                        Get In
+                        {{ locale.value==='id' ? 'Hubungi' : 'Get In' }}
                     </span>
-                    Touch
+                    {{ locale.value==='id' ? 'Saya' : 'Touch' }}
                 </h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto" 
                 data-aos="fade-up"
                 data-aos-delay="100">
-                    Tertarik untuk berkolaborasi atau ingin bertanya lebih lanjut? Hubungi saya!
+                    {{ locale.value==='id' ? 'Tertarik untuk berkolaborasi atau ingin bertanya lebih lanjut? Hubungi saya!' : 'Interested in collaborating or have questions? Get in touch!' }}
                 </p>
             </div>
 
@@ -36,7 +36,7 @@
                     </div>
                     
                     <div class="pt-4" data-aos="fade-right" data-aos-delay="300">
-                        <h4 class="text-xl font-bold text-white mb-4">Follow Me</h4>
+                        <h4 class="text-xl font-bold text-white mb-4">{{ locale.value==='id' ? 'Ikuti Saya' : 'Follow Me' }}</h4>
                         <div class="flex gap-4">
                             <a v-for="social in socialLinks" 
                             :key="social.name"
@@ -69,7 +69,7 @@
                         </div>
                         <button type="submit" :disabled="isLoading"
                             class="w-full px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center bg-emerald-500 text-white hover:bg-emerald-400 shadow-lg shadow-emerald-500/20 disabled:opacity-50 disabled:cursor-not-allowed">
-                            <span v-if="isLoading">Mengirim...</span>
+                            <span v-if="isLoading">{{ locale.value==='id' ? 'Mengirim...' : 'Sending...' }}</span>
                             <span v-else class="flex items-center">
                                 Send Message
                                 <PaperAirplaneIcon class="w-4 h-4 ml-2"/>
@@ -90,7 +90,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { locale, t as tr } from '../i18n/index.js';
 import emailjs from '@emailjs/browser';
 import { 
     EnvelopeIcon, 
@@ -123,11 +124,11 @@ const submitForm = async () => {
             '2uSqy7hts8dDzgvYp'
         );
         isSuccess.value = true;
-        statusMsg.value = 'Pesan berhasil terkirim!';
+        statusMsg.value = locale.value==='id' ? 'Pesan berhasil terkirim!' : 'Message sent successfully!';
         form.value = { name: '', email: '', message: '' };
     } catch (error) {
         isSuccess.value = false;
-        statusMsg.value = 'Gagal mengirim pesan. Coba lagi.';
+        statusMsg.value = locale.value==='id' ? 'Gagal mengirim pesan. Coba lagi.' : 'Failed to send message. Please try again.';
     } finally {
         isLoading.value = false;
     }

@@ -37,12 +37,12 @@
                             </span>
                         </h2>
                         <p class="text-emerald-200 font-medium text-lg md:text-xl mt-4">
-                            Validasi Keahlian
+                            {{ locale.value==='id' ? 'Validasi Keahlian' : 'Skills Validation' }}
                         </p>
                     </div>
                     
                     <p class="text-slate-300 pt-6 text-center lg:text-left text-base md:text-lg leading-relaxed font-light">
-                        Beberapa sertifikasi yang sudah saya selesaikan sebagai bagian dari proses belajar mandiri di luar perkuliahan.
+                        {{ locale.value==='id' ? 'Beberapa sertifikasi yang sudah saya selesaikan sebagai bagian dari proses belajar mandiri di luar perkuliahan.' : 'Some certifications I completed as part of self-directed learning outside coursework.' }}
                     </p>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8">
@@ -64,14 +64,14 @@
     href="#certificates"
     class="px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center bg-emerald-500 text-white hover:bg-emerald-400 hover:shadow-lg hover:shadow-emerald-500/25 group cursor-pointer">
         <DocumentCheckIcon class="w-5 h-5 mr-2" />
-        Lihat Sertifikat
+        {{ locale.value==='id' ? 'Lihat Sertifikat' : 'View Certificates' }}
     </a>
     <a 
     href="https://www.linkedin.com/in/ahmadubai02" 
     target="_blank" 
     rel="noopener noreferrer"
     class="px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center border border-slate-600 hover:border-emerald-400 text-slate-300 hover:text-emerald-400">
-        Lihat di LinkedIn
+        {{ locale.value==='id' ? 'Lihat di LinkedIn' : 'View on LinkedIn' }}
     </a>
                     </div>
                 </div>
@@ -87,6 +87,7 @@ import {
     CodeBracketIcon,
     ShieldCheckIcon
 } from '@heroicons/vue/24/solid'
+import { locale } from '../i18n/index.js'
 
 const certHighlights = [
     {

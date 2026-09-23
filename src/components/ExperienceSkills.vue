@@ -6,15 +6,12 @@
                     <span
                         class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500"
                     >
-                        Skills
+                        {{ locale.value==='id' ? 'Keahlian' : 'Skills' }}
                     </span>
-                    & Education
+                    {{ locale.value==='id' ? '& Edukasi' : '& Education' }}
                 </h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light">
-                    Perpaduan kemampuan full-stack, eksplorasi ekosistem Linux,
-                    dan ketertarikan mendalam pada networking perjalanan saya
-                    membangun solusi digital yang efisien, aman, dan siap
-                    di-deploy di lingkungan open-source.
+                    {{ tr('skills.subtitle') }}
                 </p>
             </div>
 
@@ -166,6 +163,8 @@ import {
     AcademicCapIcon,
     GlobeAltIcon,
 } from "@heroicons/vue/16/solid";
+import { locale, t as tr } from "../i18n/index.js";
+import { computed } from "vue";
 
 const skills = [
     {
@@ -244,7 +243,8 @@ const techStack = [
     { name: "Express", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="h-10 w-10 object-contain bg-white rounded p-1" alt="Express" />' },
 ];
 
-const experience = [
+const _experienceId = [
+
     {
         id: 1,
         date: "Agu 2026 - Present",
@@ -279,7 +279,20 @@ const experience = [
         company: "MAN 3 Tangerang",
         description:
             "Membangun fondasi logika dan analisis yang kuat melalui bidang peminatan sains. Mempelajari dasar-dasar algoritma secara mandiri dan aktif dalam kegiatan organisasi sekolah untuk mengasah soft skill komunikasi.",
+        description_en:
+            "Built strong logic and analytical foundations through science specialization. Learned algorithms independently and was active in school organizations to hone communication soft skills.",
         type: "Education",
+        type_en: "Education",
     },
 ];
+const _expEn = [
+    { id:1, description_en: "Joined as Full Stack Developer, developing internal company systems. Current project is ALC Mazda — a management system for Mazda operational needs.", type_en: "Work Experience" },
+    { id:2, description_en: "Performed functional testing of web apps, prepared test cases/scenarios, and ensured product quality before release. Involved in designing intuitive, responsive user interfaces.", type_en: "Internship" },
+    { id:3, description_en: "Pursuing vocational education focused on information systems, database management, and software engineering. Actively exploring modern tech to build efficient, scalable web solutions.", type_en: "Education" },
+    { id:4, description_en: "Built strong logic and analytical foundations through science specialization. Learned algorithms independently and was active in school organizations to hone communication soft skills.", type_en: "Education" },
+];
+const experience = computed(() => _experienceId.map(e => {
+  const en = _expEn.find(x=>x.id===e.id) || {};
+  return locale.value==='id' ? e : { ...e, description: en.description_en || e.description, type: en.type_en || e.type };
+}));
 </script>
