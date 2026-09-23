@@ -163,7 +163,7 @@ import {
     AcademicCapIcon,
     GlobeAltIcon,
 } from "@heroicons/vue/16/solid";
-import { locale, t as tr } from "../i18n/index.js";
+import { locale, t as tr } from "../i18n/locale.js";
 import { computed } from "vue";
 
 const skills = [

@@ -84,7 +84,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import { locale, t as tr } from '../i18n/index.js';
+import { locale, t as tr } from '../i18n/locale.js';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';

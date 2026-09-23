@@ -79,7 +79,7 @@ import {
     EnvelopeIcon, 
     MapPinIcon 
 } from '@heroicons/vue/24/outline';
-import { locale, t as tr } from '../i18n/index.js';
+import { locale, t as tr } from '../i18n/locale.js';
 import { computed } from 'vue';
 
 const quickLinks = computed(() => [

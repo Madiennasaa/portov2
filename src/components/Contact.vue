@@ -91,7 +91,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import { locale, t as tr } from '../i18n/index.js';
+import { locale, t as tr } from '../i18n/locale.js';
 import emailjs from '@emailjs/browser';
 import { 
     EnvelopeIcon, 

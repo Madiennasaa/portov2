@@ -1,6 +1,6 @@
 <script setup>
 import cvFile from '../assets/CV_Ubai.pdf'
-import { locale, t } from '../i18n/index.js'
+import { locale, t } from '../i18n/locale.js'
 </script>
 
 <template>

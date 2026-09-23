@@ -33,7 +33,7 @@
             <div class="text-center mt-12">
                 <a href="#contact"
                     class="inline-flex items-center px-8 py-4 rounded-lg border border-emerald-500 text-emerald-400 font-medium hover:bg-emerald-500/10 transition-all duration-300">
-                    {{ locale.value==='id' ? 'Hubungi Saya' : 'Get In Touch' }}
+                    {{ tr('services.cta') }}
                     <ChatBubbleLeftRightIcon class="w-5 h-5 ml-2" />
                 </a>
             </div>
@@ -43,7 +43,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import { locale, t as tr } from '../i18n/index.js';
+import { locale, t as tr } from '../i18n/locale.js';
 import { ChatBubbleLeftRightIcon, CodeBracketIcon, DevicePhoneMobileIcon, RocketLaunchIcon, CommandLineIcon, GlobeAltIcon, PaintBrushIcon } from '@heroicons/vue/16/solid';
 
 const services = computed(() => locale.value === 'id' ? [

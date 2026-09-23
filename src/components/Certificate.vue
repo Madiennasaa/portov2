@@ -8,7 +8,7 @@
     <div v-for="cert in certificates" :key="cert.id" class="relative" style="perspective: 1000px;">
         <!-- Badge -->
         <div class="absolute -top-2 -right-2 text-white text-[10px] px-2 py-1 rounded-full font-semibold bg-emerald-500 shadow-lg z-10">
-            Verified
+            {{ tr('certificates.verified') }}
         </div>
         <!-- Flip Card -->
         <div class="flip-card aspect-[4/3]">
@@ -32,17 +32,17 @@
                 <div class="flex flex-col justify-center order-1 lg:order-2">
                     <div class="text-center lg:text-left">
                         <h2 class="text-white font-bold text-4xl md:text-5xl lg:text-6xl leading-tight">
-                            My <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">
-                                Certificates
+                            {{ tr('certificates.my') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">
+                                {{ tr('certificates.title') }}
                             </span>
                         </h2>
                         <p class="text-emerald-200 font-medium text-lg md:text-xl mt-4">
-                            {{ locale.value==='id' ? 'Validasi Keahlian' : 'Skills Validation' }}
+                            {{ tr('certificates.subtitle') }}
                         </p>
                     </div>
                     
                     <p class="text-slate-300 pt-6 text-center lg:text-left text-base md:text-lg leading-relaxed font-light">
-                        {{ locale.value==='id' ? 'Beberapa sertifikasi yang sudah saya selesaikan sebagai bagian dari proses belajar mandiri di luar perkuliahan.' : 'Some certifications I completed as part of self-directed learning outside coursework.' }}
+                        {{ tr('certificates.desc') }}
                     </p>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8">
@@ -64,14 +64,14 @@
     href="#certificates"
     class="px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center bg-emerald-500 text-white hover:bg-emerald-400 hover:shadow-lg hover:shadow-emerald-500/25 group cursor-pointer">
         <DocumentCheckIcon class="w-5 h-5 mr-2" />
-        {{ locale.value==='id' ? 'Lihat Sertifikat' : 'View Certificates' }}
+        {{ tr('certificates.viewCert') }}
     </a>
     <a 
     href="https://www.linkedin.com/in/ahmadubai02" 
     target="_blank" 
     rel="noopener noreferrer"
     class="px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center border border-slate-600 hover:border-emerald-400 text-slate-300 hover:text-emerald-400">
-        {{ locale.value==='id' ? 'Lihat di LinkedIn' : 'View on LinkedIn' }}
+        {{ tr('certificates.viewLinkedin') }}
     </a>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ import {
     CodeBracketIcon,
     ShieldCheckIcon
 } from '@heroicons/vue/24/solid'
-import { locale } from '../i18n/index.js'
+import { locale, t as tr } from '../i18n/locale.js'
 
 const certHighlights = [
     {

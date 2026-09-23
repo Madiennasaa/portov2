@@ -57,7 +57,7 @@
             <!-- CTA + Hamburger -->
             <div class="flex items-center gap-3">
                 <button @click="toggleLocale" class="flex items-center gap-1.5 text-xs font-bold border border-white/20 text-white px-2.5 py-1.5 rounded-full hover:bg-white/10 transition-colors">
-                    <span class="text-base leading-none">{{ locale === 'id' ? '🇬🇧' : '🇮🇩' }}</span>
+                    <img :src="locale === 'id' ? 'https://flagcdn.com/w20/gb.png' : 'https://flagcdn.com/w20/id.png'" :alt="locale" class="w-5 h-3.5 object-cover rounded-sm" />
                     {{ locale === 'id' ? 'EN' : 'ID' }}
                 </button>
                 <a
@@ -133,7 +133,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from "vue";
-import { locale, toggleLocale } from "../i18n/index.js";
+import { locale, toggleLocale } from "../i18n/locale.js";
 
 const Menu = computed(() => [
     { name: locale.value === 'id' ? 'Layanan' : 'Services', href: "#services" },
