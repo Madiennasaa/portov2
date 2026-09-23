@@ -225,68 +225,23 @@ const skills = [
 ];
 
 const techStack = [
-    // Primary logos mapped from image_4.png
-    {
-        name: "JavaScript",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><rect width="64" height="64" rx="6" fill="#f7df1e"/><text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="28">JS</text></svg>',
-    },
-    {
-        name: "CSS3",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><path d="M6 4h52l-4.5 50L32 60 10.5 54 6 4z" fill="#264de4"/><path d="M32 46l13-7 2.5-28H32v35z" fill="#2965f1"/></svg>',
-    },
-    {
-        name: "HTML5",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><path d="M6 4h52l-4.5 50L32 60 10.5 54 6 4z" fill="#e34f26"/><path d="M32 46l13-7 2.5-28H32v35z" fill="#ef652a"/></svg>',
-    },
-    {
-        name: "PHP",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><ellipse cx="32" cy="32" rx="26" ry="14" fill="#777bb4"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#fff">php</text></svg>',
-    },
-    {
-        name: "Laravel",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><rect width="64" height="64" rx="6" fill="#FF2D20"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="#fff">Laravel</text></svg>',
-    },
-    {
-        name: "Nuxt.js",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><rect width="64" height="64" rx="6" fill="#00DC82"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="#fff">Nuxt</text></svg>',
-    },
-    {
-        name: "Python",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><path d="M32 6c10 0 14 6 14 6v10c0 8-8 10-14 10H18v-6c0-10 14-20 14-20z" fill="#306998"/><path d="M32 58c-10 0-14-6-14-6V42c0-8 8-10 14-10h14v6c0 10-14 20-14 20z" fill="#ffde57"/></svg>',
-    },
-    // Additional techs (icons only)
-    {
-        name: "Vue.js",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><path d="M2 2h60L32 58 2 2z" fill="#41b883"/></svg>',
-    },
-    {
-        name: "React JS",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><circle cx="32" cy="32" r="6" fill="#61dafb"/><path d="M32 4c8 0 24 8 24 28S40 60 32 60 8 52 8 32 24 4 32 4z" fill="none" stroke="#61dafb" stroke-width="2"/></svg>',
-    },
-    {
-        name: "Firebase",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><path d="M32 4l10 20-6 36L32 44 24 60 18 24 32 4z" fill="#ffca28"/></svg>',
-    },
-    {
-        name: "Kotlin",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><rect width="64" height="64" rx="6" fill="#7f52ff"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="#fff">Kt</text></svg>',
-    },
-    {
-        name: "CodeIgniter",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><rect width="64" height="64" rx="6" fill="#e84a5f"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="14" fill="#fff">CI</text></svg>',
-    },
-    {
-        name: "Flutter",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><rect width="64" height="64" rx="6" fill="#02569B"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#fff">Flutter</text></svg>',
-    },
-    {
-        name: "MySQL",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><ellipse cx="32" cy="32" rx="22" ry="16" fill="#00758F"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="11" fill="#fff">MySQL</text></svg>',
-    },
-    {
-        name: "PostgreSQL",
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-full w-full"><ellipse cx="32" cy="32" rx="22" ry="16" fill="#336791"/><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="9" fill="#fff">Postgre</text></svg>',
-    },
+    { name: "JavaScript", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="h-10 w-10 object-contain" alt="JavaScript" />' },
+    { name: "CSS3", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="h-10 w-10 object-contain" alt="CSS3" />' },
+    { name: "HTML5", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="h-10 w-10 object-contain" alt="HTML5" />' },
+    { name: "PHP", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="h-10 w-10 object-contain" alt="PHP" />' },
+    { name: "Laravel", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="h-10 w-10 object-contain" alt="Laravel" />' },
+    { name: "Nuxt.js", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg" class="h-10 w-10 object-contain" alt="Nuxt.js" />' },
+    { name: "Python", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="h-10 w-10 object-contain" alt="Python" />' },
+    { name: "Vue.js", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" class="h-10 w-10 object-contain" alt="Vue.js" />' },
+    { name: "React JS", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="h-10 w-10 object-contain" alt="React" />' },
+    { name: "Firebase", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="h-10 w-10 object-contain" alt="Firebase" />' },
+    { name: "Kotlin", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" class="h-10 w-10 object-contain" alt="Kotlin" />' },
+    { name: "CodeIgniter", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg" class="h-10 w-10 object-contain" alt="CodeIgniter" />' },
+    { name: "Flutter", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" class="h-10 w-10 object-contain" alt="Flutter" />' },
+    { name: "MySQL", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="h-10 w-10 object-contain" alt="MySQL" />' },
+    { name: "PostgreSQL", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="h-10 w-10 object-contain" alt="PostgreSQL" />' },
+    { name: "Node.js", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="h-10 w-10 object-contain" alt="Node.js" />' },
+    { name: "Express", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="h-10 w-10 object-contain bg-white rounded p-1" alt="Express" />' },
 ];
 
 const experience = [
