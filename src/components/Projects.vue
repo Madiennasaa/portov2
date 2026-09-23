@@ -48,11 +48,14 @@
                                 </div>
                                 <h3 class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors line-clamp-2">{{ project.title }}</h3>
                                 <p class="mt-2 text-sm leading-relaxed text-slate-300/70 font-light line-clamp-3 flex-1">{{ project.description }}</p>
-                                <a :href="project.link" target="_blank" rel="noopener noreferrer"
+                                <a v-if="project.link" :href="project.link" target="_blank" rel="noopener noreferrer"
                                     class="mt-4 inline-flex items-center self-start text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors" @click.stop>
                                     View on GitHub
                                     <ArrowRightIcon class="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                                 </a>
+                                <span v-else class="mt-4 inline-flex items-center self-start text-sm font-semibold text-slate-500">
+                                    Private Project
+                                </span>
                             </div>
                         </div>
                     </SwiperSlide>
@@ -156,6 +159,22 @@ const projects = ref([
         description: 'Aplikasi mobile sistem manajemen sekolah SDN Sukorame 1 untuk mempermudah akses informasi, jadwal, dan aktivitas sekolah secara mobile.',
         tags: ['Kotlin', 'Firebase'],
         link: 'https://github.com/Madiennasaa'
+    },
+    {
+        id: 8,
+        src: project7,
+        title: 'Noora - Quran Web App',
+        description: 'Platform Al-Quran digital dengan fitur baca, pencarian surah, audio murottal, dan bookmark. Dibangun modern dan responsif untuk kemudahan ibadah.',
+        tags: ['HTML', 'CSS', 'Tailwind CSS', 'JavaScript'],
+        link: 'https://github.com/Madiennasaa/noora-quran'
+    },
+    {
+        id: 9,
+        src: project7,
+        title: 'ALC Mazda - Stechoq Robotika Indonesia',
+        description: 'Sistem internal ALC Mazda yang sedang dikembangkan di Stechoq Robotika Indonesia (Yogyakarta) untuk manajemen operasional dan alur kerja perusahaan.',
+        tags: ['Vue.js', 'Nuxt.js', 'Express', 'PostgreSQL'],
+        link: ''
     },
 ]);
 </script>
