@@ -6,12 +6,11 @@
                     <span
                         class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500"
                     >
-                        {{ locale.value==='id' ? 'Keahlian' : 'Skills' }}
+                        {{ tr("skills.title") }}
                     </span>
-                    {{ locale.value==='id' ? '& Edukasi' : '& Education' }}
                 </h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light">
-                    {{ tr('skills.subtitle') }}
+                    {{ tr("skills.subtitle") }}
                 </p>
             </div>
 
@@ -22,7 +21,7 @@
                         class="text-2xl font-bold text-white mb-8 flex items-center gap-3"
                     >
                         <CodeBracketIcon class="w-6 h-6 text-emerald-400" />
-                        {{ tr('skills.technicalSkills') }}
+                        {{ tr("skills.technicalSkills") }}
                     </h3>
 
                     <div class="space-y-6">
@@ -63,7 +62,7 @@
                             class="text-xl font-bold text-white mb-6 flex items-center gap-2"
                         >
                             <Squares2X2Icon class="w-6 h-6 text-blue-400" />
-                            {{ tr('skills.techStack') }}
+                            {{ tr("skills.techStack") }}
                         </h4>
                         <div class="grid grid-cols-3 sm:grid-cols-4 gap-3">
                             <div
@@ -90,7 +89,7 @@
                         class="text-2xl font-bold text-white mb-8 flex items-center gap-3"
                     >
                         <AcademicCapIcon class="w-6 h-6 text-blue-400" />
-                        {{ tr('skills.eduExp') }}
+                        {{ tr("skills.eduExp") }}
                     </h3>
 
                     <div class="relative ml-4">
@@ -224,27 +223,77 @@ const skills = [
 ];
 
 const techStack = [
-    { name: "JavaScript", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="h-10 w-10 object-contain" alt="JavaScript" />' },
-    { name: "CSS3", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="h-10 w-10 object-contain" alt="CSS3" />' },
-    { name: "HTML5", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="h-10 w-10 object-contain" alt="HTML5" />' },
-    { name: "PHP", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="h-10 w-10 object-contain" alt="PHP" />' },
-    { name: "Laravel", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="h-10 w-10 object-contain" alt="Laravel" />' },
-    { name: "Nuxt.js", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg" class="h-10 w-10 object-contain" alt="Nuxt.js" />' },
-    { name: "Python", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="h-10 w-10 object-contain" alt="Python" />' },
-    { name: "Vue.js", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" class="h-10 w-10 object-contain" alt="Vue.js" />' },
-    { name: "React JS", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="h-10 w-10 object-contain" alt="React" />' },
-    { name: "Firebase", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="h-10 w-10 object-contain" alt="Firebase" />' },
-    { name: "Kotlin", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" class="h-10 w-10 object-contain" alt="Kotlin" />' },
-    { name: "CodeIgniter", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg" class="h-10 w-10 object-contain" alt="CodeIgniter" />' },
-    { name: "Flutter", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" class="h-10 w-10 object-contain" alt="Flutter" />' },
-    { name: "MySQL", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="h-10 w-10 object-contain" alt="MySQL" />' },
-    { name: "PostgreSQL", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="h-10 w-10 object-contain" alt="PostgreSQL" />' },
-    { name: "Node.js", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="h-10 w-10 object-contain" alt="Node.js" />' },
-    { name: "Express", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="h-10 w-10 object-contain bg-white rounded p-1" alt="Express" />' },
+    {
+        name: "JavaScript",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="h-10 w-10 object-contain" alt="JavaScript" />',
+    },
+    {
+        name: "CSS3",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="h-10 w-10 object-contain" alt="CSS3" />',
+    },
+    {
+        name: "HTML5",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="h-10 w-10 object-contain" alt="HTML5" />',
+    },
+    {
+        name: "PHP",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="h-10 w-10 object-contain" alt="PHP" />',
+    },
+    {
+        name: "Laravel",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="h-10 w-10 object-contain" alt="Laravel" />',
+    },
+    {
+        name: "Nuxt.js",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg" class="h-10 w-10 object-contain" alt="Nuxt.js" />',
+    },
+    {
+        name: "Python",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="h-10 w-10 object-contain" alt="Python" />',
+    },
+    {
+        name: "Vue.js",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" class="h-10 w-10 object-contain" alt="Vue.js" />',
+    },
+    {
+        name: "React JS",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="h-10 w-10 object-contain" alt="React" />',
+    },
+    {
+        name: "Firebase",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="h-10 w-10 object-contain" alt="Firebase" />',
+    },
+    {
+        name: "Kotlin",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" class="h-10 w-10 object-contain" alt="Kotlin" />',
+    },
+    {
+        name: "CodeIgniter",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg" class="h-10 w-10 object-contain" alt="CodeIgniter" />',
+    },
+    {
+        name: "Flutter",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" class="h-10 w-10 object-contain" alt="Flutter" />',
+    },
+    {
+        name: "MySQL",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="h-10 w-10 object-contain" alt="MySQL" />',
+    },
+    {
+        name: "PostgreSQL",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="h-10 w-10 object-contain" alt="PostgreSQL" />',
+    },
+    {
+        name: "Node.js",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="h-10 w-10 object-contain" alt="Node.js" />',
+    },
+    {
+        name: "Express",
+        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="h-10 w-10 object-contain bg-white rounded p-1" alt="Express" />',
+    },
 ];
 
 const _experienceId = [
-
     {
         id: 1,
         date: "Agu 2026 - Present",
@@ -286,13 +335,35 @@ const _experienceId = [
     },
 ];
 const _expEn = [
-    { id:1, description_en: "Joined as Full Stack Developer, developing internal company systems. Current project is ALC Mazda — a management system for Mazda operational needs.", type_en: "Work Experience" },
-    { id:2, description_en: "Performed functional testing of web apps, prepared test cases/scenarios, and ensured product quality before release. Involved in designing intuitive, responsive user interfaces.", type_en: "Internship" },
-    { id:3, description_en: "Pursuing vocational education focused on information systems, database management, and software engineering. Actively exploring modern tech to build efficient, scalable web solutions.", type_en: "Education" },
-    { id:4, description_en: "Built strong logic and analytical foundations through science specialization. Learned algorithms independently and was active in school organizations to hone communication soft skills.", type_en: "Education" },
+    {
+        id: 2,
+        description_en:
+            "Performed functional testing of web apps, prepared test cases/scenarios, and ensured product quality before release. Involved in designing intuitive, responsive user interfaces.",
+        type_en: "Internship",
+    },
+    {
+        id: 3,
+        description_en:
+            "Pursuing vocational education focused on information systems, database management, and software engineering. Actively exploring modern tech to build efficient, scalable web solutions.",
+        type_en: "Education",
+    },
+    {
+        id: 4,
+        description_en:
+            "Built strong logic and analytical foundations through science specialization. Learned algorithms independently and was active in school organizations to hone communication soft skills.",
+        type_en: "Education",
+    },
 ];
-const experience = computed(() => _experienceId.map(e => {
-  const en = _expEn.find(x=>x.id===e.id) || {};
-  return locale.value==='id' ? e : { ...e, description: en.description_en || e.description, type: en.type_en || e.type };
-}));
+const experience = computed(() =>
+    _experienceId.map((e) => {
+        const en = _expEn.find((x) => x.id === e.id) || {};
+        return locale.value === "id"
+            ? e
+            : {
+                  ...e,
+                  description: en.description_en || e.description,
+                  type: en.type_en || e.type,
+              };
+    }),
+);
 </script>

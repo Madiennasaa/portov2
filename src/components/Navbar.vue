@@ -65,7 +65,7 @@
                     @click.prevent="scrollToSection('#contact')"
                     class="hidden md:block text-xs font-semibold bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-2 rounded-full transition-all duration-300"
                 >
-                    {{ locale === 'id' ? 'Mari Bicara' : "Let's Talk" }}
+                    {{ locale === 'id' ? "Mari Bicara" : "Let's Talk" }}
                 </a>
 
                 <!-- Hamburger Mobile -->
@@ -125,7 +125,7 @@
                 @click.prevent="scrollToSection('#contact')"
                 class="text-sm font-semibold bg-emerald-500 text-white px-5 py-2.5 rounded-full text-center transition-all duration-300"
             >
-                Let's Talk
+                {{ locale === 'id' ? 'Mari Bicara' : "Let's Talk" }}
             </a>
         </div>
     </div>

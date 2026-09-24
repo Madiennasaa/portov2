@@ -32,7 +32,7 @@
                 <div class="flex flex-col justify-center order-1 lg:order-2">
                     <div class="text-center lg:text-left">
                         <h2 class="text-white font-bold text-4xl md:text-5xl lg:text-6xl leading-tight">
-                            {{ tr('certificates.my') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">
                                 {{ tr('certificates.title') }}
                             </span>
                         </h2>

@@ -62,7 +62,7 @@
 
             <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-slate-500 text-sm text-center">
-                    © {{ new Date().getFullYear() }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500 font-medium">Ahmad Ubaidillah Tsani</span>. All rights reserved.
+                    © {{ new Date().getFullYear() }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500 font-medium">Ahmad Ubaidillah Tsani</span>. {{ locale==='id' ? 'Hak cipta dilindungi.' : 'All rights reserved.' }}
                 </p>
                 <div class="flex gap-6 text-slate-500 text-sm">
                     <a href="#" class="hover:text-emerald-400 transition-colors">{{ tr('footer.privacy') }}</a>
