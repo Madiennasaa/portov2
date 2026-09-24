@@ -40,13 +40,13 @@
                     <SwiperSlide
                         v-for="project in projects"
                         :key="project.id"
-                        class="h-auto"
+                        class="!h-auto flex"
                     >
                         <!-- Card - konsisten dengan Services & Education -->
                         <div
-                            class="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-800/50 to-slate-900/30 backdrop-blur-md shadow-xl transition-all duration-500 hover:border-emerald-500/50 hover:-translate-y-1"
+                            class="group flex h-full min-h-[420px] w-full flex-col overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-800/50 to-slate-900/30 backdrop-blur-md shadow-xl transition-all duration-500 hover:border-emerald-500/50 hover:-translate-y-1"
                         >
-                            <div class="overflow-hidden">
+                            <div class="overflow-hidden shrink-0">
                                 <img
                                     :src="project.src"
                                     :alt="project.title"
@@ -54,27 +54,28 @@
                                 />
                             </div>
                             <div class="flex flex-1 flex-col p-5">
-                                <div class="flex flex-wrap gap-1.5 mb-3">
+                                <div class="flex flex-wrap content-start gap-1.5 mb-3 min-h-[56px]">
                                     <span
                                         v-for="tag in project.tags"
                                         :key="tag"
-                                        class="px-2.5 py-1 text-[10px] font-semibold rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 uppercase tracking-wider"
+                                        class="px-2.5 py-1 text-[10px] font-semibold rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 uppercase tracking-wider h-fit"
                                     >
                                         {{ tag }}
                                     </span>
                                 </div>
                                 <h3
-                                    class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors line-clamp-2"
+                                    class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors line-clamp-2 min-h-[48px]"
                                 >
                                     {{ project.title }}
                                 </h3>
                                 <p
-                                    class="mt-2 text-sm leading-relaxed text-slate-300/70 font-light line-clamp-3 flex-1"
+                                    class="mt-2 text-sm leading-relaxed text-slate-300/70 font-light line-clamp-3 min-h-[63px] flex-1"
                                 >
                                     {{
                                         locale.value === "id"
-                                            ? project.description
+                                            ? project.description_id || project.description
                                             : project.description_en ||
+                                              project.description_id ||
                                               project.description
                                     }}
                                 </p>
@@ -165,10 +166,12 @@ const projects = ref([
         id: 1,
         src: project1,
         title: "E-Commerce Platform Toko Hijau",
-        description:
+        description_id:
             "Platform marketplace jual beli online dengan fitur keranjang, manajemen produk, dan sistem checkout dinamis.",
         description_en:
             "Online marketplace platform with cart, product management, and dynamic checkout.",
+        description:
+            "Platform marketplace jual beli online dengan fitur keranjang, manajemen produk, dan sistem checkout dinamis.",
         tags: ["PHP Native", "MySQL", "Javascript", "CSS"],
         link: "https://github.com/Madiennasaa/tokohijau",
     },
@@ -176,10 +179,12 @@ const projects = ref([
         id: 2,
         src: project2,
         title: "Sistem Pembayaran SPP TK DHARMA",
-        description:
+        description_id:
             "Aplikasi manajemen keuangan sekolah untuk mencatat transaksi SPP siswa, rekap pembayaran, dan laporan keuangan.",
         description_en:
             "School finance management app for recording student tuition transactions, payment recaps, and financial reports.",
+        description:
+            "Aplikasi manajemen keuangan sekolah untuk mencatat transaksi SPP siswa, rekap pembayaran, dan laporan keuangan.",
         tags: ["Laravel", "Javascript", "MySQL", "Tailwind"],
         link: "https://github.com/Madiennasaa/pembayaran-spp",
     },
@@ -187,10 +192,12 @@ const projects = ref([
         id: 3,
         src: project3,
         title: "Sistem Perpustakaan Online",
-        description:
+        description_id:
             "Aplikasi pengelolaan peminjaman dan pengembalian buku dengan pencarian katalog dan manajemen koleksi.",
         description_en:
             "Library management app for borrowing/returning books with catalog search and collection management.",
+        description:
+            "Aplikasi pengelolaan peminjaman dan pengembalian buku dengan pencarian katalog dan manajemen koleksi.",
         tags: ["MySQL", "Python", "PyQt5"],
         link: "https://github.com/Madiennasaa/perpustakaan",
     },
@@ -198,10 +205,12 @@ const projects = ref([
         id: 4,
         src: project4,
         title: "Website Organisasi WPI",
-        description:
+        description_id:
             "Website profil organisasi yang menampilkan informasi, kegiatan, dan struktur kepengurusan secara dinamis.",
         description_en:
             "Organization profile website displaying information, activities, and management structure dynamically.",
+        description:
+            "Website profil organisasi yang menampilkan informasi, kegiatan, dan struktur kepengurusan secara dinamis.",
         tags: ["Laravel", "PHP", "MySQL", "Tailwind"],
         link: "https://github.com/Madiennasaa/wpi",
     },
@@ -209,10 +218,12 @@ const projects = ref([
         id: 5,
         src: project5,
         title: "SKMUI Platform Les Online",
-        description:
+        description_id:
             "Kontribusi UI dan pengembangan beberapa halaman pada platform les online berbasis web.",
         description_en:
             "UI contribution and development of several pages for a web-based online tutoring platform.",
+        description:
+            "Kontribusi UI dan pengembangan beberapa halaman pada platform les online berbasis web.",
         tags: ["Laravel", "Tailwind CSS"],
         link: "https://github.com/Madiennasaa/skmui",
     },
@@ -220,10 +231,12 @@ const projects = ref([
         id: 6,
         src: project6,
         title: "Web Sistem Manajemen SDN Sukorame 1",
-        description:
+        description_id:
             "Web sistem manajemen sekolah terintegrasi yang dilengkapi dengan halaman profil sekolah, manajemen jadwal, materi pembelajaran, serta pengelolaan data guru dan siswa.",
         description_en:
             "Integrated school management web system with school profile, schedule, learning materials, and teacher/student data management.",
+        description:
+            "Web sistem manajemen sekolah terintegrasi yang dilengkapi dengan halaman profil sekolah, manajemen jadwal, materi pembelajaran, serta pengelolaan data guru dan siswa.",
         tags: ["Laravel", "MySQL", "Vite", "JavaScript", "Tailwind CSS"],
         link: "https://github.com/Madiennasaa",
     },
@@ -231,32 +244,38 @@ const projects = ref([
         id: 7,
         src: project7,
         title: "Mobile Sistem Manajemen SDN Sukorame 1",
-        description:
+        description_id:
             "Aplikasi mobile sistem manajemen sekolah SDN Sukorame 1 untuk mempermudah akses informasi, jadwal, dan aktivitas sekolah secara mobile.",
         description_en:
             "Mobile school management app for SDN Sukorame 1 to simplify access to info, schedules, and school activities.",
+        description:
+            "Aplikasi mobile sistem manajemen sekolah SDN Sukorame 1 untuk mempermudah akses informasi, jadwal, dan aktivitas sekolah secara mobile.",
         tags: ["Kotlin", "Firebase"],
         link: "https://github.com/Madiennasaa",
     },
     {
         id: 8,
-        src: project9,
+        src: project8,
         title: "Noora - Quran Web App",
-        description:
+        description_id:
             "Platform Al-Quran digital dengan fitur baca, pencarian surah, audio murottal, dan bookmark. Dibangun modern dan responsif untuk kemudahan ibadah.",
         description_en:
             "Digital Quran platform with reading, surah search, murottal audio, and bookmarks. Modern and responsive.",
+        description:
+            "Platform Al-Quran digital dengan fitur baca, pencarian surah, audio murottal, dan bookmark. Dibangun modern dan responsif untuk kemudahan ibadah.",
         tags: ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
         link: "https://github.com/Madiennasaa/noora-quran",
     },
     {
         id: 9,
-        src: project8,
+        src: project9,
         title: "ALC Mazda - Stechoq Robotika Indonesia",
-        description:
+        description_id:
             "Sistem internal ALC Mazda yang sedang dikembangkan di Stechoq Robotika Indonesia (Yogyakarta) untuk manajemen operasional dan alur kerja perusahaan.",
         description_en:
             "Internal ALC Mazda system being developed at Stechoq Robotika Indonesia (Yogyakarta) for operational and workflow management.",
+        description:
+            "Sistem internal ALC Mazda yang sedang dikembangkan di Stechoq Robotika Indonesia (Yogyakarta) untuk manajemen operasional dan alur kerja perusahaan.",
         tags: ["Vue.js", "Nuxt.js", "Express", "PostgreSQL"],
         link: "",
     },
@@ -264,6 +283,13 @@ const projects = ref([
 </script>
 
 <style scoped>
+.projects-swiper :deep(.swiper-wrapper) {
+    align-items: stretch;
+}
+.projects-swiper :deep(.swiper-slide) {
+    height: auto;
+    display: flex;
+}
 .projects-swiper :deep(.swiper-pagination-bullet) {
     background: #475569;
     opacity: 1;
