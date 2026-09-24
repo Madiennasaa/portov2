@@ -256,19 +256,6 @@ const projects = ref([
     {
         id: 8,
         src: project8,
-        title: "Noora - Quran Web App",
-        description_id:
-            "Platform Al-Quran digital dengan fitur baca, pencarian surah, audio murottal, dan bookmark. Dibangun modern dan responsif untuk kemudahan ibadah.",
-        description_en:
-            "Digital Quran platform with reading, surah search, murottal audio, and bookmarks. Modern and responsive.",
-        description:
-            "Platform Al-Quran digital dengan fitur baca, pencarian surah, audio murottal, dan bookmark. Dibangun modern dan responsif untuk kemudahan ibadah.",
-        tags: ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
-        link: "https://github.com/Madiennasaa/noora-quran",
-    },
-    {
-        id: 9,
-        src: project9,
         title: "ALC Mazda - Stechoq Robotika Indonesia",
         description_id:
             "Sistem internal ALC Mazda yang sedang dikembangkan di Stechoq Robotika Indonesia (Yogyakarta) untuk manajemen operasional dan alur kerja perusahaan.",
@@ -278,6 +265,19 @@ const projects = ref([
             "Sistem internal ALC Mazda yang sedang dikembangkan di Stechoq Robotika Indonesia (Yogyakarta) untuk manajemen operasional dan alur kerja perusahaan.",
         tags: ["Vue.js", "Nuxt.js", "Express", "PostgreSQL"],
         link: "",
+    },
+    {
+        id: 9,
+        src: project9,
+        title: "Noora - Quran Web App",
+        description_id:
+            "Prototipe front-end dashboard Noora Quran, platform belajar Al-Qur'an daring. Berisi ringkasan program, status pendaftaran, modul materi (kelas teori & praktik), daftar PR/ujian dengan pencarian dan filter tanggal, serta FAQ. Dibangun dengan HTML, Tailwind CSS, dan JavaScript.",
+        description_en:
+            "Front-end prototype of the Noora Quran dashboard, an online Quran learning platform. Features program overview, registration status, learning modules (theory & practice classes), searchable/filterable assignments and exams, and an FAQ. Built with HTML, Tailwind CSS, and JavaScript.",
+        description:
+            "Prototipe front-end dashboard Noora Quran, platform belajar Al-Qur'an daring. Berisi ringkasan program, status pendaftaran, modul materi (kelas teori & praktik), daftar PR/ujian dengan pencarian dan filter tanggal, serta FAQ. Dibangun dengan HTML, Tailwind CSS, dan JavaScript.",
+        tags: ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
+        link: "https://github.com/Madiennasaa/noora-quran",
     },
 ]);
 </script>
