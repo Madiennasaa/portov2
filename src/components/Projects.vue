@@ -14,11 +14,14 @@
             <!-- Swiper Carousel -->
             <div class="relative" data-aos="fade-up" data-aos-delay="200">
                 <Swiper
+                    :key="locale"
                     :modules="modules"
                     :slides-per-view="1"
                     :space-between="24"
-                    :centered-slides="true"
+                    :centered-slides="false"
                     :loop="true"
+                    :loop-additional-slides="3"
+                    :rewind="false"
                     :autoplay="{
                         delay: 4000,
                         disableOnInteraction: false,
@@ -38,7 +41,7 @@
                     class="projects-swiper !pb-14"
                 >
                     <SwiperSlide
-                        v-for="project in projects"
+                        v-for="project in localizedProjects"
                         :key="project.id"
                         class="!h-auto flex"
                     >
@@ -71,13 +74,7 @@
                                 <p
                                     class="mt-2 text-sm leading-relaxed text-slate-300/70 font-light line-clamp-3 min-h-[63px] flex-1"
                                 >
-                                    {{
-                                        locale.value === "id"
-                                            ? project.description_id || project.description
-                                            : project.description_en ||
-                                              project.description_id ||
-                                              project.description
-                                    }}
+                                    {{ project.desc }}
                                 </p>
                                 <a
                                     v-if="project.link"
@@ -160,6 +157,13 @@ import project8 from "../assets/project8.png";
 import project9 from "../assets/project9.png";
 
 const modules = [Autoplay, Pagination, Navigation];
+
+const localizedProjects = computed(() =>
+    projects.value.map((p) => ({
+        ...p,
+        desc: locale.value === "id" ? (p.description_id || p.description) : (p.description_en || p.description_id || p.description),
+    }))
+);
 
 const projects = ref([
     {
