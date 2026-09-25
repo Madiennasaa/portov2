@@ -87,42 +87,16 @@ import {
     CodeBracketIcon,
     ShieldCheckIcon
 } from '@heroicons/vue/24/solid'
-import { locale, t as tr } from '../i18n/locale.js'
+import { t as tr } from '../i18n/locale.js'
+import { computed } from 'vue'
 
-const certHighlights = [
-    {
-        id: 1,
-        icon: CodeBracketIcon,
-        iconColor: 'text-emerald-400',
-        title: 'Backend Basic',
-        issuer: 'Dicoding Indonesia',
-        year: '2025'
-    },
-    {
-        id: 2,
-        icon: ShieldCheckIcon,
-        iconColor: 'text-blue-400',
-        title: 'Cyber Security Basic',
-        issuer: 'Cisco Networking Academy',
-        year: '2024'
-    },
-    {
-        id: 3,
-        icon: CodeBracketIcon,
-        iconColor: 'text-emerald-400',
-        title: 'Javascript Basic',
-        issuer: 'Dicoding Indonesia',
-        year: '2023'
-    },
-    {
-        id: 4,
-        icon: AcademicCapIcon,
-        iconColor: 'text-blue-400',
-        title: 'Python Basic',
-        issuer: 'Cisco Networking Academy',
-        year: '2025'
-    },
+const highlightMeta = [
+    { icon: CodeBracketIcon, iconColor: 'text-emerald-400' },
+    { icon: ShieldCheckIcon, iconColor: 'text-blue-400' },
+    { icon: CodeBracketIcon, iconColor: 'text-emerald-400' },
+    { icon: AcademicCapIcon, iconColor: 'text-blue-400' },
 ]
+const certHighlights = computed(() => highlightMeta.map((m, i) => ({ id: i+1, ...m, title: tr(`certificates.highlights.${i}.title`), issuer: tr(`certificates.highlights.${i}.issuer`), year: tr(`certificates.highlights.${i}.year`) })))
 
 // Ganti path ini dengan gambar sertifikat Anda
 import cert1 from '../assets/Cer1.png'
@@ -130,12 +104,8 @@ import cert2 from '../assets/Cer2.png'
 import cert3 from '../assets/Cer3.png'
 import cert4 from '../assets/Cer4.png'
 
-const certificates = [
-    { id: 1, src: cert1, title: 'Back-End Pemula dengan Javascript', issuer: 'Dicoding Indonesia', year: '2025' },
-    { id: 2, src: cert2, title: 'Belajar Dasar Cloud dan Gen AI di AWS', issuer: 'Dicoding Indonesia', year: '2025' },
-    { id: 3, src: cert3, title: 'Belajar Dasar Pemrograman Javascript', issuer: 'Dicoding Indonesia', year: '2023' },
-    { id: 4, src: cert4, title: 'Belajar Penerapan Data Science dengan Microsoft Fabric', issuer: 'Dicoding Indonesia', year: '2024' },
-]
+const certSrcs = [cert1, cert2, cert3, cert4]
+const certificates = computed(() => certSrcs.map((src, i) => ({ id: i+1, src, title: tr(`certificates.items.${i}.title`), issuer: tr(`certificates.items.${i}.issuer`), year: tr(`certificates.items.${i}.year`) })))
 </script>
 <style scoped>
 .flip-card { width: 100%; height: 100%; }

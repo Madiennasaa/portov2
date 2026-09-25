@@ -132,7 +132,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import { locale, t as tr } from "../i18n/locale.js";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
@@ -158,132 +158,22 @@ import project9 from "../assets/project9.png";
 
 const modules = [Autoplay, Pagination, Navigation];
 
-const localizedProjects = computed(() =>
-    projects.value.map((p) => ({
-        ...p,
-        desc: locale.value === "id" ? (p.description_id || p.description) : (p.description_en || p.description_id || p.description),
-    }))
-);
-
-const projects = ref([
-    {
-        id: 1,
-        src: project1,
-        title: "E-Commerce Platform Toko Hijau",
-        description_id:
-            "Platform marketplace jual beli online dengan fitur keranjang, manajemen produk, dan sistem checkout dinamis.",
-        description_en:
-            "Online marketplace platform with cart, product management, and dynamic checkout.",
-        description:
-            "Platform marketplace jual beli online dengan fitur keranjang, manajemen produk, dan sistem checkout dinamis.",
-        tags: ["PHP Native", "MySQL", "Javascript", "CSS"],
-        link: "https://github.com/Madiennasaa/tokohijau",
-    },
-    {
-        id: 2,
-        src: project2,
-        title: "Sistem Pembayaran SPP TK DHARMA",
-        description_id:
-            "Aplikasi manajemen keuangan sekolah untuk mencatat transaksi SPP siswa, rekap pembayaran, dan laporan keuangan.",
-        description_en:
-            "School finance management app for recording student tuition transactions, payment recaps, and financial reports.",
-        description:
-            "Aplikasi manajemen keuangan sekolah untuk mencatat transaksi SPP siswa, rekap pembayaran, dan laporan keuangan.",
-        tags: ["Laravel", "Javascript", "MySQL", "Tailwind"],
-        link: "https://github.com/Madiennasaa/pembayaran-spp",
-    },
-    {
-        id: 3,
-        src: project3,
-        title: "Sistem Perpustakaan Online",
-        description_id:
-            "Aplikasi pengelolaan peminjaman dan pengembalian buku dengan pencarian katalog dan manajemen koleksi.",
-        description_en:
-            "Library management app for borrowing/returning books with catalog search and collection management.",
-        description:
-            "Aplikasi pengelolaan peminjaman dan pengembalian buku dengan pencarian katalog dan manajemen koleksi.",
-        tags: ["MySQL", "Python", "PyQt5"],
-        link: "https://github.com/Madiennasaa/perpustakaan",
-    },
-    {
-        id: 4,
-        src: project4,
-        title: "Website Organisasi WPI",
-        description_id:
-            "Website profil organisasi yang menampilkan informasi, kegiatan, dan struktur kepengurusan secara dinamis.",
-        description_en:
-            "Organization profile website displaying information, activities, and management structure dynamically.",
-        description:
-            "Website profil organisasi yang menampilkan informasi, kegiatan, dan struktur kepengurusan secara dinamis.",
-        tags: ["Laravel", "PHP", "MySQL", "Tailwind"],
-        link: "https://github.com/Madiennasaa/wpi",
-    },
-    {
-        id: 5,
-        src: project5,
-        title: "SKMUI Platform Les Online",
-        description_id:
-            "Kontribusi UI dan pengembangan beberapa halaman pada platform les online berbasis web.",
-        description_en:
-            "UI contribution and development of several pages for a web-based online tutoring platform.",
-        description:
-            "Kontribusi UI dan pengembangan beberapa halaman pada platform les online berbasis web.",
-        tags: ["Laravel", "Tailwind CSS"],
-        link: "https://github.com/Madiennasaa/skmui",
-    },
-    {
-        id: 6,
-        src: project6,
-        title: "Web Sistem Manajemen SDN Sukorame 1",
-        description_id:
-            "Web sistem manajemen sekolah terintegrasi yang dilengkapi dengan halaman profil sekolah, manajemen jadwal, materi pembelajaran, serta pengelolaan data guru dan siswa.",
-        description_en:
-            "Integrated school management web system with school profile, schedule, learning materials, and teacher/student data management.",
-        description:
-            "Web sistem manajemen sekolah terintegrasi yang dilengkapi dengan halaman profil sekolah, manajemen jadwal, materi pembelajaran, serta pengelolaan data guru dan siswa.",
-        tags: ["Laravel", "MySQL", "Vite", "JavaScript", "Tailwind CSS"],
-        link: "https://github.com/Madiennasaa",
-    },
-    {
-        id: 7,
-        src: project7,
-        title: "Mobile Sistem Manajemen SDN Sukorame 1",
-        description_id:
-            "Aplikasi mobile sistem manajemen sekolah SDN Sukorame 1 untuk mempermudah akses informasi, jadwal, dan aktivitas sekolah secara mobile.",
-        description_en:
-            "Mobile school management app for SDN Sukorame 1 to simplify access to info, schedules, and school activities.",
-        description:
-            "Aplikasi mobile sistem manajemen sekolah SDN Sukorame 1 untuk mempermudah akses informasi, jadwal, dan aktivitas sekolah secara mobile.",
-        tags: ["Kotlin", "Firebase"],
-        link: "https://github.com/Madiennasaa",
-    },
-    {
-        id: 8,
-        src: project8,
-        title: "ALC Mazda - Stechoq Robotika Indonesia",
-        description_id:
-            "Sistem internal ALC Mazda yang sedang dikembangkan di Stechoq Robotika Indonesia (Yogyakarta) untuk manajemen operasional dan alur kerja perusahaan.",
-        description_en:
-            "Internal ALC Mazda system being developed at Stechoq Robotika Indonesia (Yogyakarta) for operational and workflow management.",
-        description:
-            "Sistem internal ALC Mazda yang sedang dikembangkan di Stechoq Robotika Indonesia (Yogyakarta) untuk manajemen operasional dan alur kerja perusahaan.",
-        tags: ["Vue.js", "Nuxt.js", "Express", "PostgreSQL"],
-        link: "",
-    },
-    {
-        id: 9,
-        src: project9,
-        title: "Noora - Quran Web App",
-        description_id:
-            "Prototipe front-end dashboard Noora Quran, platform belajar Al-Qur'an daring. Berisi ringkasan program, status pendaftaran, modul materi (kelas teori & praktik), daftar PR/ujian dengan pencarian dan filter tanggal, serta FAQ. Dibangun dengan HTML, Tailwind CSS, dan JavaScript.",
-        description_en:
-            "Front-end prototype of the Noora Quran dashboard, an online Quran learning platform. Features program overview, registration status, learning modules (theory & practice classes), searchable/filterable assignments and exams, and an FAQ. Built with HTML, Tailwind CSS, and JavaScript.",
-        description:
-            "Prototipe front-end dashboard Noora Quran, platform belajar Al-Qur'an daring. Berisi ringkasan program, status pendaftaran, modul materi (kelas teori & praktik), daftar PR/ujian dengan pencarian dan filter tanggal, serta FAQ. Dibangun dengan HTML, Tailwind CSS, dan JavaScript.",
-        tags: ["HTML", "CSS", "Tailwind CSS", "JavaScript"],
-        link: "https://github.com/Madiennasaa/noora-quran",
-    },
-]);
+const baseProjects = [
+    { id: 1, src: project1, tags: ["PHP Native", "MySQL", "Javascript", "CSS"], link: "https://github.com/Madiennasaa/tokohijau" },
+    { id: 2, src: project2, tags: ["Laravel", "Javascript", "MySQL", "Tailwind"], link: "https://github.com/Madiennasaa/pembayaran-spp" },
+    { id: 3, src: project3, tags: ["MySQL", "Python", "PyQt5"], link: "https://github.com/Madiennasaa/perpustakaan" },
+    { id: 4, src: project4, tags: ["Laravel", "PHP", "MySQL", "Tailwind"], link: "https://github.com/Madiennasaa/wpi" },
+    { id: 5, src: project5, tags: ["Laravel", "Tailwind CSS"], link: "https://github.com/Madiennasaa/skmui" },
+    { id: 6, src: project6, tags: ["Laravel", "MySQL", "Vite", "JavaScript", "Tailwind CSS"], link: "https://github.com/Madiennasaa" },
+    { id: 7, src: project7, tags: ["Kotlin", "Firebase"], link: "https://github.com/Madiennasaa" },
+    { id: 8, src: project8, tags: ["Vue.js", "Nuxt.js", "Express", "PostgreSQL"], link: "" },
+    { id: 9, src: project9, tags: ["HTML", "CSS", "Tailwind CSS", "JavaScript"], link: "https://github.com/Madiennasaa/noora-quran" },
+];
+const localizedProjects = computed(() => baseProjects.map((p, i) => ({
+    ...p,
+    title: tr(`projects.items.${i}.title`),
+    desc: tr(`projects.items.${i}.desc`),
+})));
 </script>
 
 <style scoped>

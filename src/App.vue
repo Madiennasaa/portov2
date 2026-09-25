@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 pt-14">
+  <div class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" style="padding-top: var(--nav-h, 56px)">
     <Navbar />
     <Hero />
     <Services />

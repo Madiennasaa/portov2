@@ -143,12 +143,7 @@ const Menu = computed(() => [
     { name: tr('nav.contact'), href: "#contact" },
 ]);
 
-const tickerItems = [
-    "Full-Stack Developer",
-    "Laravel & Vue",
-    "Available for Work",
-    "Kediri, Indonesia",
-];
+const tickerItems = computed(() => [tr('ticker.0'), tr('ticker.1'), tr('ticker.2'), tr('ticker.3')]);
 
 const isMenuOpen = ref(false);
 const scrolled = ref(false);

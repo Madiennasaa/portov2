@@ -64,7 +64,9 @@ import { locale, t } from '../i18n/locale.js'
               <img 
                 src="../assets/hero.png" 
                 alt="Ubai - Full-Stack Developer" 
-                loading="lazy" 
+                loading="eager"
+                decoding="async"
+                width="256" height="320"
                 class="w-full h-full object-cover object-center"
               />
             </div>

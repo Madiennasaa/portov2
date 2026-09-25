@@ -91,7 +91,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import { locale, t as tr } from '../i18n/locale.js';
+import { t as tr } from '../i18n/locale.js';
 import emailjs from '@emailjs/browser';
 import { 
     EnvelopeIcon, 
@@ -112,16 +112,22 @@ const submitForm = async () => {
     isLoading.value = true;
     statusMsg.value = '';
 
+    if(!form.value.name.trim() || !form.value.email.trim() || !form.value.message.trim()){
+        isSuccess.value=false; statusMsg.value=tr('contact.error'); isLoading.value=false; return
+    }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.value.email)){
+        isSuccess.value=false; statusMsg.value=tr('contact.error'); isLoading.value=false; return
+    }
     try {
         await emailjs.send(
-            'service_3qriz9d',
-            'template_bfgzpql',
+            import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_3qriz9d',
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_bfgzpql',
             {
                 from_name: form.value.name,
                 from_email: form.value.email,
                 message: form.value.message,
             },
-            '2uSqy7hts8dDzgvYp'
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '2uSqy7hts8dDzgvYp'
         );
         isSuccess.value = true;
         statusMsg.value = tr('contact.success');
