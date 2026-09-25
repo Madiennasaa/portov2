@@ -31,7 +31,7 @@
                 class="text-[15px] font-black tracking-tight text-white cursor-pointer"
                 @click="scrollToSection('#hero')"
             >
-                My<span class="text-emerald-400"> Portofolio</span>
+                {{ tr('footer.brand') }}<span class="text-emerald-400"> {{ tr('footer.brandBold') }}</span>
             </div>
 
             <!-- Links Desktop -->
@@ -65,7 +65,7 @@
                     @click.prevent="scrollToSection('#contact')"
                     class="hidden md:block text-xs font-semibold bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-2 rounded-full transition-all duration-300"
                 >
-                    {{ locale === 'id' ? "Mari Bicara" : "Let's Talk" }}
+                    {{ tr('nav.letsTalk') }}
                 </a>
 
                 <!-- Hamburger Mobile -->
@@ -125,7 +125,7 @@
                 @click.prevent="scrollToSection('#contact')"
                 class="text-sm font-semibold bg-emerald-500 text-white px-5 py-2.5 rounded-full text-center transition-all duration-300"
             >
-                {{ locale === 'id' ? 'Mari Bicara' : "Let's Talk" }}
+                {{ tr('nav.letsTalk') }}
             </a>
         </div>
     </div>
@@ -133,14 +133,14 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, computed } from "vue";
-import { locale, toggleLocale } from "../i18n/locale.js";
+import { locale, toggleLocale, t as tr } from "../i18n/locale.js";
 
 const Menu = computed(() => [
-    { name: locale.value === 'id' ? 'Layanan' : 'Services', href: "#services" },
-    { name: locale.value === 'id' ? 'Keahlian' : 'Skills', href: "#skills" },
-    { name: locale.value === 'id' ? 'Sertifikat' : 'Certificates', href: "#certificates" },
-    { name: locale.value === 'id' ? 'Proyek' : 'Projects', href: "#projects" },
-    { name: locale.value === 'id' ? 'Kontak' : 'Contact', href: "#contact" },
+    { name: tr('nav.services'), href: "#services" },
+    { name: tr('nav.skills'), href: "#skills" },
+    { name: tr('nav.certificates'), href: "#certificates" },
+    { name: tr('nav.projects'), href: "#projects" },
+    { name: tr('nav.contact'), href: "#contact" },
 ]);
 
 const tickerItems = [

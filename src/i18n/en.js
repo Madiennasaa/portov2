@@ -34,5 +34,5 @@ export default {
     ],
   },
   contact: { title: 'Get In Touch', subtitle: 'Interested in collaborating or have questions? Get in touch!', followMe: 'Follow Me', yourName: 'Your Name', yourEmail: 'Your Email', message: 'Message', sendMessage: 'Send Message', sending: 'Sending...', success: 'Message sent successfully!', error: 'Failed to send message. Please try again.', emailAddress: 'Email Address', phoneNumber: 'Phone Number', location: 'Location', locationDetail: 'Kediri, East Java, Indonesia' },
-  footer: { brand: 'My Portfolio', brandBold: 'Portfolio', desc: 'Always interested in new projects and learning opportunities. Feel free to reach out.', navigation: 'Navigation', contact: 'Contact', followMe: 'Follow Me', followDesc: 'Get the latest updates via my social media.', privacy: 'Privacy Policy', terms: 'Terms of Service', copyright: 'All rights reserved.' },
+  footer: { brand: 'My', brandBold: 'Portfolio', desc: 'Always interested in new projects and learning opportunities. Feel free to reach out.', navigation: 'Navigation', contact: 'Contact', followMe: 'Follow Me', followDesc: 'Get the latest updates via my social media.', privacy: 'Privacy Policy', terms: 'Terms of Service', copyright: 'All rights reserved.' },
 }
