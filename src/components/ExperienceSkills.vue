@@ -162,65 +162,18 @@ import {
     AcademicCapIcon,
     GlobeAltIcon,
 } from "@heroicons/vue/16/solid";
-import { locale, t as tr } from "../i18n/locale.js";
+import { t as tr } from "../i18n/locale.js";
 import { computed } from "vue";
 
-const skills = [
-    {
-        id: 1,
-        title: "Front-End Developer",
-        icon: CodeBracketIcon,
-        iconColor: "text-emerald-400",
-        percentage: 65,
-        percentageColor: "text-emerald-400 text-sm font-medium",
-        gradient: "bg-gradient-to-r from-emerald-500 to-blue-500",
-    },
-    {
-        id: 2,
-        title: "Back-End Developer",
-        icon: ServerIcon,
-        iconColor: "text-blue-400",
-        percentage: 50,
-        percentageColor: "text-blue-400 text-sm font-medium",
-        gradient: "bg-gradient-to-r from-blue-500 to-emerald-500",
-    },
-    {
-        id: 3,
-        title: "UI/UX Design",
-        icon: PaintBrushIcon,
-        iconColor: "text-emerald-400",
-        percentage: 50,
-        percentageColor: "text-emerald-400 text-sm font-medium",
-        gradient: "bg-gradient-to-r from-emerald-500 to-blue-500",
-    },
-    {
-        id: 4,
-        title: "Mobile Developer",
-        icon: DevicePhoneMobileIcon,
-        iconColor: "text-blue-400",
-        percentage: 20,
-        percentageColor: "text-blue-400 text-sm font-medium",
-        gradient: "bg-gradient-to-r from-blue-500 to-emerald-500",
-    },
-    {
-        id: 5,
-        title: "Database & SQL",
-        icon: CircleStackIcon,
-        iconColor: "text-emerald-400",
-        percentage: 60,
-        percentageColor: "text-emerald-400 text-sm font-medium",
-        gradient: "bg-gradient-to-r from-emerald-500 to-blue-500",
-    },
-    {
-        id: 6,
-        title: "Networking",
-        icon: GlobeAltIcon,
-        iconColor: "text-blue-400",
-        percentage: 45,
-        percentageColor: "text-blue-400 text-sm font-medium",
-        gradient: "bg-gradient-to-r from-blue-500 to-emerald-500",
-    },
+const skillMeta = [
+    { icon: CodeBracketIcon, iconColor: "text-emerald-400", percentage: 65, percentageColor: "text-emerald-400 text-sm font-medium", gradient: "bg-gradient-to-r from-emerald-500 to-blue-500" },
+    { icon: ServerIcon, iconColor: "text-blue-400", percentage: 50, percentageColor: "text-blue-400 text-sm font-medium", gradient: "bg-gradient-to-r from-blue-500 to-emerald-500" },
+    { icon: PaintBrushIcon, iconColor: "text-emerald-400", percentage: 50, percentageColor: "text-emerald-400 text-sm font-medium", gradient: "bg-gradient-to-r from-emerald-500 to-blue-500" },
+    { icon: DevicePhoneMobileIcon, iconColor: "text-blue-400", percentage: 20, percentageColor: "text-blue-400 text-sm font-medium", gradient: "bg-gradient-to-r from-blue-500 to-emerald-500" },
+    { icon: CircleStackIcon, iconColor: "text-emerald-400", percentage: 60, percentageColor: "text-emerald-400 text-sm font-medium", gradient: "bg-gradient-to-r from-emerald-500 to-blue-500" },
+    { icon: GlobeAltIcon, iconColor: "text-blue-400", percentage: 45, percentageColor: "text-blue-400 text-sm font-medium", gradient: "bg-gradient-to-r from-blue-500 to-emerald-500" },
 ];
+const skills = computed(() => skillMeta.map((m, i) => ({ id: i + 1, ...m, title: tr(`skills.items.${i}`) })));
 
 const techStack = [
     {
@@ -293,77 +246,15 @@ const techStack = [
     },
 ];
 
-const _experienceId = [
-    {
-        id: 1,
-        date: "Agu 2026 - Present",
-        title: "Full Stack Developer",
-        company: "Stechoq Robotika Indonesia - Yogyakarta",
-        description:
-            "Bergabung sebagai Full Stack Developer, mengembangkan sistem internal perusahaan. Project yang sedang dijalankan yaitu ALC Mazda — sistem manajemen untuk kebutuhan operasional Mazda.",
-        type: "Work Experience",
-    },
-    {
-        id: 2,
-        date: "Jun - Agu 2026",
-        title: "Web Tester (QA) & UI/UX Designer",
-        company: "CV Visual Code Indonesia (Viscode)",
-        description:
-            "Melakukan pengujian fungsionalitas aplikasi web, menyusun test case dan scenario pengujian, serta memastikan kualitas produk sebelum dirilis. Terlibat dalam merancang antarmuka pengguna yang intuitif, responsif, dan sesuai kebutuhan pengguna.",
-        type: "Internship",
-    },
-    {
-        id: 3,
-        date: "2024 - Present",
-        title: "D3 Manajemen Informatika",
-        company: "Politeknik Negeri Malang",
-        description:
-            "Menempuh pendidikan vokasi dengan fokus pada pengembangan sistem informasi, manajemen basis data, dan rekayasa perangkat lunak. Aktif mengeksplorasi teknologi modern untuk membangun solusi web yang efisien dan skalabel.",
-        type: "Education",
-    },
-    {
-        id: 4,
-        date: "2021 - 2024",
-        title: "MIPA (Matematika & IPA)",
-        company: "MAN 3 Tangerang",
-        description:
-            "Membangun fondasi logika dan analisis yang kuat melalui bidang peminatan sains. Mempelajari dasar-dasar algoritma secara mandiri dan aktif dalam kegiatan organisasi sekolah untuk mengasah soft skill komunikasi.",
-        description_en:
-            "Built strong logic and analytical foundations through science specialization. Learned algorithms independently and was active in school organizations to hone communication soft skills.",
-        type: "Education",
-        type_en: "Education",
-    },
-];
-const _expEn = [
-    {
-        id: 2,
-        description_en:
-            "Performed functional testing of web apps, prepared test cases/scenarios, and ensured product quality before release. Involved in designing intuitive, responsive user interfaces.",
-        type_en: "Internship",
-    },
-    {
-        id: 3,
-        description_en:
-            "Pursuing vocational education focused on information systems, database management, and software engineering. Actively exploring modern tech to build efficient, scalable web solutions.",
-        type_en: "Education",
-    },
-    {
-        id: 4,
-        description_en:
-            "Built strong logic and analytical foundations through science specialization. Learned algorithms independently and was active in school organizations to hone communication soft skills.",
-        type_en: "Education",
-    },
-];
-const experience = computed(() =>
-    _experienceId.map((e) => {
-        const en = _expEn.find((x) => x.id === e.id) || {};
-        return locale.value === "id"
-            ? e
-            : {
-                  ...e,
-                  description: en.description_en || e.description,
-                  type: en.type_en || e.type,
-              };
-    }),
-);
+const experience = computed(() => {
+    const count = 4;
+    return Array.from({ length: count }, (_, i) => ({
+        id: i + 1,
+        date: tr(`experience.items.${i}.date`),
+        title: tr(`experience.items.${i}.title`),
+        company: tr(`experience.items.${i}.company`),
+        description: tr(`experience.items.${i}.description`),
+        type: tr(`experience.items.${i}.type`),
+    }));
+});
 </script>

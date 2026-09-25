@@ -42,68 +42,20 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
-import { locale, t as tr } from '../i18n/locale.js';
-import { ChatBubbleLeftRightIcon, CodeBracketIcon, DevicePhoneMobileIcon, RocketLaunchIcon, CommandLineIcon, GlobeAltIcon, PaintBrushIcon } from '@heroicons/vue/16/solid';
+import { computed } from 'vue';
+import { t as tr } from '../i18n/locale.js';
+import { ChatBubbleLeftRightIcon, CodeBracketIcon, CommandLineIcon, GlobeAltIcon, PaintBrushIcon } from '@heroicons/vue/16/solid';
 
-const services = computed(() => locale.value === 'id' ? [
+const baseServices = [
+    { id: 1, stack: ['Laravel', 'Vue', 'MySQL'], icon: CodeBracketIcon },
+    { id: 2, stack: ['Linux', 'Docker', 'Nginx'], icon: CommandLineIcon },
+    { id: 3, stack: ['TCP/IP', 'Mikrotik', 'Firewall'], icon: GlobeAltIcon },
+    { id: 4, stack: ['Tailwind', 'Mobile-first', 'Vite'], icon: PaintBrushIcon },
+];
 
-    {
-        id: 1,
-        name: 'Full-Stack Web Development',
-        desc: 'Membangun aplikasi end-to-end dari REST API & database hingga UI yang interaktif. Fokus pada kode yang bersih, terstruktur, dan mudah dipelihara.',
-        stack: ['Laravel', 'Vue', 'MySQL'],
-        icon: CodeBracketIcon,
-    },
-    {
-        id: 2,
-        name: 'Linux Server & Deployment',
-        desc: 'Setup dan manajemen server berbasis Linux konfigurasi VPS, Nginx, Docker, hingga CI/CD untuk deployment yang stabil dan aman.',
-        stack: ['Linux', 'Docker', 'Nginx'],
-        icon: CommandLineIcon,
-    },
-    {
-        id: 3,
-        name: 'Networking & Infrastructure',
-        desc: 'Tertarik merancang dan mengoptimalkan infrastruktur jaringan: pemahaman TCP/IP, subnetting, firewall, dan troubleshooting untuk konektivitas yang andal.',
-        stack: ['TCP/IP', 'Mikrotik', 'Firewall'],
-        icon: GlobeAltIcon,
-    },
-    {
-        id: 4,
-        name: 'Responsive UI & Landing Page',
-        desc: 'Desain antarmuka yang responsif dan landing page ringan yang cepat, SEO-friendly, dan nyaman di semua ukuran layar.',
-        stack: ['Tailwind', 'Mobile-first', 'Vite'],
-        icon: PaintBrushIcon,
-    },
-] : [
-    {
-        id: 1,
-        name: 'Full-Stack Web Development',
-        desc: 'Building end-to-end apps from REST APIs & databases to interactive UIs. Focus on clean, maintainable code.',
-        stack: ['Laravel', 'Vue', 'MySQL'],
-        icon: CodeBracketIcon,
-    },
-    {
-        id: 2,
-        name: 'Linux Server & Deployment',
-        desc: 'Setup and management of Linux-based servers — VPS config, Nginx, Docker, and CI/CD for stable, secure deployments.',
-        stack: ['Linux', 'Docker', 'Nginx'],
-        icon: CommandLineIcon,
-    },
-    {
-        id: 3,
-        name: 'Networking & Infrastructure',
-        desc: 'Designing and optimizing network infrastructure: TCP/IP, subnetting, firewalls, and troubleshooting for reliable connectivity.',
-        stack: ['TCP/IP', 'Mikrotik', 'Firewall'],
-        icon: GlobeAltIcon,
-    },
-    {
-        id: 4,
-        name: 'Responsive UI & Landing Page',
-        desc: 'Responsive interfaces and lightweight landing pages — fast, SEO-friendly, and comfortable on every screen size.',
-        stack: ['Tailwind', 'Mobile-first', 'Vite'],
-        icon: PaintBrushIcon,
-    },
-]);
+const services = computed(() => baseServices.map((s, i) => ({
+    ...s,
+    name: tr(`services.items.${i}.name`),
+    desc: tr(`services.items.${i}.desc`),
+})));
 </script>

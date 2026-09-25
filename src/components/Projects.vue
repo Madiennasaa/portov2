@@ -3,8 +3,8 @@
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Header - konsisten dengan Skills & Services -->
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                    {{ tr("projects.title") }}
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">{{ tr("projects.title") }}</span>
                 </h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto font-light">
                     {{ tr("projects.subtitle") }}

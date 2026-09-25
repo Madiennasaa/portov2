@@ -10,7 +10,7 @@
                 
                 <div data-aos="fade-up">
                     <div class="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent mb-6 text-center md:text-left">
-                        My <span class="font-black">Portofolio</span>
+                        {{ tr('footer.brand') }} <span class="font-black">{{ tr('footer.brandBold') }}</span>
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6 text-center md:text-left">
                         {{ tr('footer.desc') }}
@@ -62,7 +62,7 @@
 
             <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-slate-500 text-sm text-center">
-                    © {{ new Date().getFullYear() }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500 font-medium">Ahmad Ubaidillah Tsani</span>. {{ locale==='id' ? 'Hak cipta dilindungi.' : 'All rights reserved.' }}
+                    © {{ new Date().getFullYear() }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500 font-medium">Ahmad Ubaidillah Tsani</span>. {{ tr('footer.copyright') }}
                 </p>
                 <div class="flex gap-6 text-slate-500 text-sm">
                     <a href="#" class="hover:text-emerald-400 transition-colors">{{ tr('footer.privacy') }}</a>
@@ -79,7 +79,7 @@ import {
     EnvelopeIcon, 
     MapPinIcon 
 } from '@heroicons/vue/24/outline';
-import { locale, t as tr } from '../i18n/locale.js';
+import { t as tr } from '../i18n/locale.js';
 import { computed } from 'vue';
 
 const quickLinks = computed(() => [
