@@ -62,7 +62,7 @@ import { locale, t } from '../i18n/locale.js'
 
             <div class="relative z-10 w-full h-full rounded-2xl overflow-hidden border border-emerald-400/30 shadow-[0_0_30px_rgba(52,211,153,0.15)] bg-slate-800/50 floating">
               <img 
-                src="../assets/hero.png" 
+                src="../assets/hero.jpg" 
                 alt="Ubai - Full-Stack Developer" 
                 loading="eager"
                 decoding="async"
