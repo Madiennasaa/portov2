@@ -159,20 +159,20 @@ import project9 from "../assets/project9.png";
 const modules = [Autoplay, Pagination, Navigation];
 
 const baseProjects = [
-    { id: 1, src: project1, tags: ["PHP Native", "MySQL", "Javascript", "CSS"], link: "https://github.com/Madiennasaa/tokohijau" },
-    { id: 2, src: project2, tags: ["Laravel", "Javascript", "MySQL", "Tailwind"], link: "https://github.com/Madiennasaa/pembayaran-spp" },
-    { id: 3, src: project3, tags: ["MySQL", "Python", "PyQt5"], link: "https://github.com/Madiennasaa/perpustakaan" },
-    { id: 4, src: project4, tags: ["Laravel", "PHP", "MySQL", "Tailwind"], link: "https://github.com/Madiennasaa/wpi" },
-    { id: 5, src: project5, tags: ["Laravel", "Tailwind CSS"], link: "https://github.com/Madiennasaa/skmui" },
-    { id: 6, src: project6, tags: ["Laravel", "MySQL", "Vite", "JavaScript", "Tailwind CSS"], link: "https://github.com/Madiennasaa" },
-    { id: 7, src: project7, tags: ["Kotlin", "Firebase"], link: "https://github.com/Madiennasaa" },
-    { id: 8, src: project8, tags: ["Vue.js", "Nuxt.js", "Express", "PostgreSQL"], link: "" },
-    { id: 9, src: project9, tags: ["HTML", "CSS", "Tailwind CSS", "JavaScript"], link: "https://github.com/Madiennasaa/noora-quran" },
+    { id: 8, src: project8, tags: ["Vue.js", "Nuxt.js", "Express", "PostgreSQL"], link: "", tIdx: 7 },
+    { id: 1, src: project1, tags: ["PHP Native", "MySQL", "Javascript", "CSS"], link: "https://github.com/Madiennasaa/tokohijau", tIdx: 0 },
+    { id: 2, src: project2, tags: ["Laravel", "Javascript", "MySQL", "Tailwind"], link: "https://github.com/Madiennasaa/pembayaran-spp", tIdx: 1 },
+    { id: 3, src: project3, tags: ["MySQL", "Python", "PyQt5"], link: "https://github.com/Madiennasaa/perpustakaan", tIdx: 2 },
+    { id: 4, src: project4, tags: ["Laravel", "PHP", "MySQL", "Tailwind"], link: "https://github.com/Madiennasaa/wpi", tIdx: 3 },
+    { id: 5, src: project5, tags: ["Laravel", "Tailwind CSS"], link: "https://github.com/Madiennasaa/skmui", tIdx: 4 },
+    { id: 6, src: project6, tags: ["Laravel", "MySQL", "Vite", "JavaScript", "Tailwind CSS"], link: "https://github.com/Madiennasaa", tIdx: 5 },
+    { id: 7, src: project7, tags: ["Kotlin", "Firebase"], link: "https://github.com/Madiennasaa", tIdx: 6 },
+    { id: 9, src: project9, tags: ["HTML", "CSS", "Tailwind CSS", "JavaScript"], link: "https://github.com/Madiennasaa/noora-quran", tIdx: 8 },
 ];
-const localizedProjects = computed(() => baseProjects.map((p, i) => ({
+const localizedProjects = computed(() => baseProjects.map((p) => ({
     ...p,
-    title: tr(`projects.items.${i}.title`),
-    desc: tr(`projects.items.${i}.desc`),
+    title: tr(`projects.items.${p.tIdx}.title`),
+    desc: tr(`projects.items.${p.tIdx}.desc`),
 })));
 </script>
 
