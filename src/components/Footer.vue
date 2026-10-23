@@ -1,109 +1,47 @@
-<template>
-    <footer class="relative bg-slate-950/95 border-t border-slate-800 pt-20 pb-10 overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent"></div>
-        
-        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                
-                <div data-aos="fade-up">
-                    <div class="text-3xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent mb-6 text-center md:text-left">
-                        {{ tr('footer.brand') }} <span class="font-black">{{ tr('footer.brandBold') }}</span>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 text-center md:text-left">
-                        {{ tr('footer.desc') }}
-                    </p>
-                </div>
-
-                <div class="flex flex-col items-center md:items-start" data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="text-white font-bold mb-6 text-lg">{{ tr('footer.navigation') }}</h4>
-                    <ul class="space-y-4">
-                        <li v-for="link in quickLinks" :key="link.name">
-                            <a :href="link.href" 
-                               @click.prevent="scrollToSection(link.href)"
-                               class="text-slate-400 hover:text-emerald-400 transition-all duration-300 flex items-center group">
-                                <ChevronRightIcon class="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
-                                {{ link.name }}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="flex flex-col items-center md:items-start" data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="text-white font-bold mb-6 text-lg">{{ tr('footer.contact') }}</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3 text-slate-400 group">
-                            <EnvelopeIcon class="w-5 h-5 text-emerald-400 group-hover:scale-110 transition-transform" />
-                            <span class="text-sm group-hover:text-slate-300 transition-colors">ahmadubai02@gmail.com</span>
-                        </li>
-                        <li class="flex items-center gap-3 text-slate-400 group">
-                            <MapPinIcon class="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform" />
-                            <span class="text-sm group-hover:text-slate-300 transition-colors">Kediri, Indonesia</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="flex flex-col items-center md:items-start" data-aos="fade-up" data-aos-delay="300">
-                    <h4 class="text-white font-bold mb-6 text-lg">{{ tr('footer.followMe') }}</h4>
-                    <p class="text-slate-400 text-sm mb-6 text-center md:text-left">{{ tr('footer.followDesc') }}</p>
-                    <div class="flex gap-4">
-                        <a v-for="social in socialLinks" 
-                           :key="social.name"
-                           :href="social.url"
-                           target="_blank"
-                           class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:bg-gradient-to-br hover:from-emerald-500 hover:to-blue-500 hover:border-emerald-400 hover:-translate-y-2 transition-all duration-300 shadow-lg shadow-slate-950/20">
-                            <i :class="social.icon" class="text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-slate-500 text-sm text-center">
-                    © {{ new Date().getFullYear() }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500 font-medium">Ahmad Ubaidillah Tsani</span>. {{ tr('footer.copyright') }}
-                </p>
-                <div class="flex gap-6 text-slate-500 text-sm">
-                    <a href="#" class="hover:text-emerald-400 transition-colors">{{ tr('footer.privacy') }}</a>
-                    <a href="#" class="hover:text-emerald-400 transition-colors">{{ tr('footer.terms') }}</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-</template>
-
 <script setup>
-import { 
-    ChevronRightIcon, 
-    EnvelopeIcon, 
-    MapPinIcon 
-} from '@heroicons/vue/24/outline';
-import { t as tr } from '../i18n/locale.js';
-import { computed } from 'vue';
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
+import { profile } from "../data/portfolio.js";
+import { useHome } from "../composables/useHome.js";
 
-const quickLinks = computed(() => [
-    { name: tr('nav.services'), href: '#services' },
-    { name: tr('nav.skills'), href: '#skills' },
-    { name: tr('nav.certificates'), href: '#certificates' },
-    { name: tr('nav.projects'), href: '#projects' },
-]);
-
-const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/Madiennasaa', icon: 'fab fa-github' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ahmadubai02', icon: 'fab fa-linkedin-in' },
-    { name: 'Instagram', url: 'https://www.instagram.com/madnst_', icon: 'fab fa-instagram' },
-    { name: 'Twitter', url: '#', icon: 'fab fa-x-twitter' },
-];
-
-const scrollToSection = (href) => {
-    const section = document.querySelector(href);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-};
+const h = useHome();
+const { t } = useI18n();
+const f = computed(() => h.value.footer);
+const year = new Date().getFullYear();
+const linkedin = profile.links.find((l) => l.name === "LinkedIn");
 </script>
 
-<style scoped>
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
-</style>
+<template>
+  <footer id="main-footer" class="border-t border-neutral-950 bg-neutral-950 px-6 py-16 text-white md:px-12 print:hidden">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid grid-cols-1 gap-12 border-b border-neutral-800 pb-12 md:grid-cols-12">
+        <div class="space-y-4 md:col-span-6">
+          <h3 class="font-display text-lg font-medium uppercase tracking-wider">{{ profile.name }}</h3>
+          <p class="max-w-sm font-sans text-sm font-light text-neutral-400">{{ profile.role }}</p>
+        </div>
+        <div class="space-y-4 md:col-span-3">
+          <h4 class="font-display text-xs font-semibold uppercase tracking-widest text-neutral-400">{{ f.direct }}</h4>
+          <div class="space-y-2 font-mono text-sm text-neutral-400">
+            <p><a :href="'mailto:' + profile.email" class="transition-colors hover:text-white">{{ profile.email }}</a></p>
+            <p><a href="tel:+6285756373129" class="transition-colors hover:text-white">{{ profile.phone }}</a></p>
+          </div>
+        </div>
+        <div class="space-y-4 md:col-span-3">
+          <h4 class="font-display text-xs font-semibold uppercase tracking-widest text-neutral-400">{{ f.networks }}</h4>
+          <div class="space-y-2 font-mono text-sm text-neutral-400">
+            <p><a :href="linkedin.url" target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-white">LinkedIn</a></p>
+            <p><a :href="'https://' + profile.website" target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-white">{{ profile.website }}</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-between gap-4 pt-8 font-mono text-xs text-neutral-500 md:flex-row">
+        <p>© {{ year }} {{ profile.name }}. {{ f.rights }}</p>
+        <div class="flex space-x-6">
+          <RouterLink to="/" class="uppercase transition-colors hover:text-white">{{ t("nav.home") }}</RouterLink>
+          <RouterLink to="/portfolio" class="uppercase transition-colors hover:text-white">{{ t("nav.portfolio") }}</RouterLink>
+          <RouterLink to="/resume" class="uppercase transition-colors hover:text-white">{{ t("nav.cv") }}</RouterLink>
+        </div>
+      </div>
+    </div>
+  </footer>
+</template>

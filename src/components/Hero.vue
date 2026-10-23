@@ -1,90 +1,41 @@
 <script setup>
-import cvFile from '../assets/CV_Ubai.pdf'
-import { locale, t } from '../i18n/locale.js'
+import { useI18n } from "vue-i18n";
+import { profile } from "../data/portfolio.js";
+import { ArrowDownIcon } from "@heroicons/vue/24/outline";
+import { useHome } from "../composables/useHome.js";
+const { t } = useI18n();
+const hm = useHome();
+const first = profile.name.split(" ").slice(0, -1).join(" ");
+const last = profile.name.split(" ").slice(-1)[0];
 </script>
 
 <template>
-  <section class="relative w-full overflow-hidden min-h-screen flex items-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+  <section id="hero" class="relative mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-center px-6 py-12 md:px-12 md:py-20">
+    <div class="max-w-4xl animate-fade-in-up space-y-8">
+      <div class="space-y-4">
+        <span class="block font-mono text-xs font-semibold uppercase tracking-widest text-neutral-400">{{ hm.heroBadge }}</span>
+        <h1 class="font-display text-4xl font-bold uppercase leading-none tracking-tight text-neutral-950 sm:text-5xl md:text-7xl">
+          {{ first }} <span class="font-light text-neutral-500">{{ last }}</span>
+        </h1>
+        <p class="mt-2 font-display text-lg font-light tracking-wide text-neutral-600 sm:text-xl md:text-2xl">{{ profile.role }}</p>
+      </div>
+
+      <p class="max-w-3xl font-sans text-base font-light leading-relaxed text-neutral-500 sm:text-lg md:text-xl">
+        {{ t("hero.desc") }}
+      </p>
+
+      <div class="flex flex-wrap gap-4 pt-4">
+        <RouterLink to="/portfolio" class="btn-primary">{{ t("hero.viewPortfolio") }}</RouterLink>
+        <RouterLink to="/resume" class="btn-outline">{{ t("hero.resume") }}</RouterLink>
+        <RouterLink to="/#contact" class="btn-soft">{{ t("hero.contactMe") }}</RouterLink>
+      </div>
     </div>
 
-    <div class="w-full px-6 sm:px-8 md:px-12 lg:px-16 max-w-7xl mx-auto relative z-10">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="flex flex-col justify-center space-y-8">
-          <div>
-            <p class="text-emerald-400 font-medium text-sm tracking-widest uppercase mb-4">
-              {{ t('hero.welcome') }}
-            </p>
-            <h1 class="text-white font-bold text-5xl md:text-6xl lg:text-7xl leading-tight mb-6">
-              {{ t('hero.greeting') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">Ubai</span>
-            </h1>
-            <p class="text-slate-400 text-xl md:text-2xl font-light">
-              {{ t('hero.role') }}
-            </p>
-          </div>
-
-          <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-xl font-light">
-            {{ t('hero.desc') }}
-          </p>
-
-          <div class="flex items-center gap-4 pt-4">
-            <a 
-              href="#contact" 
-              class="group px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-white rounded-lg transition-all duration-300 flex items-center gap-2 font-medium"
-            >
-              {{ t('hero.contactMe') }}
-              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
-            </a>
-
-            <a 
-              :href="cvFile" 
-              download="CV_Ubai.pdf"
-              class="group px-8 py-4 border border-slate-600 hover:border-emerald-400 text-slate-300 hover:text-white rounded-lg transition-all duration-300 flex items-center gap-2 font-medium"
-            >
-              <svg class="w-5 h-5 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-              </svg>
-              {{ t('hero.downloadCv') }}
-            </a>
-          </div>
-        </div>
-
-        <div class="lg:h-full flex justify-center lg:justify-end items-center pr-8 lg:pr-12">
-          <div class="relative w-52 h-72 md:w-64 md:h-80 flex items-center justify-center">
-
-            <div class="absolute -top-4 -right-2 w-40 h-52 rounded-xl z-0"
-              style="background-image: linear-gradient(rgba(52,211,153,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(52,211,153,0.15) 1px, transparent 1px); background-size: 20px 20px; mask-image: radial-gradient(ellipse at top right, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at top right, black 20%, transparent 70%);">
-            </div>
-
-            <div class="relative z-10 w-full h-full rounded-2xl overflow-hidden border border-emerald-400/30 shadow-[0_0_30px_rgba(52,211,153,0.15)] bg-slate-800/50 floating">
-              <img 
-                src="../assets/hero.jpg" 
-                alt="Ubai - Full-Stack Developer" 
-                loading="eager"
-                decoding="async"
-                width="256" height="320"
-                class="w-full h-full object-cover object-center"
-              />
-            </div>
-
-            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-40 h-6 bg-emerald-500/20 rounded-full blur-xl z-0"></div>
-          </div>
-        </div>
-      </div>
+    <div class="absolute bottom-4 left-6 hidden md:left-12 md:block">
+      <RouterLink to="/#featured-case-studies" class="flex items-center space-x-3 font-mono text-xs uppercase tracking-widest text-neutral-400 transition-colors hover:text-neutral-900">
+        <span>{{ hm.explore }}</span>
+        <ArrowDownIcon class="h-4 w-4" />
+      </RouterLink>
     </div>
   </section>
 </template>
-
-<style scoped>
-.floating {
-  animation: floating 4s ease-in-out infinite;
-}
-@keyframes floating {
-  0%, 100% { transform: translateY(0px); }
-  50%      { transform: translateY(-12px); }
-}
-</style>

@@ -1,186 +1,101 @@
-<template>
-    <!-- Ticker -->
-    <div class="fixed top-0 left-0 right-0 z-50">
-        <div
-            class="bg-gradient-to-r from-emerald-600 to-blue-600 py-1.5 overflow-hidden whitespace-nowrap"
-        >
-            <div class="ticker-inner inline-flex gap-8">
-                <span v-for="i in 2" :key="i" class="inline-flex gap-8">
-                    <template v-for="item in tickerItems" :key="item">
-                        <span
-                            class="text-white text-[10px] font-semibold tracking-widest uppercase opacity-90"
-                            >{{ item }}</span
-                        >
-                        <span class="text-white/30 text-[8px]">◆</span>
-                    </template>
-                </span>
-            </div>
-        </div>
-
-        <!-- Navbar -->
-        <header
-            :class="[
-                'px-6 py-3 flex items-center justify-between transition-all duration-300',
-                scrolled
-                    ? 'bg-slate-950/90 backdrop-blur-md shadow-lg shadow-slate-950/50'
-                    : 'bg-slate-950',
-            ]"
-        >
-            <!-- Logo -->
-            <div
-                class="text-[15px] font-black tracking-tight text-white cursor-pointer"
-                @click="scrollToSection('#hero')"
-            >
-                {{ tr('footer.brand') }}<span class="text-emerald-400"> {{ tr('footer.brandBold') }}</span>
-            </div>
-
-            <!-- Links Desktop -->
-            <nav
-                class="hidden md:flex items-center gap-5 bg-white/[0.03] border border-white/[0.07] rounded-full px-5 py-1.5"
-            >
-                <a
-                    v-for="item in Menu"
-                    :key="item.name"
-                    :href="item.href"
-                    :class="[
-                        'text-xs font-medium transition-colors duration-200',
-                        activeSection === item.href.slice(1)
-                            ? 'text-white'
-                            : 'text-slate-500 hover:text-slate-300',
-                    ]"
-                    @click.prevent="scrollToSection(item.href)"
-                >
-                    {{ item.name }}
-                </a>
-            </nav>
-
-            <!-- CTA + Hamburger -->
-            <div class="flex items-center gap-3">
-                <button @click="toggleLocale" class="flex items-center gap-1.5 text-xs font-bold border border-white/20 text-white px-2.5 py-1.5 rounded-full hover:bg-white/10 transition-colors">
-                    <img :src="locale === 'id' ? 'https://flagcdn.com/w20/gb.png' : 'https://flagcdn.com/w20/id.png'" :alt="locale" class="w-5 h-3.5 object-cover rounded-sm" />
-                    {{ locale === 'id' ? 'EN' : 'ID' }}
-                </button>
-                <a
-                    href="#contact"
-                    @click.prevent="scrollToSection('#contact')"
-                    class="hidden md:block text-xs font-semibold bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-2 rounded-full transition-all duration-300"
-                >
-                    {{ tr('nav.letsTalk') }}
-                </a>
-
-                <!-- Hamburger Mobile -->
-                <button
-                    class="md:hidden p-2 rounded-lg hover:bg-slate-800 transition-all"
-                    @click="isMenuOpen = !isMenuOpen"
-                >
-                    <div class="relative w-5 h-5">
-                        <span
-                            :class="[
-                                'absolute left-0 w-5 h-0.5 bg-emerald-400 transition-all duration-300',
-                                isMenuOpen ? 'rotate-45 top-2.5' : 'top-0.5',
-                            ]"
-                        ></span>
-                        <span
-                            :class="[
-                                'absolute left-0 w-5 h-0.5 bg-emerald-400 transition-all duration-300',
-                                isMenuOpen
-                                    ? 'opacity-0'
-                                    : 'top-2.5 opacity-100',
-                            ]"
-                        ></span>
-                        <span
-                            :class="[
-                                'absolute left-0 w-5 h-0.5 bg-emerald-400 transition-all duration-300',
-                                isMenuOpen
-                                    ? '-rotate-45 top-2.5'
-                                    : 'top-[18px]',
-                            ]"
-                        ></span>
-                    </div>
-                </button>
-            </div>
-        </header>
-
-        <!-- Mobile Menu -->
-        <div
-            v-if="isMenuOpen"
-            class="md:hidden bg-slate-950/95 backdrop-blur-md border-t border-slate-800 px-6 py-6 flex flex-col gap-5"
-        >
-            <a
-                v-for="item in Menu"
-                :key="item.name"
-                :href="item.href"
-                :class="[
-                    'text-base font-medium transition-colors duration-200',
-                    activeSection === item.href.slice(1)
-                        ? 'text-emerald-400'
-                        : 'text-slate-400',
-                ]"
-                @click.prevent="scrollToSection(item.href)"
-            >
-                {{ item.name }}
-            </a>
-            <a
-                href="#contact"
-                @click.prevent="scrollToSection('#contact')"
-                class="text-sm font-semibold bg-emerald-500 text-white px-5 py-2.5 rounded-full text-center transition-all duration-300"
-            >
-                {{ tr('nav.letsTalk') }}
-            </a>
-        </div>
-    </div>
-</template>
-
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from "vue";
-import { locale, toggleLocale, t as tr } from "../i18n/locale.js";
+import { ref, watch } from "vue";
+import { useRoute } from "vue-router";
+import { useI18n } from "vue-i18n";
+import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
+import { profile } from "../data/portfolio.js";
 
-const Menu = computed(() => [
-    { name: tr('nav.services'), href: "#services" },
-    { name: tr('nav.skills'), href: "#skills" },
-    { name: tr('nav.certificates'), href: "#certificates" },
-    { name: tr('nav.projects'), href: "#projects" },
-    { name: tr('nav.contact'), href: "#contact" },
-]);
+const route = useRoute();
+const { t, locale } = useI18n();
+const open = ref(false);
 
-const tickerItems = computed(() => [tr('ticker.0'), tr('ticker.1'), tr('ticker.2'), tr('ticker.3')]);
-
-const isMenuOpen = ref(false);
-const scrolled = ref(false);
-const activeSection = ref("");
-
-const scrollToSection = (href) => {
-    isMenuOpen.value = false;
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+const setLang = (c) => {
+  locale.value = c;
+  try { localStorage.setItem("lang", c); } catch {}
+  document.documentElement.lang = c;
 };
 
-const handleScroll = () => {
-    scrolled.value = window.scrollY > 50;
-    const sections = Menu.value.map((item) => item.href.slice(1));
-    for (const id of [...sections].reverse()) {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-            activeSection.value = id;
-            break;
-        }
-    }
+const links = [
+  { key: "home", to: "/" },
+  { key: "portfolio", to: "/portfolio" },
+  { key: "products", to: "/products" },
+  { key: "cv", to: "/resume" },
+];
+
+const isActive = (to) => {
+  if (to === "/") return route.path === "/" && !route.hash;
+  return route.path === to || route.path.startsWith(to + "/");
 };
 
-onMounted(() => window.addEventListener("scroll", handleScroll));
-onUnmounted(() => window.removeEventListener("scroll", handleScroll));
+watch(() => route.fullPath, () => (open.value = false));
 </script>
 
-<style scoped>
-.ticker-inner {
-    animation: ticker 16s linear infinite;
-}
-@keyframes ticker {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-</style>
+<template>
+  <nav id="main-navbar" class="fixed left-0 right-0 top-0 z-50 bg-white py-6 transition-all duration-300 print:hidden">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12">
+      <RouterLink to="/" class="select-none font-display text-lg font-bold uppercase tracking-tight text-neutral-900 transition-opacity hover:opacity-80 md:text-xl">
+        {{ profile.name.split(" ").slice(0, -1).join(" ") }} <span class="font-light text-neutral-400">{{ profile.name.split(" ").slice(-1)[0] }}</span>
+      </RouterLink>
+
+      <div class="hidden items-center space-x-10 lg:flex">
+        <ul id="desktop-nav-links" class="flex items-center space-x-8">
+          <li v-for="l in links" :key="l.to">
+            <RouterLink
+              :to="l.to"
+              :class="['font-display text-sm uppercase tracking-wide transition-colors duration-200',
+                isActive(l.to) ? 'border-b-2 border-neutral-900 pb-1 font-semibold text-neutral-900' : 'text-neutral-600 hover:text-neutral-900']"
+            >{{ t("nav." + l.key) }}</RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/#contact" class="font-display text-sm uppercase tracking-wide text-neutral-600 transition-colors duration-200 hover:text-neutral-900">{{ t("nav.contact") }}</RouterLink>
+          </li>
+        </ul>
+
+        <div class="h-6 w-px bg-neutral-200"></div>
+
+        <div id="nav-lang-switcher-desktop" class="flex items-center space-x-1 border border-neutral-200 p-1 font-mono text-xs">
+          <button
+            v-for="c in ['en', 'id', 'ja']" :key="c" @click="setLang(c)"
+            :class="['cursor-pointer px-2.5 py-1 uppercase transition-all duration-200', locale === c ? 'bg-neutral-900 font-medium text-white' : 'text-neutral-500 hover:text-neutral-900']"
+          >{{ c === "ja" ? "JP" : c }}</button>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-4 lg:hidden">
+        <div id="nav-lang-switcher-mobile" class="flex items-center space-x-1 border border-neutral-200 p-1 font-mono text-xs">
+          <button
+            v-for="c in ['en', 'id', 'ja']" :key="c" @click="setLang(c)"
+            :class="['cursor-pointer px-2.5 py-1 uppercase transition-all duration-200', locale === c ? 'bg-neutral-900 font-medium text-white' : 'text-neutral-500 hover:text-neutral-900']"
+          >{{ c === "ja" ? "JP" : c }}</button>
+        </div>
+        <button id="mobile-menu-toggle" @click="open = !open" class="cursor-pointer p-1 text-neutral-900 transition-colors hover:bg-neutral-100" aria-label="Toggle Menu">
+          <component :is="open ? XMarkIcon : Bars3Icon" class="h-6 w-6" />
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-drawer" :class="['fixed inset-0 top-[60px] z-40 bg-white transition-transform duration-300 md:top-[72px] lg:hidden', open ? 'translate-x-0' : 'translate-x-full']">
+      <div class="flex h-full flex-col justify-between border-t border-neutral-100 bg-white px-8 py-12">
+        <ul id="mobile-nav-links" class="space-y-6">
+          <li v-for="l in links" :key="l.to">
+            <RouterLink
+              :to="l.to"
+              :class="['block font-display text-2xl font-medium uppercase tracking-wide',
+                isActive(l.to) ? 'border-l-4 border-neutral-900 pl-4 text-neutral-900' : 'text-neutral-600 hover:text-neutral-900']"
+            >{{ t("nav." + l.key) }}</RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/#contact" class="block font-display text-2xl font-medium uppercase tracking-wide text-neutral-800 hover:text-neutral-900" @click="open = false">{{ t("nav.contact") }}</RouterLink>
+          </li>
+        </ul>
+        <div class="space-y-4 border-t border-neutral-100 pt-8">
+          <span class="font-display text-xs uppercase tracking-widest text-neutral-400">{{ t("nav.connect") }}</span>
+          <div class="flex flex-col space-y-2 font-mono text-sm">
+            <a :href="'mailto:' + profile.email" class="text-neutral-600 hover:text-neutral-900">{{ profile.email }}</a>
+            <a :href="profile.links.find((l) => l.name === 'LinkedIn').url" target="_blank" rel="noopener noreferrer" class="text-neutral-600 hover:text-neutral-900">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</template>
