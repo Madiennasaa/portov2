@@ -2,7 +2,7 @@ import { profile, work, education, certifications, skills } from "./portfolio.js
 
 const values = [
   "JavaScript, PHP, Python, Kotlin, Dart",
-  "Vue.js, Nuxt.js, Tailwind CSS, HTML, CSS",
+  "Vue.js, Tailwind CSS, HTML, CSS",
   "Flutter, Android (Kotlin)",
   "Express.js, gRPC, Laravel, Prisma",
   "PostgreSQL, MySQL, Firebase, Docker",
@@ -23,7 +23,7 @@ export const cvText = {
     edu: "D3 Manajemen Informatika, Polinema",
     matrix: mk(labelsId),
     strengths: [
-      "Full-Stack Delivery: Membangun aplikasi dari antarmuka Nuxt.js/Vue hingga layanan backend dan database",
+      "Full-Stack Delivery: Membangun aplikasi dari antarmuka Vue.js hingga layanan backend dan database",
       "Backend Architecture: Microservices Express.js, layanan gRPC, dan perancangan skema PostgreSQL",
       "QA Mindset: Pengujian fungsional dan performa, serta laporan replikasi bug yang terstruktur",
       "UI/UX Sense: Alur kerja yang intuitif, responsif, dan konsisten secara visual",
@@ -36,7 +36,7 @@ export const cvText = {
     edu: "D3 Information Management, Polinema",
     matrix: mk(labelsEn),
     strengths: [
-      "Full-Stack Delivery: Building applications from Nuxt.js/Vue interfaces to backend services and databases",
+      "Full-Stack Delivery: Building applications from Vue.js interfaces to backend services and databases",
       "Backend Architecture: Express.js microservices, gRPC services, and PostgreSQL schema design",
       "QA Mindset: Functional and performance testing, with structured bug reproduction reports",
       "UI/UX Sense: Intuitive, responsive, and visually consistent workflows",
@@ -45,7 +45,7 @@ export const cvText = {
     jobs: [
       {
         company: "PT. Stechoq Robotika Indonesia", location: "Yogyakarta", period: "Aug 2026 – Present", title: "Full Stack Developer",
-        desc: "Built an end-to-end web application for real-time industrial monitoring and management, covering frontend and backend architecture. Created a responsive, high-performance user interface with Nuxt.js, optimizing real-time data visualization and smooth user interaction. Designed and implemented gRPC services and Express.js microservices to run core operational modules, including assembly line planning and system diagnostics. Managed the PostgreSQL relational database, including schema design, migrations, and seed data execution. Traced and debugged services end-to-end to diagnose performance bottlenecks and keep data flowing smoothly and reliably across the stack.",
+        desc: "Built an end-to-end web application for real-time industrial monitoring and management, covering frontend and backend architecture. Created a responsive, high-performance user interface with Vue.js, optimizing real-time data visualization and smooth user interaction. Designed and implemented gRPC services and Express.js microservices to run core operational modules, including assembly line planning and system diagnostics. Managed the PostgreSQL relational database, including schema design, migrations, and seed data execution. Traced and debugged services end-to-end to diagnose performance bottlenecks and keep data flowing smoothly and reliably across the stack.",
       },
       {
         company: "CV. Visual Code Indonesia", location: "Kediri", period: "Jun 2026 – Aug 2026", title: "Web Tester (QA) & UI/UX Designer — Internship",
@@ -58,7 +58,7 @@ export const cvText = {
     edu: "情報管理学ディプロマ3、ポリネマ（マラン国立ポリテクニック）",
     matrix: mk(["言語", "フロントエンド / Web", "モバイル開発", "バックエンドフレームワーク", "データベース & DevOps", "ツール & ワークフロー"]),
     strengths: [
-      "フルスタック開発: Nuxt.js/Vueのインターフェースからバックエンドサービスとデータベースまで、アプリケーションを構築",
+      "フルスタック開発: Vue.jsのインターフェースからバックエンドサービスとデータベースまで、アプリケーションを構築",
       "バックエンド設計: Express.jsのマイクロサービス、gRPCサービス、PostgreSQLのスキーマ設計",
       "QAマインドセット: 機能テストとパフォーマンステスト、構造化されたバグ再現レポート",
       "UI/UXセンス: 直感的でレスポンシブ、視覚的に一貫したワークフロー",
@@ -67,7 +67,7 @@ export const cvText = {
     jobs: [
       {
         company: "PT. Stechoq Robotika Indonesia", location: "Yogyakarta", period: "2026年8月 – 現在", title: "フルスタックデベロッパー",
-        desc: "リアルタイムの産業モニタリング・管理システム向けに、フロントエンドとバックエンドのアーキテクチャを含むエンドツーエンドのWebアプリケーションを構築。Nuxt.jsでレスポンシブかつ高性能なUIを作成し、リアルタイムデータの可視化とスムーズなユーザー操作を最適化。組立ラインの計画やシステム診断など中核の業務モジュールを動かすため、gRPCサービスとExpress.jsによるマイクロサービスを設計・実装。スキーマ設計、マイグレーション、シードデータの実行を含め、PostgreSQLを管理。サービスをエンドツーエンドでトレースしてデバッグし、パフォーマンスのボトルネックを診断して、スタック全体で円滑かつ信頼性の高いデータフローを確保。",
+        desc: "リアルタイムの産業モニタリング・管理システム向けに、フロントエンドとバックエンドのアーキテクチャを含むエンドツーエンドのWebアプリケーションを構築。Vue.jsでレスポンシブかつ高性能なUIを作成し、リアルタイムデータの可視化とスムーズなユーザー操作を最適化。組立ラインの計画やシステム診断など中核の業務モジュールを動かすため、gRPCサービスとExpress.jsによるマイクロサービスを設計・実装。スキーマ設計、マイグレーション、シードデータの実行を含め、PostgreSQLを管理。サービスをエンドツーエンドでトレースしてデバッグし、パフォーマンスのボトルネックを診断して、スタック全体で円滑かつ信頼性の高いデータフローを確保。",
       },
       {
         company: "CV. Visual Code Indonesia", location: "Kediri", period: "2026年6月 – 2026年8月", title: "Webテスター（QA）& UI/UXデザイナー（インターン）",

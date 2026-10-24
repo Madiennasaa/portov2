@@ -1,6 +1,6 @@
 export const product = {
   slug: "alc-mazda",
-  tags: ["Nuxt.js", "Vue.js", "Express.js", "gRPC", "PostgreSQL"],
+  tags: ["Vue.js", "Express.js", "gRPC", "PostgreSQL"],
   demoUrl: "",
   demoAccount: "",
   en: {

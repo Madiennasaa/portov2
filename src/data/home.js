@@ -1,7 +1,7 @@
 // Teks home page. Cari placeholder: grep -rn "\[Isi" src/data/home.js
 export const expertiseItems = [
   ["JavaScript", "PHP", "Python", "Kotlin", "Dart"],
-  ["Vue.js", "Nuxt.js", "Tailwind CSS", "HTML", "CSS"],
+  ["Vue.js", "Tailwind CSS", "HTML", "CSS"],
   ["Flutter", "Android (Kotlin)"],
   ["Express.js", "gRPC", "Laravel", "Prisma"],
   ["PostgreSQL", "MySQL", "Firebase", "Docker"],
@@ -17,7 +17,7 @@ export const home = {
       values: {
         exp: "Less than 1 year",
         avail: "Open to relevant opportunities",
-        stack: "Nuxt.js, Vue.js, Express.js, gRPC, PostgreSQL, Laravel",
+        stack: "Vue.js, Express.js, gRPC, PostgreSQL, Laravel",
         domain: "Manufacturing Systems, School Information Systems, Mobile Apps, Web Apps",
         strength: "End-to-end delivery, microservices backend, system analysis, UI/UX, QA mindset",
       },
@@ -25,10 +25,10 @@ export const home = {
     },
     about: {
       eyebrow: "PERSONAL SUMMARY", title: "ABOUT ME", sub: "Bridging system analysis with hands-on full-stack development",
-      p1: "Hello! I am Ahmad Ubaidillah Tsani, a developer who thrives on moving products seamlessly from high-level requirement specs to refined production instances. Over the past year, I have built performant applications across web surfaces: Nuxt.js interfaces, Express.js microservices connected over gRPC, and PostgreSQL schemas for a real-time industrial monitoring platform at Stechoq Robotika Indonesia.",
+      p1: "Hello! I am Ahmad Ubaidillah Tsani, a developer who thrives on moving products seamlessly from high-level requirement specs to refined production instances. Over the past year, I have built performant applications across web surfaces: Vue.js interfaces, Express.js microservices connected over gRPC, and PostgreSQL schemas for a real-time industrial monitoring platform at Stechoq Robotika Indonesia.",
       p2: "Originally starting as a web developer deeply focused on frontend and UI/UX paradigms, my appetite for understanding stakeholder requirements and coordinating system architectures naturally drew me into full-stack delivery. I believe software succeeds when technology, business logic, and human empathy are closely aligned.",
       listTitle: "END-TO-END PRODUCT CARE",
-      list: ["REQUIREMENT GATHERING & SYSTEM ANALYSIS", "UI/UX DESIGN & PROTOTYPING", "FRONTEND & BACKEND DEVELOPMENT (NUXT, EXPRESS, GRPC)", "DATABASE DESIGN & MIGRATION (POSTGRESQL)", "QA TESTING & BUG REPLICATION"],
+      list: ["REQUIREMENT GATHERING & SYSTEM ANALYSIS", "UI/UX DESIGN & PROTOTYPING", "FRONTEND & BACKEND DEVELOPMENT (VUE, EXPRESS, GRPC)", "DATABASE DESIGN & MIGRATION (POSTGRESQL)", "QA TESTING & BUG REPLICATION"],
     },
     expertise: {
       eyebrow: "TECHNICAL MATRIX", title: "TECHNICAL EXPERTISE", sub: "My technical tools and development methodologies",
@@ -51,7 +51,7 @@ export const home = {
       values: {
         exp: "Kurang dari 1 tahun",
         avail: "Terbuka untuk peluang yang relevan",
-        stack: "Nuxt.js, Vue.js, Express.js, gRPC, PostgreSQL, Laravel",
+        stack: "Vue.js, Express.js, gRPC, PostgreSQL, Laravel",
         domain: "Sistem Manufaktur, Sistem Informasi Sekolah, Aplikasi Mobile, Aplikasi Web",
         strength: "Pengerjaan end-to-end, backend microservices, analisis sistem, UI/UX, pola pikir QA",
       },
@@ -59,10 +59,10 @@ export const home = {
     },
     about: {
       eyebrow: "RINGKASAN PRIBADI", title: "TENTANG SAYA", sub: "Menjembatani analisis sistem dengan pengembangan full-stack",
-      p1: "Halo! Saya Ahmad Ubaidillah Tsani, developer yang menikmati proses membawa produk dari spesifikasi kebutuhan tingkat tinggi hingga menjadi sistem produksi yang rapi. Selama hampir setahun terakhir, saya membangun aplikasi web berperforma baik: antarmuka Nuxt.js, microservices Express.js yang terhubung lewat gRPC, dan skema PostgreSQL untuk platform pemantauan industri real-time di Stechoq Robotika Indonesia.",
+      p1: "Halo! Saya Ahmad Ubaidillah Tsani, developer yang menikmati proses membawa produk dari spesifikasi kebutuhan tingkat tinggi hingga menjadi sistem produksi yang rapi. Selama hampir setahun terakhir, saya membangun aplikasi web berperforma baik: antarmuka Vue.js, microservices Express.js yang terhubung lewat gRPC, dan skema PostgreSQL untuk platform pemantauan industri real-time di Stechoq Robotika Indonesia.",
       p2: "Berawal sebagai web developer yang fokus pada frontend dan UI/UX, ketertarikan saya pada kebutuhan stakeholder dan arsitektur sistem membawa saya ke pengerjaan full-stack. Saya percaya perangkat lunak berhasil ketika teknologi, logika bisnis, dan empati terhadap pengguna selaras.",
       listTitle: "PERHATIAN END-TO-END",
-      list: ["PENGUMPULAN KEBUTUHAN & ANALISIS SISTEM", "DESAIN UI/UX & PROTOTIPE", "PENGEMBANGAN FRONTEND & BACKEND (NUXT, EXPRESS, GRPC)", "PERANCANGAN & MIGRASI DATABASE (POSTGRESQL)", "PENGUJIAN QA & REPLIKASI BUG"],
+      list: ["PENGUMPULAN KEBUTUHAN & ANALISIS SISTEM", "DESAIN UI/UX & PROTOTIPE", "PENGEMBANGAN FRONTEND & BACKEND (VUE, EXPRESS, GRPC)", "PERANCANGAN & MIGRASI DATABASE (POSTGRESQL)", "PENGUJIAN QA & REPLIKASI BUG"],
     },
     expertise: {
       eyebrow: "MATRIKS TEKNIS", title: "KEAHLIAN TEKNIS", sub: "Alat teknis dan metodologi pengembangan yang saya gunakan",
@@ -85,7 +85,7 @@ export const home = {
       values: {
         exp: "1年未満",
         avail: "関連する機会に前向きです",
-        stack: "Nuxt.js、Vue.js、Express.js、gRPC、PostgreSQL、Laravel",
+        stack: "Vue.js、Express.js、gRPC、PostgreSQL、Laravel",
         domain: "製造システム、学校情報システム、モバイルアプリ、Webアプリ",
         strength: "エンドツーエンド開発、マイクロサービス、システム分析、UI/UX、QA視点",
       },
@@ -93,10 +93,10 @@ export const home = {
     },
     about: {
       eyebrow: "自己紹介", title: "私について", sub: "システム分析と実践的なフルスタック開発をつなぐ",
-      p1: "こんにちは。Ahmad Ubaidillah Tsaniです。高い次元の要件定義から洗練された本番システムまで、製品をシームレスに導くことを得意とする開発者です。この1年ほどで、Nuxt.jsのインターフェース、gRPCで接続したExpress.jsのマイクロサービス、PostgreSQLのスキーマなど、実用的なWebアプリケーションを構築してきました。Stechoq Robotika Indonesiaではリアルタイム産業モニタリング基盤を担当しています。",
+      p1: "こんにちは。Ahmad Ubaidillah Tsaniです。高い次元の要件定義から洗練された本番システムまで、製品をシームレスに導くことを得意とする開発者です。この1年ほどで、Vue.jsのインターフェース、gRPCで接続したExpress.jsのマイクロサービス、PostgreSQLのスキーマなど、実用的なWebアプリケーションを構築してきました。Stechoq Robotika Indonesiaではリアルタイム産業モニタリング基盤を担当しています。",
       p2: "フロントエンドとUI/UXに注力するWeb開発者として出発しましたが、ステークホルダーの要件を理解しシステムアーキテクチャを調整したいという思いから、フルスタック開発へと自然に進みました。技術、ビジネスロジック、ユーザーへの共感が揃ったときにソフトウェアは成功すると考えています。",
       listTitle: "エンドツーエンドの品質管理",
-      list: ["要件定義とシステム分析", "UI/UXデザインとプロトタイプ", "フロントエンド・バックエンド開発（NUXT、EXPRESS、GRPC）", "データベース設計とマイグレーション（POSTGRESQL）", "QAテストとバグ再現"],
+      list: ["要件定義とシステム分析", "UI/UXデザインとプロトタイプ", "フロントエンド・バックエンド開発（VUE、EXPRESS、GRPC）", "データベース設計とマイグレーション（POSTGRESQL）", "QAテストとバグ再現"],
     },
     expertise: {
       eyebrow: "技術マトリクス", title: "技術スキル", sub: "使用している技術ツールと開発手法",

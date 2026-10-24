@@ -8,7 +8,7 @@ import { cvText } from "../data/cvI18n.js";
 
 const { t, te, locale } = useI18n();
 const tx = computed(() => cvText[locale.value] ?? cvText.id);
-const cvProjects = computed(() => [6, 1, 9].map((n) => projects.find((p) => p.n === n)).filter(Boolean));
+const cvProjects = computed(() => [1, 10, 6, 9].map((n) => projects.find((p) => p.n === n)).filter(Boolean));
 
 const printCv = async () => {
   await document.fonts.ready;

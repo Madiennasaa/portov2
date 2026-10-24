@@ -11,7 +11,7 @@ export default {
   },
   "hero": {
     "open": "OPEN TO OPPORTUNITIES",
-    "desc": "I have nearly a year in the JavaScript ecosystem, spanning Nuxt.js, Vue.js, Node.js, Express.js, and gRPC, and managing end-to-end web application delivery from system analysis and UI/UX design to working production systems.",
+    "desc": "I have nearly a year in the JavaScript ecosystem, spanning Vue.js, Node.js, Express.js, and gRPC, and managing end-to-end web application delivery from system analysis and UI/UX design to working production systems.",
     "viewPortfolio": "View Portfolio",
     "resume": "Download CV",
     "contactMe": "Contact Me"
@@ -73,6 +73,7 @@ export default {
     "6": "Tutoring information and services available online",
     "7": "School data, schedules, and learning materials centralized in one role-based system",
     "8": "School information and schedules accessible directly from a phone",
-    "9": "Program progress, materials, and homework tracked in one dashboard"
+    "9": "Program progress, materials, and homework tracked in one dashboard",
+    "10": "Workshop orders, progress, materials, and finances managed in one system"
   }
 };

@@ -11,7 +11,7 @@ export default {
   },
   "hero": {
     "open": "TERBUKA UNTUK PELUANG",
-    "desc": "Saya memiliki pengalaman hampir satu tahun di ekosistem JavaScript, mencakup Nuxt.js, Vue.js, Node.js, Express.js, dan gRPC, serta menangani pengiriman aplikasi web end-to-end dari analisis sistem dan desain UI/UX hingga sistem produksi yang berjalan.",
+    "desc": "Saya memiliki pengalaman hampir satu tahun di ekosistem JavaScript, mencakup Vue.js, Node.js, Express.js, dan gRPC, serta menangani pengiriman aplikasi web end-to-end dari analisis sistem dan desain UI/UX hingga sistem produksi yang berjalan.",
     "viewPortfolio": "Lihat Portofolio",
     "resume": "Unduh CV",
     "contactMe": "Hubungi Saya"
@@ -73,6 +73,7 @@ export default {
     "6": "Informasi dan layanan les tersedia secara daring",
     "7": "Data sekolah, jadwal, dan materi terpusat dalam satu sistem berbasis peran",
     "8": "Informasi dan jadwal sekolah dapat diakses langsung dari ponsel",
-    "9": "Progres program, materi, dan PR terpantau dalam satu dashboard"
+    "9": "Progres program, materi, dan PR terpantau dalam satu dashboard",
+    "10": "Pesanan, progres, bahan, dan keuangan bengkel terkelola dalam satu sistem"
   }
 };

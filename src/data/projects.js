@@ -12,6 +12,7 @@ const meta = {
   7: { slug: "simas-sdn-sukorame-web", category: "Web App" },
   8: { slug: "simas-sdn-sukorame-mobile", category: "Mobile App" },
   9: { slug: "noora-quran", category: "Web App" },
+  10: { slug: "bengkel-jaya-teknik", category: "Web App" },
 };
 
 const details = {
@@ -33,19 +34,19 @@ const details = {
       "Dukungan multi-bahasa (i18n)",
     ],
     technicalImplementation:
-      "Frontend Nuxt.js (Vue 3). Backend berupa microservices Express.js yang saling terhubung lewat gRPC, dengan database PostgreSQL (skema, migrasi, seed). Tracing dan debugging layanan end-to-end untuk mencari hambatan performa, serta regression testing pada fitur pencarian di beberapa service.",
+      "Frontend Vue 3. Backend berupa microservices Express.js yang saling terhubung lewat gRPC, dengan database PostgreSQL (skema, migrasi, seed). Tracing dan debugging layanan end-to-end untuk mencari hambatan performa, serta regression testing pada fitur pencarian di beberapa service.",
     lessonLearned:
       "Bekerja di arsitektur microservices yang kompleks mengajarkan saya pentingnya kontrak antar layanan (gRPC proto), pengelolaan state autentikasi yang tangguh (koordinasi refresh token dan permission berbasis api path), serta disiplin menjaga payload dan aturan bisnis papan andon agar konsisten antar mesin dan antar bahasa.",
   },
   2: {
     role: "Full Stack Developer",
-    impact: "Etalase hingga transaksi toko pertanian berjalan daring, kemudian tumbuh menjadi aplikasi Nuxt + PostgreSQL yang jauh lebih terstruktur.",
+    impact: "Etalase hingga transaksi toko pertanian berjalan daring, kemudian tumbuh menjadi aplikasi Vue + PostgreSQL yang jauh lebih terstruktur.",
     background:
       "Berawal sebagai proyek akhir mata kuliah Desain Web semester 2 (Januari 2026) saat kuliah di Politeknik Negeri Malang, lalu terus dikembangkan menjadi platform e-commerce toko pertanian hingga ratusan commit.",
     problem:
       "Penjual produk pertanian membutuhkan kanal penjualan daring milik sendiri — katalog, keranjang, checkout, dan pengelolaan pesanan/produk — tanpa bergantung pada marketplace pihak ketiga, sementara pencatatan penjualan dan unggulan produknya masih manual.",
     solution:
-      "Platform e-commerce toko pertanian yang berisi etalase dan detail produk, keranjang & checkout sampai struk pesanan, pengelolaan pesanan, berita, dan kalender promo. Versi pertama dibangun dengan PHP Native, lalu di-reengineering penuh menjadi aplikasi Nuxt.",
+      "Platform e-commerce toko pertanian yang berisi etalase dan detail produk, keranjang & checkout sampai struk pesanan, pengelolaan pesanan, berita, dan kalender promo. Versi pertama dibangun dengan PHP Native, lalu di-reengineering penuh menjadi aplikasi Vue.",
     features: [
       "Etalase produk, kategori, dan promo/deals",
       "Keranjang, checkout, struk, serta riwayat dan detail pesanan",
@@ -53,7 +54,7 @@ const details = {
       "Autentikasi pengguna: daftar, verifikasi, dan reset password",
     ],
     technicalImplementation:
-      "Fase pertama: PHP Native + MySQL dan diploy ke Vercel. Fase reengineering: Nuxt 3 + PostgreSQL (Neon) dengan server API terstruktur, migrasi database versi (001–020) yang immutable dengan checksum dan advisory lock, seed data, i18n (shared locales), dan pengujian Vitest.",
+      "Fase pertama: PHP Native + MySQL dan diploy ke Vercel. Fase reengineering: Vue 3 + PostgreSQL (Neon) dengan server API terstruktur, migrasi database versi (001–020) yang immutable dengan checksum dan advisory lock, seed data, i18n (shared locales), dan pengujian Vitest.",
     lessonLearned:
       "Kode awal yang prosedural (satu file PHP hingga 1.000+ baris) menjadi alasan tuntas me-reengineering proyek ini. Dari situ saya terbiasa menjaga migrasi database yang disiplin (immutable, expand → deploy → contract) dan menulis test sejak awal agar aplikasi tetap maintainable.",
   },
@@ -184,6 +185,29 @@ const details = {
     technicalImplementation: "HTML dan Tailwind CSS multi-halaman dengan interaksi JavaScript. Tema visual dari hitam/emas menjadi terang.",
     lessonLearned:
       "Prototipe multi-page HTML + Tailwind dengan JS ringan (tanpa framework) melatih saya menyusun struktur dashboard yang rapi, memakai CSS per halaman tetap konsisten, dan memikirkan kebutuhan data nyata sejak tahap mockup.",
+  },
+  10: {
+    role: "Full Stack Developer",
+    impact: "Pesanan, progres pengerjaan, pemakaian bahan, dan laporan keuangan bengkel terkelola dalam satu sistem.",
+    background:
+      "Sistem manajemen bengkel untuk Bengkel Jaya Teknik, dikembangkan sebagai bagian dari penelitian dosen untuk program pengabdian masyarakat guna mendigitalisasi operasional bengkel.",
+    problem:
+      "Pencatatan pesanan servis, progres pengerjaan, pemakaian bahan, dan pemasukan bengkel masih dilakukan manual, sehingga status pesanan sulit dipantau, stok bahan tidak terkontrol, dan laporan keuangan harus direkap ulang setiap periode.",
+    solution:
+      "Aplikasi web berbasis peran (admin dan pelanggan) yang mencatat pesanan beserta kode unik, memantau progres pengerjaan, mengelola stok dan pemakaian bahan, menampilkan katalog, serta menyusun laporan keuangan dan status pembayaran.",
+    features: [
+      "Autentikasi dan hak akses berbasis peran (admin & pelanggan)",
+      "Manajemen pesanan dengan kode pesanan unik dan status pengerjaan",
+      "Pencatatan progres pengerjaan beserta foto dan catatan",
+      "Manajemen bahan, stok, dan pemakaian bahan per pesanan",
+      "Katalog layanan/produk bengkel",
+      "Laporan keuangan, pembayaran, dan riwayat pesanan",
+      "Pelanggan dapat mengecek status pesanan lewat kode",
+    ],
+    technicalImplementation:
+      "Laravel dengan Blade, MySQL, Vite, dan Tailwind CSS. RoleMiddleware membatasi area admin dan pelanggan; migrasi database membentuk relasi pesanan–progres–pemakaian bahan–katalog; laporan keuangan dihitung dari total harga, biaya jasa, DP, dan sisa pembayaran.",
+    lessonLearned:
+      "Membangun sistem operasional bengkel dari kebutuhan lapangan mengajarkan saya memetakan alur pesanan dan progres ke relasi database yang rapi, menjaga konsistensi stok bahan, serta menyusun laporan keuangan yang mudah dibaca pengelola bengkel.",
   },
 };
 

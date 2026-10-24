@@ -197,10 +197,6 @@ const techStack = [
         icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" class="h-10 w-10 object-contain" alt="Laravel" />',
     },
     {
-        name: "Nuxt.js",
-        icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg" class="h-10 w-10 object-contain" alt="Nuxt.js" />',
-    },
-    {
         name: "Python",
         icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="h-10 w-10 object-contain" alt="Python" />',
     },
