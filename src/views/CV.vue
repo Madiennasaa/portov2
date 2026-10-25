@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { useI18n } from "vue-i18n";
-import { PrinterIcon, EnvelopeIcon, PhoneIcon, LinkIcon, MapPinIcon, ClockIcon, GlobeAltIcon } from "@heroicons/vue/24/outline";
+import { PrinterIcon, EnvelopeIcon, PhoneIcon, LinkIcon, MapPinIcon, ClockIcon, GlobeAltIcon, CodeBracketIcon } from "@heroicons/vue/24/outline";
 import { profile } from "../data/portfolio.js";
 import { projects } from "../data/projects.js";
 import { cvText } from "../data/cvI18n.js";
@@ -47,6 +47,7 @@ const h3 = "font-display text-sm font-bold uppercase tracking-wider text-neutral
           <p class="flex items-center gap-2 md:justify-end"><PhoneIcon class="h-3.5 w-3.5" /><a href="tel:+6285756373129" class="text-neutral-800 hover:underline">{{ profile.phone }}</a></p>
           <p class="flex items-center gap-2 md:justify-end"><LinkIcon class="h-3.5 w-3.5" /><a href="https://www.linkedin.com/in/ahmadubai02" target="_blank" rel="noopener noreferrer" class="text-neutral-800 hover:underline">linkedin.com/in/ahmadubai02</a></p>
           <p class="flex items-center gap-2 md:justify-end"><GlobeAltIcon class="h-3.5 w-3.5" /><a :href="'https://' + profile.website" target="_blank" rel="noopener noreferrer" class="text-neutral-800 hover:underline">{{ profile.website }}</a></p>
+          <p class="flex items-center gap-2 md:justify-end"><CodeBracketIcon class="h-3.5 w-3.5" /><a href="https://github.com/Madiennasaa" target="_blank" rel="noopener noreferrer" class="text-neutral-800 hover:underline">github.com/Madiennasaa</a></p>
         </div>
       </div>
 
@@ -139,26 +140,12 @@ const h3 = "font-display text-sm font-bold uppercase tracking-wider text-neutral
         </div>
       </section>
 
-      <section class="space-y-4 border-b border-neutral-100 py-8">
-        <h3 :class="h3">{{ t("cv.skillsExtra") }}</h3>
-        <div class="grid grid-cols-1 gap-x-12 gap-y-6 sm:grid-cols-2">
-          <div class="cv-keep-together space-y-1.5">
-            <span class="block font-mono text-[10px] font-bold uppercase text-neutral-400">{{ t("cv.hard") }}</span>
-            <p class="font-sans text-sm font-medium text-neutral-800">{{ tx.skillSets.hard.join(", ") }}</p>
-          </div>
-          <div class="cv-keep-together space-y-1.5">
-            <span class="block font-mono text-[10px] font-bold uppercase text-neutral-400">{{ t("cv.soft") }}</span>
-            <p class="font-sans text-sm font-medium text-neutral-800">{{ tx.skillSets.soft.join(", ") }}</p>
-          </div>
-        </div>
-      </section>
-
       <section class="space-y-4 py-8">
         <h3 :class="h3">{{ t("cv.values") }}</h3>
         <ul class="space-y-2 font-mono text-xs uppercase text-neutral-500">
-          <li v-for="s in tx.strengths" :key="s" class="cv-keep-together flex items-start gap-4">
+          <li v-for="s in tx.strengths" :key="s.title" class="cv-keep-together flex items-start gap-4">
             <span class="font-bold text-neutral-950">—</span>
-            <span>{{ s }}</span>
+            <span>{{ s.title }}: {{ s.desc }}</span>
           </li>
         </ul>
       </section>

@@ -1,4 +1,4 @@
-import { profile, work, education, certifications, skills } from "./portfolio.js";
+import { work, education, certifications } from "./portfolio.js";
 
 const values = [
   "JavaScript, PHP, Python, Kotlin, Dart",
@@ -19,28 +19,60 @@ const idJobs = work.map((w) => {
 
 export const cvText = {
   id: {
-    summary: profile.summary,
+    summary:
+      "Full Stack Developer dan mahasiswa Manajemen Informatika di Politeknik Negeri Malang dengan fondasi kuat pada seluruh siklus produk digital: analisis sistem, desain UI/UX, layanan backend, dan administrasi basis data. Berpengalaman membangun aplikasi web industri real-time dengan Vue.js, Express.js, gRPC, dan PostgreSQL, didukung latar belakang QA dalam pengujian fungsional dan performa. Sangat termotivasi untuk terus belajar dan siap berkontribusi sebagai Web Developer, Back-End Developer, atau Full-Stack Developer. Tersedia untuk bekerja remote.",
     edu: "D3 Manajemen Informatika, Polinema",
     matrix: mk(labelsId),
     strengths: [
-      "Full-Stack Delivery: Membangun aplikasi dari antarmuka Vue.js hingga layanan backend dan database",
-      "Backend Architecture: Microservices Express.js, layanan gRPC, dan perancangan skema PostgreSQL",
-      "QA Mindset: Pengujian fungsional dan performa, serta laporan replikasi bug yang terstruktur",
-      "UI/UX Sense: Alur kerja yang intuitif, responsif, dan konsisten secara visual",
-      "Team Discipline: Manajemen waktu, komunikasi yang baik, dan kerja sama tim lintas fungsi",
+      {
+        title: "Full-Stack Delivery",
+        desc: "Menghubungkan antarmuka Vue.js, layanan backend, dan database menjadi satu alur produk yang utuh dan bisa dioperasikan.",
+      },
+      {
+        title: "Backend Architecture",
+        desc: "Merancang microservices Express.js, kontrak gRPC, dan skema PostgreSQL yang konsisten serta mudah dirawat.",
+      },
+      {
+        title: "QA Mindset",
+        desc: "Menguji fungsi dan performa, lalu menulis langkah reproduksi bug yang jelas agar perbaikan lebih cepat.",
+      },
+      {
+        title: "UI/UX Sense",
+        desc: "Menyusun alur responsif dengan hierarki visual jelas dan interaksi yang mudah dipahami pengguna.",
+      },
+      {
+        title: "Team Discipline",
+        desc: "Menjaga tenggat, komunikasi lintas peran, dan serah-terima pekerjaan yang rapi di dalam tim.",
+      },
     ],
     jobs: idJobs,
   },
   en: {
-    summary: "A dedicated and adaptable Information Management student at Politeknik Negeri Malang with a strong foundation across the entire digital product development lifecycle, from system analysis and UI/UX design to database administration. Hands-on experience in web development and software quality assurance (QA). Highly motivated to keep learning and ready to contribute professionally as a Web Developer, Back-End Developer, or Full-Stack Developer.",
+    summary:
+      "Dedicated Full Stack Developer and Information Management student at Politeknik Negeri Malang with a strong foundation across the digital product lifecycle: system analysis, UI/UX design, backend services, and database administration. Hands-on experience building real-time industrial web applications with Vue.js, Express.js, gRPC, and PostgreSQL, backed by a QA background in functional and performance testing. Highly motivated to keep learning and ready to contribute as a Web Developer, Back-End Developer, or Full-Stack Developer. Available for remote work.",
     edu: "D3 Information Management, Polinema",
     matrix: mk(labelsEn),
     strengths: [
-      "Full-Stack Delivery: Building applications from Vue.js interfaces to backend services and databases",
-      "Backend Architecture: Express.js microservices, gRPC services, and PostgreSQL schema design",
-      "QA Mindset: Functional and performance testing, with structured bug reproduction reports",
-      "UI/UX Sense: Intuitive, responsive, and visually consistent workflows",
-      "Team Discipline: Time management, clear communication, and cross-functional teamwork",
+      {
+        title: "Full-Stack Delivery",
+        desc: "Connects Vue.js interfaces, backend services, and databases into one coherent, operable product flow.",
+      },
+      {
+        title: "Backend Architecture",
+        desc: "Designs Express.js microservices, gRPC contracts, and PostgreSQL schemas that stay consistent and maintainable.",
+      },
+      {
+        title: "QA Mindset",
+        desc: "Tests functionality and performance, then documents clear bug reproduction steps so fixes move faster.",
+      },
+      {
+        title: "UI/UX Sense",
+        desc: "Shapes responsive flows with clear visual hierarchy and interactions that are easy to understand.",
+      },
+      {
+        title: "Team Discipline",
+        desc: "Protects deadlines, communicates across roles, and keeps handoffs clean within the team.",
+      },
     ],
     jobs: [
       {
@@ -54,15 +86,31 @@ export const cvText = {
     ],
   },
   ja: {
-    summary: "ポリテクニック・ネグリ・マラン情報管理学科に在籍する、意欲的で適応力のある学生です。システム分析やUI/UXデザインからデータベース管理まで、デジタルプロダクト開発の全工程にわたる確かな基礎を持ち、Web開発とソフトウェア品質保証（QA）の実務経験があります。学び続ける意欲が高く、Webデベロッパー、バックエンドデベロッパー、フルスタックデベロッパーとして貢献する準備ができています。",
+    summary:
+      "ポリテクニック・ネグリ・マランの情報管理学科に在籍する、意欲的なフルスタックデベロッパーです。システム分析、UI/UXデザイン、バックエンドサービス、データベース管理まで、デジタルプロダクトのライフサイクル全体にわたる確かな基礎を持っています。Vue.js、Express.js、gRPC、PostgreSQLを用いたリアルタイムの産業向けWebアプリケーションの開発経験があり、機能テストとパフォーマンステストを中心としたQAのバックグラウンドも備えています。学び続ける意欲が高く、Webデベロッパー、バックエンドデベロッパー、フルスタックデベロッパーとして貢献する準備ができています。リモートワーク可能です。",
     edu: "情報管理学ディプロマ3、ポリネマ（マラン国立ポリテクニック）",
     matrix: mk(["言語", "フロントエンド / Web", "モバイル開発", "バックエンドフレームワーク", "データベース & DevOps", "ツール & ワークフロー"]),
     strengths: [
-      "フルスタック開発: Vue.jsのインターフェースからバックエンドサービスとデータベースまで、アプリケーションを構築",
-      "バックエンド設計: Express.jsのマイクロサービス、gRPCサービス、PostgreSQLのスキーマ設計",
-      "QAマインドセット: 機能テストとパフォーマンステスト、構造化されたバグ再現レポート",
-      "UI/UXセンス: 直感的でレスポンシブ、視覚的に一貫したワークフロー",
-      "チーム規律: 時間管理、円滑なコミュニケーション、部門横断のチームワーク",
+      {
+        title: "フルスタック開発",
+        desc: "Vue.jsのインターフェース、バックエンドサービス、データベースを一つの運用可能なプロダクトフローに接続します。",
+      },
+      {
+        title: "バックエンド設計",
+        desc: "Express.jsのマイクロサービス、gRPCの契約、PostgreSQLのスキーマを一貫性と保守性を保って設計します。",
+      },
+      {
+        title: "QAマインドセット",
+        desc: "機能とパフォーマンスをテストし、修正が迅速に進むよう明確なバグ再現手順を記録します。",
+      },
+      {
+        title: "UI/UXセンス",
+        desc: "明確な視覚的階層と理解しやすいインタラクションを備えたレスポンシブなフローを構築します。",
+      },
+      {
+        title: "チーム規律",
+        desc: "期限を守り、役割を越えてコミュニケーションし、チーム内の引き継ぎを整えます。",
+      },
     ],
     jobs: [
       {
@@ -80,9 +128,9 @@ export const cvText = {
 
 // --- Header resume (lokasi & pengalaman), label halaman, dan lokasi kerja per bahasa ---
 const cvExtra = {
-  id: { loc: "Indonesia", exp: "Kurang dari 1 Tahun Pengalaman", eyebrow: "RESUME", title: "Resume Online", print: "Cetak Resume" },
-  en: { loc: "Indonesia", exp: "Less than 1 Year Experience", eyebrow: "RESUME", title: "Online Resume", print: "Print Resume" },
-  ja: { loc: "インドネシア", exp: "経験1年未満", eyebrow: "履歴書", title: "オンライン履歴書", print: "履歴書を印刷" },
+  id: { loc: "Indonesia (UTC+7)", exp: "Kurang dari 1 Tahun Pengalaman", eyebrow: "RESUME", title: "Resume Online", print: "Cetak Resume" },
+  en: { loc: "Indonesia (UTC+7)", exp: "Less than 1 Year Experience", eyebrow: "RESUME", title: "Online Resume", print: "Print Resume" },
+  ja: { loc: "インドネシア（UTC+7）", exp: "経験1年未満", eyebrow: "履歴書", title: "オンライン履歴書", print: "履歴書を印刷" },
 };
 for (const k of Object.keys(cvExtra)) {
   Object.assign(cvText[k], cvExtra[k]);
@@ -134,15 +182,3 @@ const cvExtraSections = {
 
 for (const k of Object.keys(cvExtraSections)) Object.assign(cvText[k], cvExtraSections[k]);
 
-const cvSkillSets = {
-  id: { hard: skills.hard, soft: skills.soft },
-  en: {
-    hard: ["Microsoft Office (Excel, Word, PowerPoint)", "Spreadsheet", "Canva"],
-    soft: ["Time management", "Clear communication", "Teamwork", "Discipline", "Indonesian & English"],
-  },
-  ja: {
-    hard: ["Microsoft Office（Excel・Word・PowerPoint）", "表計算", "Canva"],
-    soft: ["時間管理", "円滑なコミュニケーション", "チームワーク", "規律", "インドネシア語・英語"],
-  },
-};
-for (const k of Object.keys(cvSkillSets)) cvText[k].skillSets = cvSkillSets[k];

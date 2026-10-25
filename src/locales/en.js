@@ -59,21 +59,18 @@ export default {
     "projects": "Primary Project Contributions",
     "values": "Core Values & Methodological Strengths",
     "education": "Education",
-    "certifications": "Certifications",
-    "skillsExtra": "Additional Skills",
-    "hard": "Hard Skills",
-    "soft": "Soft Skills"
+    "certifications": "Certifications"
   },
   "impact": {
-    "1": "Real-time production line monitoring and management in one unified system",
+    "1": "5 gRPC services + API gateway, 172 PostgreSQL tables, and 101 RPC methods in one real-time monitoring system",
     "2": "More centralized and efficient store and transaction management",
     "3": "More orderly and transparent tuition payment tracking",
     "4": "Book collection and lending managed without manual records",
     "5": "Organization information and data presented on a single web platform",
-    "6": "Tutoring information and services available online",
+    "6": "11 public pages and 5 reusable Blade components delivered consistently",
     "7": "School data, schedules, and learning materials centralized in one role-based system",
     "8": "School information and schedules accessible directly from a phone",
-    "9": "Program progress, materials, and homework tracked in one dashboard",
-    "10": "Workshop orders, progress, materials, and finances managed in one system"
+    "9": "7 dashboard pages covering programs, materials, homework/exams, certificates, and profile",
+    "10": "2 user roles (admin & customer) and 7 operational modules in one system"
   }
 };

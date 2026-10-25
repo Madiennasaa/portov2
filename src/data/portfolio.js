@@ -80,11 +80,6 @@ export const certifications = [
   { title: "Python Essentials", issuer: "Cisco Networking Academy – Politeknik Negeri Malang", year: "2025" },
 ];
 
-export const skills = {
-  hard: ["Microsoft Office (Excel, Word, PowerPoint)", "Spreadsheet", "Canva"],
-  soft: ["Manajemen waktu", "Komunikasi yang baik", "Kerja sama tim", "Disiplin", "Bahasa Indonesia & Inggris"],
-};
-
 export const stack = [
   { group: "Frontend", items: ["Vue.js", "JavaScript", "Tailwind CSS", "HTML", "CSS"] },
   { group: "Backend", items: ["Express.js", "gRPC", "Microservices", "Laravel", "PHP", "PHP Native", "Python"] },
