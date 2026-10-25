@@ -69,7 +69,7 @@ const h3 = "font-display text-sm font-bold uppercase tracking-wider text-neutral
       <section class="space-y-6 border-b border-neutral-100 py-8">
         <h3 :class="h3">{{ t("cv.work") }}</h3>
         <div class="space-y-8">
-          <div v-for="j in tx.jobs" :key="j.company" class="space-y-3">
+          <div v-for="j in tx.jobs" :key="j.company" class="cv-keep-together space-y-3">
             <div class="flex flex-wrap items-start justify-between gap-4">
               <div>
                 <h4 class="font-display text-base font-bold text-neutral-900">{{ j.company }}</h4>
@@ -93,7 +93,7 @@ const h3 = "font-display text-sm font-bold uppercase tracking-wider text-neutral
       <section class="space-y-6 border-b border-neutral-100 py-8">
         <h3 :class="h3">{{ t("cv.education") }}</h3>
         <div class="space-y-8">
-          <div v-for="e in tx.education" :key="e.company" class="space-y-3">
+          <div v-for="e in tx.education" :key="e.company" class="cv-keep-together space-y-3">
             <div class="flex flex-wrap items-start justify-between gap-4">
               <div>
                 <h4 class="font-display text-base font-bold text-neutral-900">{{ e.company }}</h4>

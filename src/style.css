@@ -40,8 +40,16 @@ section { scroll-margin-top: 6rem; }
 .tag-line { @apply border border-neutral-200 px-2 py-0.5 font-mono text-[10px] text-neutral-600; }
 .cv-keep-together { break-inside: avoid; }
 
+@page {
+  size: A4;
+  margin: 10mm 12mm;
+}
+
 @media print {
   nav, footer { display: none !important; }
   main { padding: 0 !important; }
   body { background: #fff; }
+  #cv-page { padding: 0 !important; }
+  #cv-canvas h2, #cv-canvas h3 { break-after: avoid; }
+  #cv-canvas section { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
 }
